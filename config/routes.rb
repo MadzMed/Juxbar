@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
+  get 'sessions/index'
+  get 'sessions/show'
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :sessions, only: [:index, :show] do
+    resources :playlists, only: [:index]
+    namespace :my do
+      resources :playlists, only: [:new, :create]
+    end
+  end
+  namespace :my do
+    resources :playlists, only: [:show, :update]
+  end
+  resources :playlists, only: [:update]
 end
