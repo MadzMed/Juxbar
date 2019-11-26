@@ -3,7 +3,9 @@
     <div class="col-6 offset-3">
       <ul>
         <% @playlists.each do |playlist| %>
-          <li><%= playlist.users %></li>
+          <% playlist.songs.each do |song| %>
+            <li><%= song.title %></li>
+          <% end %>
         <% end %>
       </ul>
     </div>
