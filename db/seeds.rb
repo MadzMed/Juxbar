@@ -18,8 +18,8 @@ Bar.create(name: "Le Wagon", address: "107 Cours Balguerie Stuttenberg, 33300 Bo
 
 # SONGS
 
-url = 'https://api.deezer.com/artist/13/top?limit=5'
-songs = open(url).read
-song = JSON.parse(songs)
-p song
+# url = 'https://api.deezer.com/artist/13/top?limit=5'
+# songs = open(url).read
+# song = JSON.parse(songs)
+# p song
 

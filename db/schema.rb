@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_111722) do
+ActiveRecord::Schema.define(version: 2019_11_26_112858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,28 +39,28 @@ ActiveRecord::Schema.define(version: 2019_11_26_111722) do
 
   create_table "playlists", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "session_id"
     t.datetime "started_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_playlists_on_session_id"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
     t.bigint "bar_id"
     t.text "description"
-    t.bigint "playlist_id"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bar_id"], name: "index_sessions_on_bar_id"
-    t.index ["playlist_id"], name: "index_sessions_on_playlist_id"
   end
 
   create_table "songs", force: :cascade do |t|
     t.string "artist"
     t.string "album"
     t.string "category"
-    t.float "duration"
+    t.integer "duration"
     t.string "title"
     t.bigint "deezer_id"
     t.string "composer"
@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(version: 2019_11_26_111722) do
   add_foreign_key "bars", "users"
   add_foreign_key "likes", "songs"
   add_foreign_key "likes", "users"
+  add_foreign_key "playlists", "sessions"
   add_foreign_key "playlists", "users"
   add_foreign_key "sessions", "bars"
-  add_foreign_key "sessions", "playlists"
   add_foreign_key "songs", "playlists"
 end

@@ -1,4 +1,4 @@
 class Session < ApplicationRecord
   belongs_to :bar
-  belongs_to :playlist
+  has_many :playlists
 end
