@@ -1,4 +1,4 @@
-class my::PlaylistsController < ApplicationController
+class My::PlaylistsController < ApplicationController
   def show
   end
 
@@ -9,8 +9,11 @@ class my::PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
     @playlist.user_id = current_user.id
-    @playlist.save
-    redirect_to my_playlist_path
+    if @playlist.save
+      redirect_to my_playlist_path
+    else
+      render :new
+    end
   end
 
   def update
