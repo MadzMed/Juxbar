@@ -1,2 +1,39 @@
-<h1>Sessions#index</h1>
-<p>Find me in app/views/sessions/index.html.erb</p>
+<div class="container container-min-height">
+  <div class="card-results d-flex justify-content-center align-items-center align-content-around flex-column">
+    <% if @sessions.count == 0 %>
+      <h2> Aucun résultat trouvé </h2>
+      <%= link_to "retour", root_path, class: "btn btn-primary" %>
+    <% else %>
+      <h2>  <%= @sessions.count %> résultat(s) trouvé(s) </h2>
+    <% end %>
+  </div>
+
+
+
+<% @sessions.each do |session| %>
+    <%= link_to session_path(session) do %>
+      <div class="card-sessions">
+        <div class="card-sessions-infos">
+          <h2>
+              <%= session.title %>
+          </h2>
+          <p>
+              <%= session.description %>
+          </p>
+          <p>
+              <%= session.category %>
+          </p>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+
+
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 400px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
