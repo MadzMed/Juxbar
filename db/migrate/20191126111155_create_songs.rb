@@ -8,6 +8,7 @@ class CreateSongs < ActiveRecord::Migration[5.2]
       t.string :title
       t.bigint :deezer_id
       t.string :composer
+      t.references :playlist, foreign_key: true
 
       t.timestamps
     end
