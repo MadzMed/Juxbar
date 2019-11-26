@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_160826) do
+ActiveRecord::Schema.define(version: 2019_11_26_111722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,11 +39,9 @@ ActiveRecord::Schema.define(version: 2019_11_25_160826) do
 
   create_table "playlists", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "song_id"
     t.datetime "started_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["song_id"], name: "index_playlists_on_song_id"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
@@ -66,8 +64,10 @@ ActiveRecord::Schema.define(version: 2019_11_25_160826) do
     t.string "title"
     t.bigint "deezer_id"
     t.string "composer"
+    t.bigint "playlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_songs_on_playlist_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_160826) do
     t.string "genre"
     t.string "photo"
     t.boolean "barman"
-    t.integer "birthyear"
+    t.integer "birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(version: 2019_11_25_160826) do
   add_foreign_key "bars", "users"
   add_foreign_key "likes", "songs"
   add_foreign_key "likes", "users"
-  add_foreign_key "playlists", "songs"
   add_foreign_key "playlists", "users"
   add_foreign_key "sessions", "bars"
   add_foreign_key "sessions", "playlists"
+  add_foreign_key "songs", "playlists"
 end

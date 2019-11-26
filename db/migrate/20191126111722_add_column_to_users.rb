@@ -4,6 +4,6 @@ class AddColumnToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :genre, :string
     add_column :users, :photo, :string
     add_column :users, :barman, :boolean
-    add_column :users, :birthyear, :integer
+    add_column :users, :birthday, :integer
   end
 end
