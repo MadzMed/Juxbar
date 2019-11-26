@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/index'
-  get 'sessions/show'
   devise_for :users
   root to: 'pages#home'
   resources :sessions, only: [:index, :show] do

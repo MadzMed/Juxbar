@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_11_26_131107) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,10 +40,12 @@ ActiveRecord::Schema.define(version: 2019_11_26_131107) do
 
   create_table "playlists", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "session_id"
     t.datetime "started_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "session_id"
+
     t.index ["session_id"], name: "index_playlists_on_session_id"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_131107) do
     t.string "artist"
     t.string "album"
     t.string "category"
-    t.float "duration"
+    t.integer "duration"
     t.string "title"
     t.bigint "deezer_id"
     t.string "composer"

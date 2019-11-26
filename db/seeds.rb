@@ -27,4 +27,3 @@ songs["data"].each do |song|
   s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: p.id )
 end
 
-
