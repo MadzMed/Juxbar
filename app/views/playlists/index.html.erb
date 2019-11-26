@@ -1,0 +1,11 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <ul>
+        <% @playlists.each do |playlist| %>
+          <li><%= playlist.users %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
