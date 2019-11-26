@@ -6,6 +6,7 @@ class PlaylistsController < ApplicationController
   def update
     @playlist = Playlist.find(params[:id])
     @playlist.update(playlist_params)
+    render :index
   end
 
   private
