@@ -1,4 +1,4 @@
-<div class="container text-center center-pages">
+<div class="container text-center">
   <div class="search_playlist">
     <div class="nav_search_bar d-flex justify-content-between align-items-center">
       <i class="fas fa-arrow-left"></i>
@@ -10,13 +10,17 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-6 offset-3">
+  <div class="selection_song_card">
+    <div class="hearder-playlist-card">
 
-      <div class="card p-4">
-
-
-      </div>
     </div>
+    <div class="playlist">
+      <% @songs['tracks']['data'].each do |song|%>
+        <p><%= song["title"] %></p>
+      <% end %>
+    </div>
+
+
   </div>
+
 </div>
