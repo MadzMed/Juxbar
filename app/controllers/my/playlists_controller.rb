@@ -1,9 +1,15 @@
+require 'json'
+require 'open-uri'
+
 class My::PlaylistsController < ApplicationController
   def show
   end
 
   def new
     @playlist = Playlist.new
+    songs_serialized = open("https://api.deezer.com/chart/?limit=5").read
+    @songs = JSON.parse(songs_serialized)
+
   end
 
   def create
