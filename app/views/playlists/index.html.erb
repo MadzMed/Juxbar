@@ -1,13 +1,19 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-6 offset-3">
-      <ul>
-        <% @playlists.each do |playlist| %>
-          <% playlist.songs.each do |song| %>
-            <li><%= song.title %></li>
-          <% end %>
-        <% end %>
-      </ul>
+      <% @playlists.each do |playlist| %>
+        <div>
+          <div class="hearder-playlist-card">
+            <img src="https://www.facebook.com/photo.php?fbid=10218747533538333&set=a.1629146127419&type=3&theater" alt="" class="avatar-playlist-card">
+            Mahdi
+          </div>
+          <div class="playlist">
+            <% playlist.songs.each do |song| %>
+              <li><%= song.title %></li>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
