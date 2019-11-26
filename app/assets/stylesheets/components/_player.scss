@@ -1,0 +1,12 @@
+.player {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.431));
+    position: absolute;
+    width: 743px;
+    height: 629px;
+    left: 43px;
+    top: 0px;
+    background: linear-gradient(180deg, rgba(15,33,51,1) 0%, rgba(0,47,95,1) 78.33%, rgba(40,77,113,1) 100%);
+    border-radius: 0px 0px 50px 50px;
+    border: 0;
+    overflow: hidden;
+  }
