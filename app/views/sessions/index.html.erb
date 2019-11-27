@@ -1,4 +1,4 @@
-<div class="container container-min-height">
+<div class="container-min-height">
   <div class="card-results d-flex justify-content-center align-items-center align-content-around flex-column">
     <% if @sessions.count == 0 %>
       <h2> Aucun résultat trouvé </h2>
@@ -8,34 +8,35 @@
     <% end %>
   </div>
 
-
-
-<% @sessions.each do |session| %>
+<div class=" col-xs-6">
+  <% @sessions.each do |session| %>
     <%= link_to session_path(session.bar_id) do %>
-      <div class="card-sessions">
+      <div class="bar-card-index d-flex justify-content-center align-items-center">
         <div class="card-sessions-infos">
-
-          <h2>
-              <%= session.bar.name %>
+        <div>
+          <h2 class="text-center">
+            <%= session.bar.name %>
           </h2>
-          <h3>
-              <%= session.category %>
-          </h3>
-          <p>
-              <%= session.description %>
-          </p>
           </div>
-      </div>
+            <div>
+              <h3 class="text-center">
+                <%= session.category %>
+              </h3>
+            </div>
+              <div>
+                <p class="text-center">
+                  <%= session.description %>
+                </p>
+              </div>
+          </div>
+        </div>
     <% end %>
   <% end %>
 
-
-
-<div
-  id="map"
-  style="width: 70vw;
-  height: 80vh;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-
+  <div class="map-container"
+    id="map"
+    style="width: 80vw; height: 80vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>

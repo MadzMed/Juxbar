@@ -1,12 +1,13 @@
-.navbar-lewagon {
+#navbar_playlist {
+  background: linear-gradient(#00224f, #0051bc);
+  padding-bottom: 1px;
+  margin-bottom: 10px;
+  border-radius: 0px 0px 45px 45px;
+}
+
+.nav_search_bar {
+  color: white;
+  display: flex;
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  align-items : center;
 }
