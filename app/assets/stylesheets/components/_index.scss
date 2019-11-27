@@ -6,8 +6,4 @@
 @import "menu";
 @import "playlist_card";
 @import "button";
-
-bar_card {
-  border-radius: 8px 8px 0 0;
-  border-bottom: 1px solid #DADCE0;
-}
+@import "search_bar"
