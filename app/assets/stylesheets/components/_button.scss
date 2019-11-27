@@ -1,7 +1,9 @@
 .button {
-  color: #BA1B1D;
+  color: white;//#BA1B1D;
+  font-weight: bold;
   padding: 8px 24px;
+  width: 30%;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #BA1B1D;//#1EDD88;
   transition: background 0.3s ease;
 }
