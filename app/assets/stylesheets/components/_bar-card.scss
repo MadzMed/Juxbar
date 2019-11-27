@@ -11,22 +11,26 @@
     color: white;
 }
 
-.bar-card-description h1 {
-    font-family: Montserrat;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    text-transform: uppercase;
+.bar-card-description, h1 {
+  color: white;
+  font-family: $headers-font;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.bar-card-description h2 {
+// .bar-card-description h1 {
+
+// }
+
+.bar-card-description, h2 {
     font-family: Montserrat;
     color: white;
     font-size: 25px;
     font-weight: 200;
 }
 
-.session-description p {
+.session-description, p {
     font-family: Montserrat;
     color: white;
     font-size: 25px;
