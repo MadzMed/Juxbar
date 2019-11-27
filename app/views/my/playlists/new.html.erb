@@ -13,30 +13,43 @@
     </div>
   </div>
 
-  <div class="selection_song_card">
-    <div class="hearder-playlist-card">
 
+
+  <div class="hearder-playlist-card">
+    <div class="d-flex justify-content-between">
+      <div>
+        <p>Myplaylist</p>
+      </div>
+      <div class="text-right">
+
+      </div>
     </div>
-    <div class="playlist">
-      <% @songs['tracks']['data'].each do |song|%>
-        <p><%= song["title"] %></p>
-      <% end %>
-    </div>
-
-
   </div>
 
-  <div class="selection_song_card">
-    <div class="hearder-playlist-card">
-
-    </div>
-    <div class="playlist">
-      <% @songs['tracks']['data'].each do |song|%>
-        <p><%= song["title"] %></p>
-      <% end %>
-    </div>
-
-
+  <div class="playlist container-playlist-card" id="first-card">
+    <% @songs['tracks']['data'].each do |song|%>
+      <p><%= song["title"] %></p>
+    <% end %>
   </div>
 
+
+  <div class="hearder-playlist-card">
+    <div class="d-flex justify-content-between">
+      <div>
+        <p>TOP titre</p>
+      </div>
+      <div class="text-right">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="playlist container-playlist-card">
+    <% @songs['tracks']['data'].each do |song|%>
+      <p><%= song["title"] %></p>
+    <% end %>
+  </div>
 </div>
+
+
+
