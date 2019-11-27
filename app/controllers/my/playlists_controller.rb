@@ -6,10 +6,14 @@ class My::PlaylistsController < ApplicationController
   end
 
   def new
-    @playlist = Playlist.new
-    songs_serialized = open("https://api.deezer.com/chart/?limit=5").read
-    @songs = JSON.parse(songs_serialized)
-
+    @playlist = Playlist.new(session_id: params[:session_id])
+    if params[:search].present?
+      songs_serialized = open("https://api.deezer.com/search?q=#{params[:search][:query]}").read
+      @songs = JSON.parse(songs_serialized)
+    else
+      songs_serialized = open("https://api.deezer.com/chart/?limit=20").read
+      @songs = JSON.parse(songs_serialized)
+    end
   end
 
   def create
@@ -23,6 +27,7 @@ class My::PlaylistsController < ApplicationController
   end
 
   def update
+
   end
 
   private
