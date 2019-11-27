@@ -18,10 +18,10 @@ Bar.create(name: "Le Wagon", address: "107 Cours Balguerie Stuttenberg, 33300 Bo
 
 # SONGS
 
-Session.create(bar_id: 5, description: "little describe")
-Session.create(bar_id: 4, description: "little describe")
-Session.create(bar_id: 3, description: "little describe")
-Session.create(bar_id: 2, description: "little describe")
+Session.create(bar_id: 5, description: "little describe", category: "pop")
+Session.create(bar_id: 4, description: "little describe", category: "pop")
+Session.create(bar_id: 3, description: "little describe", category: "pop")
+Session.create(bar_id: 2, description: "little describe", category: "pop")
 p = Playlist.create(user_id: 1, started_at: Time.now, session_id: 1)
 m = Playlist.create(user_id: 2, started_at: Time.now, session_id: 2)
 d = Playlist.create(user_id: 3, started_at: Time.now, session_id: 3)

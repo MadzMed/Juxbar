@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+// A demander
 @import "components/alert";
 @import "components/avatar";
 @import "components/bar_card";
@@ -18,9 +19,7 @@
 @import "components/map";
 @import "components/menu";
 @import "components/player";
-@import "components/playlist_card";
-@import "components/bar_card_index";
-@import "components/search_sessions";
+
 
 body {
   background-color: #103458;
@@ -29,4 +28,5 @@ body {
 a {
   color: white;
 }
+
 
