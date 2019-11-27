@@ -9,7 +9,7 @@
   background-color: rgba(255,255,255,1);
   border-radius: 10px;
   border: #F4F5F6 1px solid;
-  height: 95px;
+  height: 180px;
   margin: 8px;
   padding-top: 8px;
 
@@ -40,8 +40,21 @@ color: black;
   width:30px;
   height:30px;
   border:2px solid #679403;
+  margin: auto;
 
 }
  .moncercle-vert {
   background: green;
+ }
+.moncercle-noir {
+  background: black;
+ }
+ .moncercle-rouge {
+  background: red;
+ }
+ .moncercle-cyan {
+  background: #40E0D0;
+ }
+ .moncercle-marron {
+  background: #800000;
  }

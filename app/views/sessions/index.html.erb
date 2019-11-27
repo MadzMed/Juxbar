@@ -33,11 +33,21 @@
                     <%= session.description %>
                 </p>
             </div>
+            <div class= "d-flex justify-content-center align-items-center">
             <% if session.category == "latino"%>
             <div id="moncercle" class="moncercle-vert"></div>
+            <% elsif session.category == "metal"%>
+            <div id="moncercle" class="moncercle-noir"></div>
+            <% elsif session.category == "techno"%>
+            <div id="moncercle" class="moncercle-cyan"></div>
+            <% elsif session.category == "dancehall"%>
+            <div id="moncercle" class="moncercle-vert"></div>
+            <% elsif session.category == "hip-hop"%>
+            <div id="moncercle" class="moncercle-marron"></div>
             <% else %>
             <div></div>
             <% end %>
+            </div>
         </div>
 
     </div>
