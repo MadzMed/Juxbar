@@ -1,11 +1,11 @@
 .hearder-playlist-card {
     filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.365));
-    position: absolute;
-    left: 20px;
+    // position: absolute;
+    // left: 20px;
     width: 90vw;
-    margin: 0px auto;
+    margin: 20px;
     height: 195px;
-    background-color: rgba(62,83,105,1);
+    background-color: $cardblue;
     border-radius: 25px 25px 0px 0px;
     padding: 15px 20px;
     border: 0;
@@ -17,13 +17,13 @@
     filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.365));
     position: absolute;
     position: fixed;
-    z-index: 0;
-    left: 20px;
+    z-index: 1;
+    left: 19px;
     top: 0px;
-    width: 90vw;
+    width: 91vw;
     margin: 0px auto;
-    height: 205px;
-    background-color: rgba(62,83,105,1);
+    height: 225px;
+    background: linear-gradient($playerblue, $playerbluelight);
     border-radius: 0px 0px 25px 25px;
     padding: 15px 20px;
     border: 0;
@@ -33,13 +33,14 @@
   .playlist {
     position: relative;
     width: 90vw;
-    margin: 0 auto;
+    margin: 20px;
     padding: 5px;
-    top: 80px;
+    top: -130px;
     background-color: rgba(255,255,255,1);
     border-radius: 25px 25px 25px 25px;
     border: 0;
     overflow: hidden;
+    color: $fontblack;
   }
 
 .avatar-playlist-card {
@@ -53,7 +54,12 @@
 }
 
 .container-playlist-card {
-  margin: 120px auto;
+
+  // margin: 120px auto;
+  max-width: 100%;
+  position: absolute;
+  top: 250px;
+
 }
 
 .playlist-list {
@@ -67,4 +73,8 @@
   height: 90px;
   padding: 20px 10px;
   overflow: hidden;
+}
+
+.font-height-shrink {
+  line-height: 1.2em;
 }
