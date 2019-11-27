@@ -1,4 +1,20 @@
 <div class="header-playlist">
+  <div class="nav_search_bar">
+    <%= link_to session_path(@playlists.first.session_id) do  %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="d-flex justify-content-around">
+    <div>
+      <h3><%= @playlists.first.songs.last.artist %></h3>
+      <h4><%= @playlists.first.songs.last.album %></h4>
+      <p><%= @playlists.first.songs.last.title %></p>
+    </div>
+    <div>
+      <%= image_tag @playlists.first.songs.last.photo_album %>
+    </div>
+  </div>
 </div>
 
 <div class="container-playlist-card">
@@ -6,12 +22,12 @@
   <% @playlists.each do |playlist| %>
     <div class="hearder-playlist-card">
       <div class="d-flex justify-content-between">
-        <div>
+        <div class="d-flex">
           <img src="https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/s960x960/47689225_10218747533618335_6207042897448009728_o.jpg?_nc_cat=109&_nc_ohc=FoQmIqCNeWMAQlSbe-2QlhWxL1vfCFVZgtr_-pgOUQQYVOlL5zz712xBw&_nc_ht=scontent-cdg2-1.xx&oh=8f14f8adb4b971a8348536fab2536273&oe=5E7F51FA" alt="" class="avatar-playlist-card">
-          <%= playlist.user.username %>
+          <h4 class="ml-3"><%= playlist.user.username %></h4>
         </div>
         <div class="text-right">
-          <h5">Position <%= n %></h5>
+          <h5>Position <%= n %></h5>
           <p>
             <% sum = 0 %>
             <% playlist.songs.each do |song| %>
@@ -22,12 +38,12 @@
         </div>
       </div>
     </div>
-    <div class="playlist container-playlist-card">
+    <div class="playlist">
       <% i = 1 %>
       <% playlist.songs.each do |song| %>
         <% if i==1 %>
           <div class="playlist-list-first d-flex justify-content-between">
-            <div class="d-flex">
+            <div class="d-flex font-height-shrink">
               <span class="mr-3 mt-3"><%= i %> •</span>
               <%= image_tag song.photo_album, alt: "alttext" %>
               <span class="ml-3">
@@ -47,7 +63,7 @@
           <% i += 1 %>
         <% else %>
           <div class="playlist-list d-flex justify-content-between">
-            <div class="d-flex">
+            <div class="d-flex font-height-shrink">
               <span class="mr-3 mt-3"><%= i %> •</span>
               <%= image_tag song.photo_album, alt: "alttext" %>
               <span class="ml-3">
@@ -70,8 +86,9 @@
     </div>
     <% n += 1 %>
   <% end %>
+  <div class="d-flex justify-content-center">
+    <%= link_to "DJ", new_session_my_playlist_path(@playlists.first.session_id), class: "button text-center"  %>
+  </div>
 </div>
-<div class="d-flex justify-content-center">
-  <%= link_to "DJ", session_path(@playlists.first.session_id), class: "button text-center"  %>
-</div>
+
 
