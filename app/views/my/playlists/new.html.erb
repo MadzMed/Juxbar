@@ -1,26 +1,55 @@
-<div class="container text-center">
-  <div class="search_playlist">
-    <div class="nav_search_bar d-flex justify-content-between align-items-center">
-      <i class="fas fa-arrow-left"></i>
-      <h2>My Playlist</h2>
+<div class="text-center">
+  <div class="search_playlist" id="navbar_playlist">
+    <div class="nav_search_bar">
+      <i class="fas fa-arrow-left">
+      </i>
+      <h3>SELECTION</h3>
       <i class="fas fa-bars"></i>
     </div>
-    <div class="search_bar">
-
+    <div id="accordion_search_bar_container">
+      <input type="search"
+         id="accordion_search_bar"
+         placeholder="Search"/>
     </div>
   </div>
 
-  <div class="selection_song_card">
-    <div class="hearder-playlist-card">
 
+
+  <div class="hearder-playlist-card">
+    <div class="d-flex justify-content-between">
+      <div>
+        <p>Myplaylist</p>
+      </div>
+      <div class="text-right">
+
+      </div>
     </div>
-    <div class="playlist">
-      <% @songs['tracks']['data'].each do |song|%>
-        <p><%= song["title"] %></p>
-      <% end %>
-    </div>
-
-
   </div>
 
+  <div class="playlist container-playlist-card" id="first-card">
+    <% @songs['tracks']['data'].each do |song|%>
+      <p><%= song["title"] %></p>
+    <% end %>
+  </div>
+
+
+  <div class="hearder-playlist-card">
+    <div class="d-flex justify-content-between">
+      <div>
+        <p>TOP titre</p>
+      </div>
+      <div class="text-right">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="playlist container-playlist-card">
+    <% @songs['tracks']['data'].each do |song|%>
+      <p><%= song["title"] %></p>
+    <% end %>
+  </div>
 </div>
+
+
+

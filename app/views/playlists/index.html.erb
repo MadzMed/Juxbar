@@ -1,19 +1,77 @@
-<div class="container text-center">
-  <div class="row">
-    <div class="col-6 offset-3">
-      <% @playlists.each do |playlist| %>
+<div class="header-playlist">
+</div>
+
+<div class="container-playlist-card">
+  <% n = 1 %>
+  <% @playlists.each do |playlist| %>
+    <div class="hearder-playlist-card">
+      <div class="d-flex justify-content-between">
         <div>
-          <div class="hearder-playlist-card">
-            <img src="https://www.facebook.com/photo.php?fbid=10218747533538333&set=a.1629146127419&type=3&theater" alt="" class="avatar-playlist-card">
-            Mahdi
-          </div>
-          <div class="playlist">
-            <% playlist.songs.each do |song| %>
-              <li><%= song.title %></li>
-            <% end %>
-          </div>
+          <img src="https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/s960x960/47689225_10218747533618335_6207042897448009728_o.jpg?_nc_cat=109&_nc_ohc=FoQmIqCNeWMAQlSbe-2QlhWxL1vfCFVZgtr_-pgOUQQYVOlL5zz712xBw&_nc_ht=scontent-cdg2-1.xx&oh=8f14f8adb4b971a8348536fab2536273&oe=5E7F51FA" alt="" class="avatar-playlist-card">
+          <%= playlist.user.username %>
         </div>
+        <div class="text-right">
+          <h5">Position <%= n %></h5>
+          <p>
+            <% sum = 0 %>
+            <% playlist.songs.each do |song| %>
+              <% sum += song.duration %>
+            <% end %>
+            <%= Time.at(sum).utc.strftime("%M:%S") %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="playlist container-playlist-card">
+      <% i = 1 %>
+      <% playlist.songs.each do |song| %>
+        <% if i==1 %>
+          <div class="playlist-list-first d-flex justify-content-between">
+            <div class="d-flex">
+              <span class="mr-3 mt-3"><%= i %> •</span>
+              <%= image_tag song.photo_album, alt: "alttext" %>
+              <span class="ml-3">
+                <h5>
+                  <%= song.artist %>
+                </h5>
+                <p>
+                  <%= song.title %>
+                </p>
+              </span>
+            </div>
+            <div class="d-flex flex-column">
+              <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
+              <span class="text-center"><i class="far fa-heart"></i></span>
+            </div>
+          </div>
+          <% i += 1 %>
+        <% else %>
+          <div class="playlist-list d-flex justify-content-between">
+            <div class="d-flex">
+              <span class="mr-3 mt-3"><%= i %> •</span>
+              <%= image_tag song.photo_album, alt: "alttext" %>
+              <span class="ml-3">
+                <h5>
+                  <%= song.artist %>
+                </h5>
+                <p>
+                  <%= song.title %>
+                </p>
+              </span>
+            </div>
+            <div class="d-flex flex-column">
+              <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
+              <span class="text-center"><i class="far fa-heart"></i></span>
+            </div>
+          </div>
+          <% i += 1 %>
+        <% end %>
       <% end %>
     </div>
-  </div>
+    <% n += 1 %>
+  <% end %>
 </div>
+<div class="d-flex justify-content-center">
+  <%= link_to "DJ", session_path(@playlists.first.session_id), class: "button text-center"  %>
+</div>
+
