@@ -5,7 +5,7 @@
     width: 90vw;
     margin: 0px auto;
     height: 195px;
-    background-color: rgba(62,83,105,1);
+    background-color: $cardblue;
     border-radius: 25px 25px 0px 0px;
     padding: 15px 20px;
     border: 0;
@@ -23,7 +23,7 @@
     width: 90vw;
     margin: 0px auto;
     height: 205px;
-    background-color: rgba(62,83,105,1);
+    background: linear-gradient($playerblue, $playerbluelight);
     border-radius: 0px 0px 25px 25px;
     padding: 15px 20px;
     border: 0;
@@ -40,6 +40,7 @@
     border-radius: 25px 25px 25px 25px;
     border: 0;
     overflow: hidden;
+    color: $fontblack;
   }
 
 .avatar-playlist-card {
@@ -67,4 +68,8 @@
   height: 90px;
   padding: 20px 10px;
   overflow: hidden;
+}
+
+.font-height-shrink {
+  line-height: 1.2em;
 }
