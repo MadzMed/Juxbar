@@ -4,7 +4,7 @@ class CreateSongs < ActiveRecord::Migration[5.2]
       t.string :artist
       t.string :album
       t.string :category
-      t.integer :duration
+      t.float :duration
       t.string :title
       t.bigint :deezer_id
       t.string :composer
