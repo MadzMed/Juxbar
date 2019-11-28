@@ -1,24 +1,24 @@
 
-
-.bar_card {
-
-}
-
 .card-sessions-infos {
   width: 80vw;
-  background-color: rgba(255,255,255,1);
+  background-color: #F1F3F4 ;
   border-radius: 10px;
-  border: #F4F5F6 1px solid;
-  height: 95px;
+  border: #CBCDCF 1px solid;
+  height: 100px;
   margin: 8px;
-  padding-top: 8px;
+  padding: 10px;
+  box-shadow: 2px;
+  position: relative;
+  justify-content: space-between;
 
 }
 
 .card-sessions-infos h2 {
-font-size: 15px;
-text-decoration: none;
-color: black;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 0px;
+  margin: 0px;
 
 }
 
@@ -26,22 +26,41 @@ color: black;
   font-size: 10px;
   text-decoration: none;
   color: black;
+  padding: 0px;
+  margin: 0px;
+
 }
 
 .card-sessions-infos h3 {
-font-size: 15px;
-text-decoration: none;
-color: black;
-
+  font-size: 15px;
+  padding: 0px;
+  text-decoration: none;
+  color: black;
+  margin: 0px;
 }
+
 #moncercle {
-  // background: red;
   border-radius:50%;
   width:30px;
   height:30px;
   border:2px solid #679403;
+  margin: auto;
+  // position: absolute;
+  // right: 100px;
 
 }
  .moncercle-vert {
   background: green;
+ }
+.moncercle-noir {
+  background: black;
+ }
+ .moncercle-rouge {
+  background: red;
+ }
+ .moncercle-cyan {
+  background: #40E0D0;
+ }
+ .moncercle-marron {
+  background: #800000;
  }
