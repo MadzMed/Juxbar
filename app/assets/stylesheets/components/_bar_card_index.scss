@@ -6,7 +6,7 @@
   border: #CBCDCF 1px solid;
   height: 100px;
   margin: 8px;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 2px;
   position: relative;
   justify-content: space-between;
@@ -37,6 +37,15 @@
   text-decoration: none;
   color: black;
   margin: 0px;
+}
+
+.content-div-index {
+  display: flex;
+  display: inline-block;
+  vertical-align: top;
+  justify-content: space-between;
+  align-content: space-between;
+
 }
 
 #moncercle {
