@@ -6,8 +6,8 @@
 }
 
 .heart-item {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     color: white;
 }
 
@@ -27,7 +27,7 @@
     font-family: Montserrat;
     color: white;
     font-size: 25px;
-    font-weight: 200;
+    font-weight: 600;
 }
 
 .session-description, p {
@@ -36,6 +36,9 @@
     font-size: 25px;
     font-weight: normal;
     text-transform: capitalize;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .bar-card {
