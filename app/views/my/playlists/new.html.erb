@@ -17,18 +17,13 @@
     <% end %>
   </div>
 
-
-
-  <div class="hearder-playlist-card">
-    <div class="d-flex justify-content-center">
-      <div>
-        <p>My playlist</p>
+  <div id="myplaylist" style="display: none">
+    <div class="hearder-playlist-card">
+      <div class="d-flex justify-content-center">
+        <div>
+          <p>My playlist</p>
+        </div>
       </div>
-      <div class="text-right">
-
-      </div>
-    </div>
-    <div class="playlist container-playlist-card" id="first-card">
     </div>
   </div>
 
@@ -43,7 +38,7 @@
     </div>
   </div>
 
-   <div class="playlist container-playlist-card">
+   <div class="playlist container-playlist-card" id="top-playlist">
     <% @songs_var = @songs['data'] == nil ? @songs['tracks']['data'] : @songs['data'] %>
       <% i = 1 %>
       <% @songs_var.each do |song| %>
