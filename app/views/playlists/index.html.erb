@@ -1,23 +1,44 @@
-<div class="header-playlist">
-  <div class="nav_search_bar">
-    <%= link_to session_path(@playlists.first.session_id) do  %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <i class="fas fa-bars"></i>
-  </div>
-  <div class="d-flex justify-content-around">
-    <div >
-      <h3><%= @playlists.first.songs.last.artist %></h3>
-      <h4><%= @playlists.first.songs.last.album %></h4>
-      <p><%= @playlists.first.songs.last.title %></p>
-    </div>
-    <div>
-      <%= image_tag @playlists.first.songs.last.photo_album %>
-    </div>
-  </div>
-</div>
-
 <div class="container-playlist-card">
+  <div class="header-playlist">
+    <div class="nav_search_bar">
+      <%= link_to session_path(@playlists.first.session_id) do  %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="d-flex justify-content-between p-3">
+      <div class="text-center">
+        <h4 class="mt-4"><%= @playlists.first.songs.last.artist %></h4>
+        <p><%= @playlists.first.songs.last.title %></p>
+        <h6><%= @playlists.first.songs.last.album %></h5>
+      </div>
+      <div>
+        <%= image_tag @playlists.first.songs.last.photo_large, width: 150, height: 150 %>
+      </div>
+      <div class="d-flex flex-column justify-content-around">
+        <div class="avatar-thema-medium"></div>
+        <div class="text-center"><i class="far fa-heart icon-large"></i></div>
+      </div>
+    </div>
+     <div class="w-100">
+      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" id="top-waves">
+        <% i = 0 %>
+        <% 350.times do %>
+          <rect x=<%= i %> y="0" width="0.1" height=<%= (1..5).to_a.sample %> rx="4" ry="4" fill="white" class=<%="wave-#{(1..5).to_a.sample}"%>  transform="translate(100,05) rotate(180)"></rect>
+          <% i += 0.3 %>
+        <% end %>
+      </svg>
+    </div>
+    <hr color="white">
+      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" id="bottom-waves">
+        <% i = 0 %>
+        <% 350.times do %>
+          <rect x=<%= i %> y="0" width="0.1" height=<%= (1..5).to_a.sample %> rx="4" ry="4" fill="white" class=<%= "wave-#{(1..5).to_a.sample}" %>></rect>
+          <% i += 0.3 %>
+        <% end %>
+      </svg>
+  </div>
+
   <% n = 1 %>
   <% @playlists.each do |playlist| %>
     <div class="hearder-playlist-card">
@@ -46,11 +67,11 @@
             <div class="d-flex font-height-shrink">
               <span class="mr-3 mt-3"><%= i %> •</span>
               <%= image_tag song.photo_album, alt: "alttext" %>
-              <span class="ml-3">
+              <span class="ml-3 black-color">
                 <h5>
                   <%= song.artist %>
                 </h5>
-                <p>
+                <p class="black-color">
                   <%= song.title %>
                 </p>
               </span>
@@ -66,11 +87,11 @@
             <div class="d-flex font-height-shrink">
               <span class="mr-3 mt-3"><%= i %> •</span>
               <%= image_tag song.photo_album, alt: "alttext" %>
-              <span class="ml-3">
+              <span class="ml-3 black-color">
                 <h5>
                   <%= song.artist %>
                 </h5>
-                <p>
+                <p class="black-color">
                   <%= song.title %>
                 </p>
               </span>
@@ -87,7 +108,7 @@
     <% n += 1 %>
   <% end %>
   <div class="d-flex justify-content-center">
-    <%= link_to "DJ", new_session_my_playlist_path(@playlists.first.session_id), class: "button text-center"  %>
+    <%= link_to "DJ", new_session_my_playlist_path(@playlists.first.session_id), class: "button button-DJ text-center"  %>
   </div>
 </div>
 

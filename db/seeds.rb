@@ -1,6 +1,13 @@
 require 'json'
 require 'open-uri'
 
+# Init
+p "seed begin"
+User.destroy_all
+Bar.destroy_all
+Session.destroy_all
+Playlist.destroy_all
+Song.destroy_all
 # USERS
 
 m = User.create(email: "mehdilmbn@gmail.com", password: "juxbar", username: "MadzMed", barman: true, photo: "https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/s960x960/47689225_10218747533618335_6207042897448009728_o.jpg?_nc_cat=109&_nc_ohc=FoQmIqCNeWMAQlSbe-2QlhWxL1vfCFVZgtr_-pgOUQQYVOlL5zz712xBw&_nc_ht=scontent-cdg2-1.xx&oh=8f14f8adb4b971a8348536fab2536273&oe=5E7F51FA")
@@ -30,27 +37,28 @@ url = 'https://api.deezer.com/chart/?limit=5'
 songs_serialized = open(url).read
 songs = JSON.parse(songs_serialized)
 songs["tracks"]["data"].each do |song|
-  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: p.id )
+  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: p.id, photo_large: song["album"]["cover_medium"] )
 end
 
 url = 'https://api.deezer.com/chart/?index=6&limit=5'
 songs_serialized = open(url).read
 songs = JSON.parse(songs_serialized)
 songs["tracks"]["data"].each do |song|
-  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: m.id )
+  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: m.id, photo_large: song["album"]["cover_medium"] )
 end
 
 url = 'https://api.deezer.com/chart/?index=12&limit=5'
 songs_serialized = open(url).read
 songs = JSON.parse(songs_serialized)
 songs["tracks"]["data"].each do |song|
-  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: d.id )
+  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: d.id, photo_large: song["album"]["cover_medium"] )
 end
 
 url = 'https://api.deezer.com/chart/?index=18&limit=5'
 songs_serialized = open(url).read
 songs = JSON.parse(songs_serialized)
 songs["tracks"]["data"].each do |song|
-  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: f.id )
+  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: f.id, photo_large: song["album"]["cover_medium"] )
 end
 
+p "seed completed"
