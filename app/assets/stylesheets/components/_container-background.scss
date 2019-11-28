@@ -1,5 +1,28 @@
 .container-background {
-  width: 828px;
+  // width: 828px;
   height: 1730px;
   background-color: #3E5369;
+}
+
+.action-btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  .btn-gradient {
+    color: white;
+    width: 270px;
+    height: 80px;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 30px;
+    background: #BA1B1D;
+    transition: background 0.3s ease;
+  }
+}
+
+
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
 }
