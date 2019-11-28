@@ -6,7 +6,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: "mapbox://styles/pierrot160/ck3hoi4o00cuf1cmve0k4avrx/draft",
+    style: "mapbox://styles/pierrot160/ck3ium8k607ko1cqkseu7wvkm",
   });
 };
 
@@ -55,11 +55,5 @@ const initMapbox = () => {
 };
 
 
-
-navigator.geolocation.getCurrentPosition((data) => {
-
-
-  console.log(data);
-});
 
 export { initMapbox };
