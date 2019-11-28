@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_122804) do
     t.datetime "updated_at", null: false
     t.string "photo_artist"
     t.string "photo_album"
+    t.string "photo_large"
     t.index ["playlist_id"], name: "index_songs_on_playlist_id"
   end
 

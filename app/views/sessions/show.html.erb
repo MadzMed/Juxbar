@@ -1,47 +1,49 @@
 <div class="container-background">
   <div class="container-description-bar">
-    <div class="container-show" style="background-image: url(https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80);">
-      <div class="bar-card d-flex">
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered" />
-        <div>
+    <div class="container-show d-flex align-items-end" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80);">
+      <div class="bar-card d-flex align-items-center justify-content-around mb-3">
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" />
+        <div class="ml">
           <h1 class="bar-card-description">Rockwood</h1>
           <h2 class="bar-card-description">4  quai Louis XVIII, 33000 Bordeaux</h2>
           <p class="bar-card-description">Max Barnman</p>
         </div>
-        <i class="fas fa-heart white heart-item"></i>
+        <i class="fas fa-heart" id= "heart"></i>
       </div>
     </div>
     <div class="session-bar">
-      <div class="row title-session d-flex">
+      <div class="title-session d-flex justify-content-around">
         <img class="avatar-thema" />
-        <div>
+        <div class="d-flex flex-column">
           <h1 class="title-description">Retour vers le futur !</h1>
           <h2 class="date-thema">6 décembre 2019 - Electro</h2>
         </div>
-        <div class="row session-description">
-          <p> Ce soir le Rockwood ouvre une session JuxBar avec un
-            thème musicale electro. Max le barman du Rockwood qui
-            vous servira de délicieux cocktail, précise que la soirée se
-            concentrera sur électro très festive, dans la veine d’artistes
-            comme …. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-            ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet
-            clita kasd gubergren, no sea takimata sanctus est Lorem
-            ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-            consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua. At vero eos et accusam et justo duo
-            dolores et ea rebum. Stet clita kasd gubergren, no sea
-            takimata sanctus est Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor invidunt ut labore et dolore
-            magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor
-          sit amet. Lorem ipsum </p>
-        </div>
+      </div>
+      <div class="session-description d-flex justify-content-center">
+        <p>
+          Ce soir le Rockwood ouvre une session JuxBar avec un
+          thème musicale electro. Max le barman du Rockwood qui
+          vous servira de délicieux cocktail, précise que la soirée se
+          concentrera sur électro très festive, dans la veine d’artistes
+          comme …. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+          ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo
+          dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+        </p>
       </div>
     </div>
   </div>
+  <div class="action-btn mb-5">
+    <%= link_to 'Join', session_playlists_path(params[:id]), class: "btn btn-gradient d-block mx-auto" %>
+  </div>
 </div>
+
+

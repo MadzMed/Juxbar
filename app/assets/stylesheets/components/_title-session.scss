@@ -6,6 +6,18 @@
     border: white 3px solid;
 }
 
+.avatar-thema-medium {
+    background: #f00;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: white 3px solid;
+}
+
+.icon-large {
+  font-size: 2em;
+}
+
 
 .title-description h1 {
     font-family: Montserrat;
@@ -13,6 +25,7 @@
     font-size: 42px;
     font-weight: bold;
     text-transform: uppercase;
+    margin-left: -37px;
 }
 
 .bar-card-description p {
@@ -36,7 +49,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding: 70% 5% 5% 5%;
 
 }
