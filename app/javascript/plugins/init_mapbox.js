@@ -6,7 +6,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: "mapbox://styles/pierrot160/ck3hoi4o00cuf1cmve0k4avrx/draft",
+    style: "mapbox://styles/pierrot160/ck3ium8k607ko1cqkseu7wvkm",
   });
 };
 
@@ -26,10 +26,11 @@ const addMarkersToMap = (map, markers) => {
   });
 };
 
+
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  map.fitBounds(bounds, { padding: 100, maxZoom: 15, duration: 0 });
 };
 
 const initMapbox = () => {
@@ -39,8 +40,20 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    if (mapElement) {
+      map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+
+      trackUserLocation: true,
+      trackUserLocationStart: true
+
+      }));
+    }
   }
 };
+
 
 
 export { initMapbox };
