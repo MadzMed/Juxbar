@@ -20,35 +20,35 @@
     <% @sessions.each do |session| %>
     <%= link_to session_path(session.bar_id) do %>
     <div class="bar-card-index d-flex justify-content-center align-items-center">
-        <div class="card-sessions-infos d-flex justify-content-around">
-          <div></div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="card-sessions-infos d-flex">
+            <div class="d-flex flex-column align-content-space-between">
                 <h2>
                     <%= session.bar.name %>
                 </h2>
-                <h3>
-                    <%= session.bar.address %>
-                </h3>
                 <p>
                     <%= session.description %>
                 </p>
+                <h3>
+                    <%= session.bar.address %>
+                </h3>
             </div>
-            <div class= "d-flex justify-content-center align-items-center">
-            <% if session.category == "latino"%>
-            <div id="moncercle" class="moncercle-vert"></div>
-            <% elsif session.category == "metal"%>
-            <div id="moncercle" class="moncercle-noir"></div>
-            <% elsif session.category == "techno"%>
-            <div id="moncercle" class="moncercle-cyan"></div>
-            <% elsif session.category == "dancehall"%>
-            <div id="moncercle" class="moncercle-vert"></div>
-            <% elsif session.category == "hip-hop"%>
-            <div id="moncercle" class="moncercle-marron"></div>
-            <% else %>
-            <div></div>
-            <% end %>
+
+            <div class= "icon d-flex align-items-center justify-content-space-between">
+              <% if session.category == "latino"%>
+                  <div id="moncercle" class="moncercle-vert"></div>
+                <% elsif session.category == "metal"%>
+                  <div id="moncercle" class="moncercle-noir"></div>
+                <% elsif session.category == "techno"%>
+                  <div id="moncercle" class="moncercle-cyan"></div>
+                <% elsif session.category == "dancehall"%>
+                  <div id="moncercle" class="moncercle-vert"></div>
+                <% elsif session.category == "hip-hop"%>
+                  <div id="moncercle" class="moncercle-marron"></div>
+                <% else %>
+                <div></div>
+              <% end %>
             </div>
-        </div>
+          </div>
 
     </div>
     <% end %>
