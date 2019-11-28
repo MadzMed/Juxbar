@@ -29,15 +29,15 @@
 
 
 
+  <div class="topcard">
+    <div class="hearder-playlist-card">
 
-  <div class="hearder-playlist-card">
-    <div class="d-flex">
-      <div class="justify-content-center">
-        <p>TOP titre</p>
-      </div>
+        <div class="d-flex justify-content-center">
+          <p>TOP titre</p>
+        </div>
+
     </div>
-  </div>
-
+    
    <div class="playlist container-playlist-card" id="top-playlist">
     <% @songs_var = @songs['data'] == nil ? @songs['tracks']['data'] : @songs['data'] %>
       <% i = 1 %>
@@ -58,32 +58,33 @@
             </div>
             <div class="d-flex flex-column">
 
-              <span class="text-center"><i class="fas fa-plus"></i></span>
+                <span class="text-center"><i class="fas fa-plus"></i></span>
+              </div>
             </div>
-          </div>
-          <% i += 1 %>
-        <% else %>
-          <div class="playlist-list d-flex justify-content-between">
-            <div class="d-flex">
-              <span class="mr-3 mt-3"><%= i %> •</span>
-              <%= image_tag song["album"]["cover_small"], alt: "alttext" %>
-              <span class="ml-3">
-                <h5>
-                  <%= song["artist"]["name"] %>
-                </h5>
-                <p>
-                  <%= song["title"] %>
-                </p>
-              </span>
+            <% i += 1 %>
+          <% else %>
+            <div class="playlist-list d-flex justify-content-between">
+              <div class="d-flex">
+                <span class="mr-3 mt-3"><%= i %> •</span>
+                <%= image_tag song["album"]["cover_small"], alt: "alttext" %>
+                <span class="ml-3">
+                  <h5>
+                    <%= song["artist"]["name"] %>
+                  </h5>
+                  <p>
+                    <%= song["title"] %>
+                  </p>
+                </span>
+              </div>
+              <div class="d-flex flex-column">
+                <span class="text-center"><i class="fas fa-plus"></i></span>
+              </div>
             </div>
-            <div class="d-flex flex-column">
-              <span class="text-center"><i class="fas fa-plus"></i></span>
-            </div>
-          </div>
-          <% i += 1 %>
+            <% i += 1 %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+  </div>
 
 </div>
 

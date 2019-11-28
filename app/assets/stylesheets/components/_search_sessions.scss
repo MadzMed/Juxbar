@@ -16,3 +16,19 @@
     top: 0px;
     z-index: 1;
 }
+
+#search_input {
+  -webkit-appearance: textfield;
+}
+
+.p-2 {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px;
+  border: 1px solid $light-gray;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+}
