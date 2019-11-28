@@ -21,7 +21,7 @@
       </div>
     </div>
      <div class="w-100">
-      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" class="d-flex align-middle">
+      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" id="top-waves">
         <% i = 0 %>
         <% 350.times do %>
           <rect x=<%= i %> y="0" width="0.1" height=<%= (1..5).to_a.sample %> rx="4" ry="4" fill="white" class=<%="wave-#{(1..5).to_a.sample}"%>  transform="translate(100,05) rotate(180)"></rect>
@@ -30,15 +30,13 @@
       </svg>
     </div>
     <hr color="white">
-    <div class="w-100">
-      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" id="bottom-waves">
         <% i = 0 %>
         <% 350.times do %>
           <rect x=<%= i %> y="0" width="0.1" height=<%= (1..5).to_a.sample %> rx="4" ry="4" fill="white" class=<%= "wave-#{(1..5).to_a.sample}" %>></rect>
           <% i += 0.3 %>
         <% end %>
       </svg>
-    </div>
   </div>
 
   <% n = 1 %>
