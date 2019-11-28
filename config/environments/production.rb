@@ -81,6 +81,21 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Use a different logger for distributed setups.
+
+
+
+
+
+  config.assets.precompile += %w( '.svg' )
+
+  # Must include to get inline SVGs to work in deploy
+
+
+
+  config.assets.css_compressor = :sass
+
+
+
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
