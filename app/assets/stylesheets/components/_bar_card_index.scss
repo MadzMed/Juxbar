@@ -3,40 +3,43 @@
   width: 80vw;
   background-color: #EAEAEA ;
   border-radius: 10px;
-  border: #CBCDCF 1px solid;
-  height: 231px;
+  border: #A9A9A9 3px solid;
+  min-height: 150px;
   margin: 8px;
   padding: 20px;
   box-shadow: 2px;
   position: relative;
   justify-content: space-between;
+  // font-family: 'Montserrat', sans-serif;
+
 
 }
 
 .card-sessions-infos h2 {
-  font-size: 26px;
-  text-decoration: none;
-  color: black;
-  padding: 0px;
+  font-size: 30px;
+  text-decoration: underline;  color: black;
+  padding: 5px;
   margin: 0px;
-
+  font-family: 'Montserrat', sans-serif;
 }
 
 .card-sessions-infos p {
-  font-size: 22px;
+  font-size: 26px;
   text-decoration: none;
   color: black;
-  padding: 0px;
+  padding: 5px;
   margin: 0px;
+  font-family: 'Montserrat', sans-serif;
 
 }
 
 .card-sessions-infos h3 {
-  font-size: 20px;
-  padding: 0px;
+  font-size: 24px;
+  padding: 5px;
   text-decoration: none;
   color: black;
   margin: 0px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .content-div-index {
