@@ -44,7 +44,7 @@ url = 'https://api.deezer.com/chart/?index=6&limit=5'
 songs_serialized = open(url).read
 songs = JSON.parse(songs_serialized)
 songs["tracks"]["data"].each do |song|
-  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: m.id, photo_large: song["album"]["cover_medium"] )
+  s = Song.create(artist: song["artist"]["name"], album: song["album"]["title"], photo_artist: song["artist"]["picture_small"], photo_album: song["album"]["cover_small"], duration: song["duration"], title: song["title"], deezer_id: song["id"], playlist_id: m.id, photo_large: song["album"]["cover_medium"])
 end
 
 url = 'https://api.deezer.com/chart/?index=12&limit=5'
