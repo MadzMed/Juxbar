@@ -1,18 +1,20 @@
 .container-background {
   // width: 828px;
-  height: 1730px;
+  // height: 1730px;
+  height: 100vh;
   background-color: #3E5369;
 }
 
 .action-btn {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  right: calc(50vw - 160px);
+  // width: 100%;
   .btn-gradient {
     color: white;
-    width: 270px;
-    height: 80px;
-    padding: 8px 24px;
+    // width: 270px;
+    // height: 80px;
+    padding: 24px 120px;
     border-radius: 50px;
     font-weight: bold;
     font-size: 30px;
@@ -22,7 +24,3 @@
 }
 
 
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
-}

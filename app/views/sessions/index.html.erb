@@ -15,7 +15,9 @@
         </div>
     </div>
 </div>
-<div class="map_container" id="map" style="width: 100vw; height: 60vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="map_container " id="map" style="width: 100vw; height: 60vh; border-radius: 0px 0px 66px 66px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <div class=" col-xs-6" style=" height: 40vh; overflow: scroll; ">
     <% @sessions.each do |session| %>
     <%= link_to session_path(session.id) do %>
@@ -25,9 +27,9 @@
                 <h2>
                     <%= session.bar.name %>
                 </h2>
-                <p>
+                <!-- <p>
                     <%= session.description %>
-                </p>
+                </p> -->
                 <h3>
                     <%= session.bar.address %>
                 </h3>
