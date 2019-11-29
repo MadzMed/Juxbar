@@ -1,7 +1,6 @@
 class PlaylistsController < ApplicationController
   def index
-    # @playlists = Playlist.where(session_id: params[:session_id])
-    @playlists = Playlist.all
+    @playlists = Playlist.where(session_id: params[:session_id])
   end
 
   def update
@@ -15,4 +14,5 @@ class PlaylistsController < ApplicationController
   def playlist_params
     params.require(:playlist).permit(:song_id)
   end
+
 end

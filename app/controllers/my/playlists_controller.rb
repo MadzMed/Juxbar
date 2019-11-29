@@ -3,6 +3,8 @@ require 'open-uri'
 
 class My::PlaylistsController < ApplicationController
   def show
+    @playlist = Playlist.find(params[:id])
+    @playlists = @playlist.session.playlists
   end
 
   def new
@@ -27,7 +29,7 @@ class My::PlaylistsController < ApplicationController
   end
 
   def update
-
+    @playlist = Playlist.find(params[:id])
   end
 
   private
