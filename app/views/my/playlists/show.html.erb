@@ -1,0 +1,107 @@
+<div class="container-playlist-card">
+  <div class="header-playlist">
+    <div class="nav_search_bar">
+      <%= link_to session_playlists_path(@playlist.session_id) do  %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="d-flex justify-content-between p-3">
+      <div class="text-center">
+        <h4 class="mt-4"><%= @playlists.first.songs[1].artist %></h4>
+        <h3><%= @playlists.first.songs[1].title %></h3>
+        <h6><%= @playlists.first.songs[1].album %></h6>
+      </div>
+      <div>
+        <%= image_tag @playlists.first.songs[1].photo_large, width: 150, height: 150 %>
+      </div>
+      <div class="d-flex flex-column justify-content-around">
+        <div class="avatar-thema-medium"></div>
+        <div class="text-center"><i class="far fa-heart icon-large"></i></div>
+      </div>
+    </div>
+     <div class="w-100">
+      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" id="top-waves">
+        <% i = 0 %>
+        <% 320.times do %>
+          <rect x=<%= i %> y="0" width="0.1" height=<%= (1..5).to_a.sample %> rx="4" ry="4" fill="white" class=<%="wave-#{(1..5).to_a.sample}"%>  transform="translate(95.7,05) rotate(180)"></rect>
+          <% i += 0.3 %>
+        <% end %>
+      </svg>
+      <hr color="white" width="747">
+      <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" id="bottom-waves">
+        <% i = 0 %>
+        <% 320.times do %>
+          <rect x=<%= i %> y="0" width="0.1" height=<%= (1..5).to_a.sample %> rx="4" ry="4" fill="white" class=<%= "wave-#{(1..5).to_a.sample}" %>></rect>
+          <% i += 0.3 %>
+        <% end %>
+      </svg>
+    </div>
+  </div>
+  <div class="hearder-playlist-card">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+        <img src="https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/s960x960/47689225_10218747533618335_6207042897448009728_o.jpg?_nc_cat=109&_nc_ohc=FoQmIqCNeWMAQlSbe-2QlhWxL1vfCFVZgtr_-pgOUQQYVOlL5zz712xBw&_nc_ht=scontent-cdg2-1.xx&oh=8f14f8adb4b971a8348536fab2536273&oe=5E7F51FA" alt="" class="avatar-playlist-card">
+        <h4 class="ml-3"><%= @playlist.user.username %></h4>
+      </div>
+      <div class="text-right">
+        <p>
+          <% sum = 0 %>
+          <% @playlist.songs.each do |song| %>
+            <% sum += song.duration %>
+          <% end %>
+          <%= Time.at(sum).utc.strftime("%M:%S") %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="playlist">
+    <% sum = 0 %>
+    <% i = 1 %>
+    <% @playlist.songs.each do |song| %>
+      <% sum += song.duration %>
+      <% if i==1 %>
+        <div class="playlist-list-first d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-remote="true">
+          <div class="d-flex font-height-shrink">
+            <span class="mr-3 mt-3"><%= i %> •</span>
+            <%= image_tag song.photo_album, alt: "alttext" %>
+            <span class="ml-3 black-color">
+              <h5>
+                <%= song.artist %>
+              </h5>
+              <h4 class="black-color">
+                <%= song.title %>
+              </h4>
+            </span>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
+            <span class="text-center"><i class="far fa-heart"></i></span>
+          </div>
+        </div>
+        <% i += 1 %>
+      <% else %>
+        <div class="playlist-list d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-remote="true">
+          <div class="d-flex font-height-shrink">
+            <span class="mr-3 mt-3"><%= i %> •</span>
+            <%= image_tag song.photo_album, alt: "alttext" %>
+            <span class="ml-3 black-color">
+              <h5>
+                <%= song.artist %>
+              </h5>
+              <h4 class="black-color">
+                <%= song.title %>
+              </h4>
+            </span>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
+            <span class="text-center"><i class="far fa-heart"></i></span>
+          </div>
+        </div>
+        <% i += 1 %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to "validate", my_playlist_path(params[:id]), method: :patch, remote: true, class: "button btnred"  %>
+</div>
