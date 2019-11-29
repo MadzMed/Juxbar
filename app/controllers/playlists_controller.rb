@@ -4,15 +4,17 @@ class PlaylistsController < ApplicationController
   end
 
   def update
+    raise
     @playlist = Playlist.find(params[:id])
-    @playlist.update(playlist_params)
+    @song.new(song_params)
+    @song.playlist_id = @playlist.id
     render :index
   end
 
   private
 
-  def playlist_params
-    params.require(:playlist).permit(:song_id)
+  def song_params
+    params.require(:playlist).permit(:artist, :album, :category, :duration, :title, :deezer_id, :composer)
   end
 
 end

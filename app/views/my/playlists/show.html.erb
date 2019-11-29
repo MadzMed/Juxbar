@@ -61,7 +61,7 @@
     <% @playlist.songs.each do |song| %>
       <% sum += song.duration %>
       <% if i==1 %>
-        <div class="playlist-list-first d-flex justify-content-between">
+        <div class="playlist-list-first d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-remote="true">
           <div class="d-flex font-height-shrink">
             <span class="mr-3 mt-3"><%= i %> •</span>
             <%= image_tag song.photo_album, alt: "alttext" %>
@@ -81,7 +81,7 @@
         </div>
         <% i += 1 %>
       <% else %>
-        <div class="playlist-list d-flex justify-content-between">
+        <div class="playlist-list d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-remote="true">
           <div class="d-flex font-height-shrink">
             <span class="mr-3 mt-3"><%= i %> •</span>
             <%= image_tag song.photo_album, alt: "alttext" %>
@@ -103,4 +103,5 @@
       <% end %>
     <% end %>
   </div>
+  <%= link_to "validate", my_playlist_path(params[:id]), method: :patch, remote: true, class: "button btnred"  %>
 </div>
