@@ -7,9 +7,9 @@ const song = () => {
         playlists[i].children["1"].children["0"].children["0"].classList.toggle("fa-check");
         console.dir(playlists[i].children["1"].children["0"].children["0"].classList);
 
-        const myPlaylist = document.getElementById("myplaylist");
-        console.log(myPlaylist)
-        console.dir(document.getElementById("first-card"));
+        // const myPlaylist = document.getElementById("myplaylist");
+        // console.log(myPlaylist)
+        // console.dir(document.getElementById("first-card"));
         // if (document.getElementById("first-card").children.length === 0){
         //   myPlaylist.style.display = "";
         //   myPlaylist.insertAdjacentHTML("beforeend", "<div class='playlist-list-first d-flex justify-content-between' data-song-title='<%= song['title'] %>' data-song-artist='<%= song['artist']['name'] %>' data-song-album='<%= song['album']['title'] %>' data-song-duration='<%= song['duration'] %>' data-song-deezer-id='<%= song['id'] %>' data-song-photo-album='<%= song['album']['cover_small'] %>' data-song-photo-album='<%= song['artist']['picture_small'] %>' data-remote='true' ><div class='d-flex text-left'> \

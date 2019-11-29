@@ -103,5 +103,7 @@
       <% end %>
     <% end %>
   </div>
-  <%= link_to "validate", my_playlist_path(params[:id]), method: :patch, remote: true, class: "button btnred"  %>
+  <div class="d-flex justify-content-center">
+    <%= link_to "validate", my_playlist_path(params[:id]), method: :patch, remote: true, class: "button btnred text-center"  %>
+  </div>
 </div>
