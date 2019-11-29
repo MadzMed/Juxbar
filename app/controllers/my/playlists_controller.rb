@@ -8,8 +8,8 @@ class My::PlaylistsController < ApplicationController
   end
 
   def new
-    @playlist = Playlist.create(session_id: params[:session_id], user_id: 1, started_at: Time.now)
-    @song = Song.new(playlist_id: @playlist.id)
+    @playlist = Playlist.new(session_id: params[:session_id], user_id: 1, started_at: Time.now)
+    # @song = Song.new(playlist_id: @playlist.id)
     if params[:search].present?
       songs_serialized = open("https://api.deezer.com/search?q=#{params[:search][:query]}").read
       @songs = JSON.parse(songs_serialized)
