@@ -37,6 +37,9 @@
         <% end %>
       </svg>
     </div>
+    <div>
+      <audio autoplay src=<%= @playlists.first.songs[1].preview %>></audio>
+    </div>
   </div>
 
   <% n = 1 %>
@@ -109,9 +112,6 @@
   <% end %>
   <div class="d-flex justify-content-center">
     <%= link_to "DJ", new_session_my_playlist_path(@playlists.first.session_id), class: "button button-DJ text-center"  %>
-  </div>
-  <div>
-    <audio autoplay src=<%= @playlists.first.songs[1].preview %>></audio>
   </div>
 </div>
 
