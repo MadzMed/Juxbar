@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_122804) do
+ActiveRecord::Schema.define(version: 2019_11_28_214909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_122804) do
     t.string "photo_artist"
     t.string "photo_album"
     t.string "photo_large"
+    t.string "preview"
     t.index ["playlist_id"], name: "index_songs_on_playlist_id"
   end
 

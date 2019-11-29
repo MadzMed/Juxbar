@@ -8,12 +8,12 @@
     </div>
     <div class="d-flex justify-content-between p-3">
       <div class="text-center">
-        <h4 class="mt-4"><%= @playlists.first.songs.last.artist %></h4>
-        <h3><%= @playlists.first.songs.last.title %></h3>
-        <h6><%= @playlists.first.songs.last.album %></h5>
+        <h4 class="mt-4"><%= @playlists.first.songs[1].artist %></h4>
+        <h3><%= @playlists.first.songs[1].title %></h3>
+        <h6><%= @playlists.first.songs[1].album %></h6>
       </div>
       <div>
-        <%= image_tag @playlists.first.songs.last.photo_large, width: 150, height: 150 %>
+        <%= image_tag @playlists.first.songs[1].photo_large, width: 150, height: 150 %>
       </div>
       <div class="d-flex flex-column justify-content-around">
         <div class="avatar-thema-medium"></div>
@@ -28,8 +28,7 @@
           <% i += 0.3 %>
         <% end %>
       </svg>
-    </div>
-    <hr color="white">
+      <hr color="white" width="747">
       <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" id="bottom-waves">
         <% i = 0 %>
         <% 320.times do %>
@@ -37,6 +36,7 @@
           <% i += 0.3 %>
         <% end %>
       </svg>
+    </div>
   </div>
 
   <% n = 1 %>
@@ -63,7 +63,7 @@
       <% i = 1 %>
       <% playlist.songs.each do |song| %>
         <% if i==1 %>
-          <div class="playlist-list-first d-flex justify-content-between">
+          <div class="playlist-list-first d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>">
             <div class="d-flex font-height-shrink">
               <span class="mr-3 mt-3"><%= i %> •</span>
               <%= image_tag song.photo_album, alt: "alttext" %>
@@ -83,7 +83,7 @@
           </div>
           <% i += 1 %>
         <% else %>
-          <div class="playlist-list d-flex justify-content-between">
+          <div class="playlist-list d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>">
             <div class="d-flex font-height-shrink">
               <span class="mr-3 mt-3"><%= i %> •</span>
               <%= image_tag song.photo_album, alt: "alttext" %>
@@ -109,6 +109,9 @@
   <% end %>
   <div class="d-flex justify-content-center">
     <%= link_to "DJ", new_session_my_playlist_path(@playlists.first.session_id), class: "button button-DJ text-center"  %>
+  </div>
+  <div>
+    <audio autoplay src=<%= @playlists.first.songs[1].preview %>></audio>
   </div>
 </div>
 
