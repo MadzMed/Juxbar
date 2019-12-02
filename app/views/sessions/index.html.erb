@@ -2,12 +2,11 @@
     <div class="search_div d-flex align-items-center justify-content-around">
         <div class="d-inline-flex align-items-center justify-content-around">
             <div class="search_button">
-                <i class="p-3 form_buttons fas fa-arrow-left"></i>
-            </div>
-            <div class="d-inline-flex">
-                <div class="p-2 search_bar_form">
-                    <input type="search" id="search_input" placeholder="Search" />
+                <%= simple_form_for :filter, url: sessions_path, method: "GET", html: { class: 'form-inline' } do %>
+                <div id="accordion_search_session_div">
+                    <input type="search" name="search[query]" id="accordion_search_session" placeholder="Search" />
                 </div>
+                <% end %>
             </div>
             <div class="d-inline-flex">
                 <i class="p-3 form_buttons fas fa-bars"></i>
@@ -15,9 +14,9 @@
         </div>
     </div>
 </div>
+</div>
 <div class="map_container " id="map" style="width: 100vw; height: 60vh; border-radius: 0px 0px 66px 66px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
 <div class=" col-xs-6" style=" height: 40vh; overflow: scroll; ">
     <% @sessions.each do |session| %>
     <%= link_to session_path(session.id) do %>
@@ -31,28 +30,92 @@
                     <%= session.description %>
                 </p> -->
                 <h3>
-                    <%= session.bar.address %>
+                    <%= session.bar.address.split(',').join("<br>").html_safe %>
                 </h3>
             </div>
-
-            <div class= "icon d-flex align-items-center justify-content-space-between">
-              <% if session.category == "latino"%>
-                  <div id="moncercle" class="moncercle-vert"></div>
-                <% elsif session.category == "metal"%>
-                  <div id="moncercle" class="moncercle-noir"></div>
-                <% elsif session.category == "techno"%>
-                  <div id="moncercle" class="moncercle-cyan"></div>
+            <div class="icon d-flex align-items-center justify-content-space-between">
+                <% if session.category == "latino"%>
+                <div id="moncercle" class="moncercle-vert"></div>
+                <% elsif session.category == "pop"%>
+                <div id="moncercle" class="moncercle-noir"></div>
+                <% elsif session.category == "pop"%>
+                <div id="moncercle" class="moncercle-cyan"></div>
                 <% elsif session.category == "dancehall"%>
-                  <div id="moncercle" class="moncercle-vert"></div>
+                <div id="moncercle" class="moncercle-vert"></div>
                 <% elsif session.category == "hip-hop"%>
-                  <div id="moncercle" class="moncercle-marron"></div>
+                <div id="moncercle" class="moncercle-marron"></div>
                 <% else %>
                 <div></div>
-              <% end %>
+                <% end %>
             </div>
-          </div>
-
+        </div>
     </div>
     <% end %>
-  <% end %>
+    <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="accordion" class="accordion">
+  <li>
+    <div class="link"><i class="fa fa-database"></i>Web Design<i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li><a href="#">Photoshop</a></li>
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+    </ul>
+  </li>
+  <li>
+    <div class="link"><i class="fa fa-code"></i>Coding<i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li><a href="#">Javascript</a></li>
+      <li><a href="#">jQuery</a></li>
+      <li><a href="#">Ruby</a></li>
+    </ul>
+  </li>
+  <li>
+    <div class="link"><i class="fa fa-mobile"></i>Devices<i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li><a href="#">Tablet</a></li>
+      <li><a href="#">Mobile</a></li>
+      <li><a href="#">Desktop</a></li>
+    </ul>
+  </li>
+  <li>
+    <div class="link"><i class="fa fa-globe"></i>Global<i class="fa fa-chevron-down"></i></div>
+    <ul class="submenu">
+      <li><a href="#">Google</a></li>
+      <li><a href="#">Bing</a></li>
+      <li><a href="#">Yahoo</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
