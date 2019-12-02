@@ -8,16 +8,17 @@ const createPlaylist = () => {
       playlist.children["1"].children["0"].children["0"].classList.toggle("fa-check");
       // console.dir(playlists[i].children["1"].children["0"].children["0"].classList);
       let myPlaylist = document.getElementById("myplaylist");
+      console.log(e.currentTarget)
       // console.log(playlist)
-      console.dir(playlist.children["1"])
+      // console.dir(playlist.children["1"])
       // console.dir(document.getElementById("myplaylist").children)
-      if (document.getElementById("myplaylist").children.length === 2){
+      console.dir(document.getElementById("first-card").children)
+      if (document.getElementById("first-card").children.length === 0){
         myPlaylist.style.display = "";
-        myPlaylist.insertAdjacentHTML("beforeend", playlist.innerHTML)
-      } else if (playlist.children["0"].children["0"].classList["1"] === "fa-check") {
-        myPlaylist.insertAdjacentHTML("beforeend", playlist.innerHTML)
-      } else {
-
+        document.getElementById("first-card").insertAdjacentHTML("beforeend", `<div class="playlist-list-first d-flex justify-content-between children">${playlist.innerHTML}</div>`);
+      } else if (playlist.children["1"].children["0"].children["0"].classList["1"] === "fa-check") {
+        document.getElementById("first-card").insertAdjacentHTML("beforeend", `<div class="playlist-list d-flex justify-content-between children">${playlist.innerHTML}</div>`);
+      } else if (playlist.children["1"].children["0"].children["0"].classList["1"] === "fa-check") {
 
       }
    });
