@@ -66,7 +66,7 @@
       <% i = 1 %>
       <% playlist.songs.each do |song| %>
         <% if i==1 %>
-          <div class="playlist-list-first d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>">
+          <div class="playlist-list-first d-flex justify-content-between" id= "first-playlist-songs" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-song-photo-album="<%= song.photo_album %>" data-song-photo-artist="<%= song.photo_artist %>" data-song-photo-album-large="<%= song.photo_large %>">
             <div class="d-flex font-height-shrink">
               <span class="mr-3 mt-3"><%= i %> •</span>
               <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
@@ -81,12 +81,14 @@
             </div>
             <div class="d-flex flex-column">
               <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
-              <span class="text-center"><i class="far fa-heart"></i></span>
+              <%= link_to playlist_path(params[:session_id], like: true, song: song.id), class: "text-center", method: :patch do %>
+                <i class="far fa-heart" style="color: #262525;"></i>
+              <% end %>
             </div>
           </div>
           <% i += 1 %>
         <% else %>
-          <div class="playlist-list d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>">
+          <div class="playlist-list d-flex justify-content-between" id= "playlist-songs" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-song-photo-album="<%= song.photo_album %>" data-song-photo-artist="<%= song.photo_artist %>" data-song-photo-album-large="<%= song.photo_large %>">
             <div class="d-flex font-height-shrink">
               <span class="mr-3 mt-3"><%= i %> •</span>
               <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
@@ -101,7 +103,9 @@
             </div>
             <div class="d-flex flex-column">
               <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
-              <span class="text-center"><i class="far fa-heart"></i></span>
+              <%= link_to playlist_path(playlist.id), class: "text-center", remote: true, method: :patch do %>
+                <i class="far fa-heart" style="color: #262525;"></i>
+              <% end %>
             </div>
           </div>
           <% i += 1 %>

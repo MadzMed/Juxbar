@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :likes
   has_many :bars
+  has_many :playlists
 end
