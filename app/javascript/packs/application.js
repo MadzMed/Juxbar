@@ -5,12 +5,14 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { heartLike } from '../plugins/heart_animation';
 import { playerAdvance } from '../plugins/player_wave';
-import { song } from '../plugins/add_playlist';
+import { createPlaylist } from '../plugins/add_playlist';
 
 
 initMapbox();
 heartLike();
 playerAdvance();
-song();
+if (document.getElementById("top-playlist")) {
+  createPlaylist();
+}
 
 
