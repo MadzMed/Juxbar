@@ -1,0 +1,14 @@
+.image-bar-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  height: 182px;
+  width: 237px;
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .image-bar-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
