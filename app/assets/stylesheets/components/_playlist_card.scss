@@ -22,10 +22,10 @@
   margin: 0 auto;
   top: 0px;
   width: 90vw;
-  height: 25vh;
+  height: 529px;
   background: linear-gradient($playerblue, $playerbluelight);
   border-radius: 0px 0px 25px 25px;
-  padding: 20px 20px;
+  padding: 20px 20px 40px 20px;
   border: 0;
   overflow: hidden;
   color: white;
@@ -57,18 +57,18 @@
 .container-playlist-card {
   max-width: 100%;
   position: absolute;
-  top: 475px;
+  top: 554px;
 }
 
 .playlist-list {
-  height: 90px;
+  height: 189px;
   padding: 20px 10px;
   border-top: 1px solid black;
   overflow: hidden;
 }
 
 .playlist-list-first {
-  height: 90px;
+  height: 189px;
   padding: 20px 10px;
   overflow: hidden;
 }
@@ -88,8 +88,9 @@
 
 .topcard {
   position: relative;
-  top: 20px;
+  top: 150px;
   right: 40px;
+  height: 117vh;
 }
 
 #top-playlist {
@@ -101,4 +102,8 @@
   position: relative;
   right: 40px;
 
+}
+
+.photo-album-border {
+  border-radius: 17px;
 }
