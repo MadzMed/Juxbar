@@ -7,6 +7,7 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  color: black;
 }
 
 .map_container {
@@ -153,9 +154,9 @@
     cursor: not-allowed;
 }
 
-.mapboxgl-ctrl button:disabled .mapboxgl-ctrl-icon {
-    opacity: 0.25;
-}
+// .mapboxgl-ctrl button:disabled .mapboxgl-ctrl-icon {
+//     opacity: 0.25;
+// }
 
 .mapboxgl-ctrl button:not(:disabled):hover {
     background-color: rgba(0, 0, 0, 0.05);
@@ -312,73 +313,83 @@
 //     #dot { display: none; }
 // }
 
-.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
-    background-image: svg-inline(ctrl-geolocate);
+.mapboxgl-ctrl-geolocate {
+     background-image: url(https://cdn3.iconfinder.com/data/icons/glypho-travel/64/gps-position-target-512.png) !important;
+    background-size: cover;
 }
 
-.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate:disabled .mapboxgl-ctrl-icon {
-    background-image: svg-inline(ctrl-geolocate-disabled);
-}
+// .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
+//     // background-image: svg-inline(ctrl-geolocate);
+//     background-image: url(https://cdn3.iconfinder.com/data/icons/glypho-travel/64/gps-position-target-512.png);
+//     background-size: cover;
 
-.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active .mapboxgl-ctrl-icon {
-    background-image: svg-inline(ctrl-geolocate-active);
-}
 
-.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active-error .mapboxgl-ctrl-icon {
-    background-image: svg-inline(ctrl-geolocate-active-error);
-}
+// }
 
-.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background .mapboxgl-ctrl-icon {
-    background-image: svg-inline(ctrl-geolocate-background);
-}
+// .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate:disabled .mapboxgl-ctrl-icon {
+//     background-image: svg-inline(ctrl-geolocate-disabled);
+// }
 
-.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background-error .mapboxgl-ctrl-icon {
-    background-image: svg-inline(ctrl-geolocate-background-error);
-}
+// .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active .mapboxgl-ctrl-icon {
+//     background-image: svg-inline(ctrl-geolocate-active);
+// }
 
-.mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-waiting .mapboxgl-ctrl-icon {
-    -webkit-animation: mapboxgl-spin 2s infinite linear;
-    -moz-animation: mapboxgl-spin 2s infinite linear;
-    -o-animation: mapboxgl-spin 2s infinite linear;
-    -ms-animation: mapboxgl-spin 2s infinite linear;
-    animation: mapboxgl-spin 2s infinite linear;
-}
+// .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active-error .mapboxgl-ctrl-icon {
+//     background-image: svg-inline(ctrl-geolocate-active-error);
+// }
 
-@media (-ms-high-contrast: active) {
-    .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
-        background-image: svg-inline(ctrl-geolocate-white);
-    }
+// .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background .mapboxgl-ctrl-icon {
+//     background-image: svg-inline(ctrl-geolocate-background);
+// }
 
-    .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate:disabled .mapboxgl-ctrl-icon {
-        background-image: svg-inline(ctrl-geolocate-disabled-white);
-    }
+// .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background-error .mapboxgl-ctrl-icon {
+//     background-image: svg-inline(ctrl-geolocate-background-error);
+// }
 
-    .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active .mapboxgl-ctrl-icon {
-        background-image: svg-inline(ctrl-geolocate-active);
-    }
+// .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-waiting .mapboxgl-ctrl-icon {
+//     -webkit-animation: mapboxgl-spin 2s infinite linear;
+//     -moz-animation: mapboxgl-spin 2s infinite linear;
+//     -o-animation: mapboxgl-spin 2s infinite linear;
+//     -ms-animation: mapboxgl-spin 2s infinite linear;
+//     animation: mapboxgl-spin 2s infinite linear;
+// }
 
-    .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active-error .mapboxgl-ctrl-icon {
-        background-image: svg-inline(ctrl-geolocate-active-error);
-    }
+// @media (-ms-high-contrast: active) {
+//     .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
+//         background-image: svg-inline(ctrl-geolocate-white);
 
-    .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background .mapboxgl-ctrl-icon {
-        background-image: svg-inline(ctrl-geolocate-background);
-    }
+//     }
 
-    .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background-error .mapboxgl-ctrl-icon {
-        background-image: svg-inline(ctrl-geolocate-background-error);
-    }
-}
+//     .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate:disabled .mapboxgl-ctrl-icon {
+//         background-image: svg-inline(ctrl-geolocate-disabled-white);
+//     }
 
-@media (-ms-high-contrast: black-on-white) {
-    .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
-        background-image: svg-inline(ctrl-geolocate-black);
-    }
+//     .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active .mapboxgl-ctrl-icon {
+//         background-image: svg-inline(ctrl-geolocate-active);
+//     }
 
-    .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate:disabled .mapboxgl-ctrl-icon {
-        background-image: svg-inline(ctrl-geolocate-disabled-black);
-    }
-}
+//     .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active-error .mapboxgl-ctrl-icon {
+//         background-image: svg-inline(ctrl-geolocate-active-error);
+//     }
+
+//     .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background .mapboxgl-ctrl-icon {
+//         background-image: svg-inline(ctrl-geolocate-background);
+//     }
+
+//     .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-background-error .mapboxgl-ctrl-icon {
+//         background-image: svg-inline(ctrl-geolocate-background-error);
+//     }
+// }
+
+// @media (-ms-high-contrast: black-on-white) {
+//     .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
+//         background-image: svg-inline(ctrl-geolocate-black);
+//     }
+
+//     .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate:disabled .mapboxgl-ctrl-icon {
+//         background-image: svg-inline(ctrl-geolocate-disabled-black);
+//     }
+// }
 
 @-webkit-keyframes mapboxgl-spin {
     0% { -webkit-transform: rotate(0deg); }

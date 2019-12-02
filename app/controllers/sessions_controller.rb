@@ -1,8 +1,20 @@
 class SessionsController < ApplicationController
   def index
-    @sessions = Session.all
-    @sessions.each do |session|
-      session.bar.geocode
+    if params[:search].present?
+      sql_query = "\
+        sessions.category ILIKE :query \
+        OR bars.address ILIKE :query \
+        OR bars.name ILIKE :query \
+      "
+      @sessions = Session.joins(:bar).where(sql_query, query: "%#{params[:search][:query]}%")
+      @sessions.each do |session|
+        session.bar.geocode
+      end
+    else
+      @sessions = Session.all
+      @sessions.each do |session|
+        session.bar.geocode
+      end
     end
 
     @markers = @sessions.map do |session|
@@ -18,3 +30,7 @@ class SessionsController < ApplicationController
     @session = Session.find(params[:id])
   end
 end
+
+# session.bar.address
+# session.bar.name
+# session.category

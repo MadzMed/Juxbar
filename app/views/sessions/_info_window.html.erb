@@ -1,6 +1,11 @@
-<h2>
-    <%= session.bar.name %>
-</h2>
-<h3>
-    <%= session.category %>
-</h3>
+<div class="d-flex flex-column">
+    <span class=" popup d-flex align-items-left">
+        <%= session.bar.name %>
+    </span>
+    <span class=" popup ">
+        <%= session.category %>
+    </span>
+    <span>
+      <%= session.bar.image %>
+    </span>
+</div>

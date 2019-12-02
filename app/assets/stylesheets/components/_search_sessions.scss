@@ -17,9 +17,6 @@
     z-index: 1;
 }
 
-#search_input {
-  -webkit-appearance: textfield;
-}
 
 .p-2 {
   background: white;
@@ -31,4 +28,31 @@
   text-align: center;
   justify-content: center;
 
+}
+ .popup {
+  font-size: 25px;
+  // font-family: Montserrat;
+
+ }
+
+
+#accordion_search_session_div {
+  position: relative;
+  &:after {
+    font-family: Montserrat;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  #accordion_search_session {
+    display: block;
+    margin: 10px auto;
+    width: 95%;
+    padding: 3px 10px;
+    border: 1px solid $gray;
+    border-radius: 25px !important;
+    outline: 0;
+  }
 }
