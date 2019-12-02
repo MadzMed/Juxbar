@@ -19,11 +19,14 @@
   }
 }
 
-// #navbar_playlist {
-//   position: fixed;
-//   top: 0;
-//   z-index: 1;
-//   width: 90%;
-//   /* margin: 0 auto; */
-//   left: 72px;
-// }
+#navbar_playlist {
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.365));
+  position: relative;
+  position: fixed;
+  z-index: 1;
+  left: 5vw;
+  margin: 0 auto;
+  top: 0px;
+  width: 90vw;
+}
+

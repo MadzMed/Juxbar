@@ -20,11 +20,32 @@ class My::PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = Playlist.new(playlist_params)
-    @playlist.user_id = current_user.id
+    if current_user.playlists.present?
+      if current_user.playlists.where(session_id: params[:session_id]).present?
+        @playlist = current_user.playlists.where(session_id: params[:session_id]).first
+        @song = Song.create(songs_params)
+        @song.playlist_id = @playlist.id
+      else
+        @playlist = Playlist.new(started_at: Time.now)
+        @playlist.user_id = current_user.id
+        @playlist.session_id = params[:session_id]
+        if @playlist.save
+          @song = Song.create(songs_params)
+          @song.playlist_id = @playlist.id
+        end
+      end
+    else
+      @playlist = Playlist.new(started_at: Time.now)
+      @playlist.user_id = current_user.id
+      @playlist.session_id = params[:session_id]
+      if @playlist.save
+        @song = Song.create(songs_params)
+        @song.playlist_id = @playlist.id
+      end
+    end
     if @playlist.save
       respond_to do |format|
-        format.html { redirect_to my_playlist_path }
+        format.html { redirect_to my_playlist_path(params[:session_id]) }
         format.js
       end
     else
@@ -42,7 +63,7 @@ class My::PlaylistsController < ApplicationController
 
   private
 
-  def playlist_params
-    params.require(:playlist).permit(:started_at)
+  def songs_params
+    params.require(:song).permit(:artist, :album, :category, :duration, :title, :deezer_id, :composer, :photo_album, :photo_large, :photo_artist)
   end
 end
