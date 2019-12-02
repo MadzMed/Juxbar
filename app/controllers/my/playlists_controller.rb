@@ -23,14 +23,14 @@ class My::PlaylistsController < ApplicationController
     if current_user.playlists.present?
       if current_user.playlists.where(session_id: params[:session_id]).present?
         @playlist = current_user.playlists.where(session_id: params[:session_id]).first
-        @song = Song.new(songs_params)
+        @song = Song.create(songs_params)
         @song.playlist_id = @playlist.id
       else
         @playlist = Playlist.new(started_at: Time.now)
         @playlist.user_id = current_user.id
         @playlist.session_id = params[:session_id]
         if @playlist.save
-          @song = Song.new(songs_params)
+          @song = Song.create(songs_params)
           @song.playlist_id = @playlist.id
         end
       end
@@ -39,7 +39,7 @@ class My::PlaylistsController < ApplicationController
       @playlist.user_id = current_user.id
       @playlist.session_id = params[:session_id]
       if @playlist.save
-        @song = Song.new(songs_params)
+        @song = Song.create(songs_params)
         @song.playlist_id = @playlist.id
       end
     end
