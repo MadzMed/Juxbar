@@ -46,7 +46,7 @@
           <div class="playlist-list-first d-flex justify-content-between children">
             <div class="d-flex text-left">
               <span class="mr-3 mt-3"><%= i %> •</span>
-              <%= image_tag song["album"]["cover_small"], alt: "alttext" %>
+              <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
               <span class="ml-3">
                 <h5>
                   <%= song["artist"]["name"] %>
@@ -67,7 +67,7 @@
             <div class="playlist-list d-flex justify-content-between children">
               <div class="d-flex">
                 <span class="mr-3 mt-3"><%= i %> •</span>
-                <%= image_tag song["album"]["cover_small"], alt: "alttext" %>
+                <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
                   <h5>
                     <%= song["artist"]["name"] %>
@@ -86,9 +86,9 @@
           <% end %>
         <% end %>
       </div>
+  <div class="d-flex justify-content-center mb-5">
+    <%= link_to "validate", my_playlist_path(@playlist.id), class: "button btnred text-center"  %>
   </div>
-  <div class="d-flex justify-content-center">
-    <%= link_to "validate", my_playlist_path(1), class: "button btnred text-center"  %>
   </div>
 </div>
 
