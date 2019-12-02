@@ -4,11 +4,12 @@ require 'open-uri'
 class My::PlaylistsController < ApplicationController
   def show
     @playlist = Playlist.find(params[:id])
-    @playlists = @playlist.session.playlists.where(user_id: 1)
+    raise
+    @playlists = @playlist.session.playlists.where(user_id: @playlist.user.id)
   end
 
   def new
-    @playlist = Playlist.new(session_id: params[:session_id], user_id: 1, started_at: Time.now)
+    @playlist = Playlist.create(session_id: params[:session_id], user_id: 1, started_at: Time.now)
     # @song = Song.new(playlist_id: @playlist.id)
     if params[:search].present?
       songs_serialized = open("https://api.deezer.com/search?q=#{params[:search][:query]}").read
@@ -22,25 +23,28 @@ class My::PlaylistsController < ApplicationController
   def create
     if current_user.playlists.present?
       if current_user.playlists.where(session_id: params[:session_id]).present?
-        @playlist = current_user.playlists.where(session_id: params[:session_id]).first
-        @song = Song.create(songs_params)
+        @playlist = current_user.playlists.where(session_id: params[:session_id])
+        @song = Song.new(songs_params)
         @song.playlist_id = @playlist.id
+        @song.save
       else
         @playlist = Playlist.new(started_at: Time.now)
         @playlist.user_id = current_user.id
         @playlist.session_id = params[:session_id]
         if @playlist.save
-          @song = Song.create(songs_params)
+          @song = Song.new(songs_params)
           @song.playlist_id = @playlist.id
+          @song.save
         end
       end
     else
-      @playlist = Playlist.new(started_at: Time.now)
+      @playlist = Playlist.find(params[:playlist_id])
       @playlist.user_id = current_user.id
       @playlist.session_id = params[:session_id]
       if @playlist.save
-        @song = Song.create(songs_params)
+        @song = Song.new(songs_params)
         @song.playlist_id = @playlist.id
+        @song.save
       end
     end
     if @playlist.save

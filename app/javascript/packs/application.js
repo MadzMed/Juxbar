@@ -10,16 +10,17 @@ import { song } from '../plugins/add_playlist';
 import { anim } from '../plugins/burger_animation_slider';
 import { home, pushEnter } from '../plugins/home';
 
-
-
 initMapbox();
 heartLike();
 playerAdvance();
 if (document.getElementById("top-playlist")) {
   createPlaylist();
 }
-song();
-anim();
-home();
-pushEnter();
+if (document.querySelector('#box')) {
+  anim();
+}
 
+if (document.getElementById("btn-home")) {
+  home();
+  pushEnter();
+}
