@@ -8,12 +8,12 @@
     </div>
     <div class="d-flex justify-content-between p-3">
       <div class="text-center">
-        <h4 class="mt-4"><%= @playlists.first.songs[1].artist %></h4>
-        <h3><%= @playlists.first.songs[1].title %></h3>
-        <h6><%= @playlists.first.songs[1].album %></h6>
+        <h4 class="mt-4"><%= @playlists.first.songs[4].artist %></h4>
+        <h3><%= @playlists.first.songs[4].title %></h3>
+        <h6><%= @playlists.first.songs[4].album %></h6>
       </div>
       <div>
-        <%= image_tag @playlists.first.songs[1].photo_large, width: 150, height: 150 %>
+        <%= image_tag @playlists.first.songs[4].photo_large, width: 150, height: 150 %>
       </div>
       <div class="d-flex flex-column justify-content-around">
         <div class="avatar-thema-medium"></div>
@@ -36,6 +36,9 @@
           <% i += 0.3 %>
         <% end %>
       </svg>
+    </div>
+    <div>
+      <audio autoplay src=<%= @playlists.first.songs[4].preview %>></audio>
     </div>
   </div>
 
@@ -109,9 +112,6 @@
   <% end %>
   <div class="d-flex justify-content-center">
     <%= link_to "DJ", new_session_my_playlist_path(@playlists.first.session_id), class: "button button-DJ text-center"  %>
-  </div>
-  <div>
-    <audio autoplay src=<%= @playlists.first.songs[1].preview %>></audio>
   </div>
 </div>
 
