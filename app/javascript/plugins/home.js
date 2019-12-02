@@ -1,5 +1,5 @@
 const home = () => {
-  const target = window.document.getElementsByTagName('h1')[0]
+  const target = window.document.getElementById('title-home')
 
   const flickerLetter = letter => `<span style="animation: text-flicker-in-glow ${Math.random()*4}s linear both ">${letter}</span>`
   const colorLetter = letter => `<span style="color: hsla(${Math.random()*360}, 100%, 80%, 1);">${letter}</span>`;
@@ -20,5 +20,5 @@ const pushEnter = () => {
   setTimeout(() => document.getElementById('btn-home').click(), 4500);
 };
 
-export { home };
-export { pushEnter };
+export { home, pushEnter };
+
