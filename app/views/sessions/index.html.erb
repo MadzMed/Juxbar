@@ -14,14 +14,17 @@
                 </div>
                 <div id="box">
                     <div id="items">
-                      <%= link_to root_path do  %>
-                        <div class="item-menu-burger"><%= image_tag ( "info-icon"), class: "icons-menu-session"%> Infos </div>
-                          <% end %>
+                        <div class="item-menu-burger">
+                          <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "icons-menu-session" %>
+                        </div>
                         <%= link_to root_path do  %>
-                        <div class="item-menu-burger"><%= image_tag ( "user-icon"), class: "icons-menu-session"%> Profil </div>
-                          <% end %>
+                          <div class="item-menu-burger"><%= image_tag ( "info-icon"), class: "icons-menu-session"%> Infos </div>
+                         <% end %>
                         <%= link_to root_path do  %>
-                        <div class="item-menu-burger"><%= image_tag ( "setting-icon"), class: "icons-menu-session"%> Paramètres </div>
+                          <div class="item-menu-burger"><%= image_tag ( "user-icon"), class: "icons-menu-session"%> Profil </div>
+                        <% end %>
+                        <%= link_to root_path do  %>
+                          <div class="item-menu-burger"><%= image_tag ( "setting-icon"), class: "icons-menu-session"%> Paramètres </div>
                         <%end%>
                     </div>
                 </div>

@@ -5,12 +5,11 @@ class PlaylistsController < ApplicationController
   end
 
   def update
-    @like = Like.new(user_id: 1)
+    @like = Like.new(user_id: current_user)
     @song = Song.find(params[:song])
     @like.song_id = @song.id
-    raise
     @playlist = Playlist.find(params[:id])
-    @song.new(song_params)
+    # @song.new(song_params)
     @song.playlist_id = @playlist.id
     if @song.save
       respond_to do |format|
@@ -28,7 +27,7 @@ class PlaylistsController < ApplicationController
 
   private
 
-  def song_params
-    params.require(:playlist).permit(:artist, :album, :category, :duration, :title, :deezer_id, :composer)
-  end
+  # def song_params
+  #   params.require(:song).permit(:artist, :album, :category, :duration, :title, :deezer_id, :composer)
+  # end
 end
