@@ -13,6 +13,16 @@
 .map_container {
   position: relative !important;
 }
+a {
+  opacity: 0 !important;
+}
+
+.mapboxgl-ctrl-top-right {
+  position: absolute;
+  left: 20px;
+  min-height:25px;
+  max-height: 40px;
+}
 
 .mapboxgl-map {
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -69,11 +79,11 @@
 }
 
 .mapboxgl-ctrl-top-left,
-.mapboxgl-ctrl-top-right,
+// .mapboxgl-ctrl-top-right,
 .mapboxgl-ctrl-bottom-left,
 .mapboxgl-ctrl-bottom-right { position: absolute; pointer-events: none; z-index: 2; }
 .mapboxgl-ctrl-top-left     { top: 0; left: 0; }
-.mapboxgl-ctrl-top-right    { top: 0; right: 0; }
+// .mapboxgl-ctrl-top-right    { top: 0; right: 0; }
 .mapboxgl-ctrl-bottom-left  { bottom: 0; left: 0; }
 .mapboxgl-ctrl-bottom-right { right: 0; bottom: 0; }
 
@@ -507,10 +517,10 @@ a.mapboxgl-ctrl-logo.mapboxgl-compact {
         right: 0;
     }
 
-    .mapboxgl-ctrl-top-right > .mapboxgl-ctrl-attrib.mapboxgl-compact::after {
-        top: 0;
-        right: 0;
-    }
+    // .mapboxgl-ctrl-top-right > .mapboxgl-ctrl-attrib.mapboxgl-compact::after {
+    //     top: 0;
+    //     right: 0;
+    // }
 
     .mapboxgl-ctrl-top-left > .mapboxgl-ctrl-attrib.mapboxgl-compact::after {
         top: 0;
