@@ -1,11 +1,20 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Monoton');
+
+//FONT WEIGHT
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
 
 // Define fonts for body and headers
 $body-font: 'Montserrat', "sans-serif";
 $headers-font: 'Montserrat', "sans-serif";
 $home-font: 'Monoton', "sans-serif";
+
+
 
 
 // To use a font file (.woff) uncomment following lines
