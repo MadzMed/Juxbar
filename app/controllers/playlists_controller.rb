@@ -1,10 +1,12 @@
 class PlaylistsController < ApplicationController
   def index
+    raise
     @playlists = Playlist.where(session_id: params[:session_id])
     # @playlists = Playlist.all
   end
 
   def update
+    raise
     @like = Like.new(user_id: current_user)
     @song = Song.find(params[:song])
     @like.song_id = @song.id

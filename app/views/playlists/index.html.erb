@@ -39,11 +39,6 @@
         <% end %>
       </svg>
     </div>
-    <div>
-      <% if !@playlists.empty? %>
-        <audio autoplay src=<%= @playlists.first.songs[4].preview %>></audio>
-      <% end %>
-    </div>
   </div>
   <% if !@playlists.empty? %>
     <% n = 1 %>
@@ -87,8 +82,8 @@
                 </span>
               </div>
               <div class="d-flex flex-column">
-                <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
-                <%= link_to playlist_path(params[:session_id], like: true, song: song.id), class: "text-center", method: :patch do %>
+                <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S") %></span>
+                <%= link_to playlist_path(params[:id], like: true, song: song.id), class: "text-center", method: :patch do %>
                   <i class="far fa-heart" style="color: #262525;"></i>
                 <% end %>
               </div>
