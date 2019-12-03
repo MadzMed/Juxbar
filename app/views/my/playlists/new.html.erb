@@ -18,16 +18,44 @@
     <% end %>
   </div>
 
-  <div id="myplaylist" style="display: none">
-    <div class="hearder-playlist-card">
-      <div class="d-flex justify-content-center">
-          <h3>My playlist</h3>
+  <% if !@mysongs.nil? %>
+    <div id="myplaylist">
+      <div class="hearder-playlist-card">
+        <div class="d-flex justify-content-center">
+            <h3>My playlist</h3>
+        </div>
+      </div>
+      <div class='playlist container-playlist-card' id='first-card'>
+        <% @mysongs.each do |song| %>
+          <div class="playlist-list d-flex justify-content-between children"><div class="d-flex text-left">
+                <span class="mr-3 mt-3"> •</span>
+                <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
+                <span class="ml-3">
+                  <h5>
+                    <%= song.artist %>
+                  </h5>
+                  <p>
+                    <%= song.title %>
+                  </p>
+                </span>
+              </div>
+            </div>
+        <% end %>
       </div>
     </div>
-    <div class='playlist container-playlist-card' id='first-card'>
-      <!-- inserer le nouveau son -->
+  <% else %>
+    <div id="myplaylist" style="display: none;">
+      <div class="hearder-playlist-card">
+        <div class="d-flex justify-content-center">
+            <h3>My playlist</h3>
+        </div>
+      </div>
+      <div class='playlist container-playlist-card' id='first-card'>
+
+      </div>
     </div>
-  </div>
+  <% end %>
+      <!-- inserer le nouveau son -->
 
 
 
@@ -87,7 +115,7 @@
         <% end %>
       </div>
   <div class="d-flex justify-content-center mb-5">
-    <%= link_to "validate", my_playlist_path(@playlist.id), class: "button btnred text-center"  %>
+    <%= link_to "validate", my_playlist_path(current_user.playlists.find_by(session_id: params[:session_id]).id), class: "button btnred text-center"  %>
   </div>
   </div>
 </div>
