@@ -1,10 +1,11 @@
 $black: #343838;
-$blueform: black;
+$blueform: #103458;
 $dullWhite: #f6f6f6;
 $easing: cubic-bezier(.6, .05, .28, .91);
 * {
   box-sizing: border-box;
 }
+
 
 #page-wrapper {
   position: absolute;
@@ -16,14 +17,15 @@ $easing: cubic-bezier(.6, .05, .28, .91);
 
 #btn {
   position: fixed;
+  color: red;
   z-index: 199;
   top: 15px;
   right: 15px;
   cursor: pointer;
   transition: right 500ms $easing;
   div {
-    width: 35px;
-    height: 3px;
+    width: 38px;
+    height: 5px;
     margin-bottom: 8px;
     background-color: $blueform;
     transition: transform 500ms $easing, opacity 500ms, background-color 250ms;
@@ -36,30 +38,30 @@ $easing: cubic-bezier(.6, .05, .28, .91);
     background-color: white;
   }
   #top {
-    transform:translate(110px,501px) rotate(135deg);
+    transform:translate(110px,535px) rotate(135deg);
   }
   #middle {
     opacity: 0;
     transform: rotate(-135deg);
   }
   #bottom {
-    transform: translate(110px, 480px) rotate(45deg)  }
+    transform: translate(110px, 509px) rotate(45deg)  }
 }
 
 #box {
   position: fixed;
   z-index: 99;
   overflow: auto;
-  border-radius: 0 0 0 50px;
-  top: 0px;
+  border-radius: 50px 0 0 50px;
+  top: 120px;
   right: -275px;
-  width: 275px;
+  width: 300px;
   opacity: 0;
-  padding: 20px 0px;
-  height: 42%;
+  padding: 0px 0px 20px 10px;
+  height: 35%;
   background-color: #EAEAEA;
   // color: $black;
-  transition: all 350ms $easing;
+  transition: all 550ms $easing;
 }
 
 #box.active {
@@ -92,7 +94,7 @@ animation: Gradient-Juxbar 6s ease infinite;
     color: white;
     position: relative;
     cursor: pointer;
-    font-size: 2em;
+    font-size: 32px;
     padding: 30px 5px 15px 15px;
     transition: all 250ms;
   }
@@ -117,4 +119,7 @@ animation: Gradient-Juxbar 6s ease infinite;
   font-size: 2px;
 }
 
-
+.menu-sign-out {
+  font-size: 32px;
+  color: white;
+}

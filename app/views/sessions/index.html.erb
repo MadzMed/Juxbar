@@ -1,73 +1,72 @@
-<div id="page-wrapper">
-    <div class="container d-flex align-items-center justify-content-around">
-        <div class="search_div d-inline-flex align-items-center justify-content-center">
-            <%= simple_form_for :filter, url: sessions_path, method: "GET", html: { class: 'form-inline' } do %>
-            <div id="search_session_div">
-                <input type="search" name="search[query]" id="accordion_search_session" placeholder="Search" />
-            </div>
-            <% end %>
-            <div class="d-inline-flex">
-                <div id="btn">
-                    <div id='top'></div>
-                    <div id='middle'></div>
-                    <div id='bottom'></div>
-                </div>
-                <div id="box">
-                    <div id="items">
-                        <div class="item-menu-burger">
-                          <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "icons-menu-session" %>
-                        </div>
-                        <%= link_to root_path do  %>
-                          <div class="item-menu-burger"><%= image_tag "info-icon.png", class: "icons-menu-session"%> Infos </div>
-                         <% end %>
-                        <%= link_to root_path do  %>
-                          <div class="item-menu-burger"><%= image_tag "user-icon.png", class: "icons-menu-session"%> Profil </div>
-                        <% end %>
-                        <%= link_to root_path do  %>
-                          <div class="item-menu-burger"><%= image_tag "setting-icon.png", class: "icons-menu-session"%> Paramètres </div>
-                        <%end%>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="map_container " id="map" style="width: 100vw; height: 60vh; border-radius: 0px 0px 66px 66px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-<div class=" col-xs-6" style=" height: 40vh; overflow: scroll; ">
-    <% @sessions.each do |session| %>
-    <%= link_to session_path(session.id) do %>
-    <div class="bar-card-index d-flex justify-content-center align-items-center">
-        <div class="card-sessions-infos d-flex">
-            <div class="content-div-index d-flex flex-column">
-                <h2>
-                    <%= session.bar.name %>
-                </h2>
-                <!-- <p>
-                      <%= session.description %>
-                  </p> -->
-                <h3>
-                    <%= session.bar.address.split(',').join("<br>").html_safe %>
-                </h3>
-            </div>
-            <div class="icon d-flex align-items-center justify-content-space-between">
-                <% if session.category == "latino"%>
-                <div id="moncercle" class="moncercle-vert"></div>
-                <% elsif session.category == "pop"%>
-                <div id="moncercle" class="moncercle-noir"></div>
-                <% elsif session.category == "pop"%>
-                <div id="moncercle" class="moncercle-cyan"></div>
-                <% elsif session.category == "dancehall"%>
-                <div id="moncercle" class="moncercle-vert"></div>
-                <% elsif session.category == "hip-hop"%>
-                <div id="moncercle" class="moncercle-marron"></div>
-                <% else %>
-                <div></div>
-                <% end %>
-            </div>
-        </div>
-    </div>
-    <% end %>
-    <% end %>
-</div>
-</div>
+  <div id="page-wrapper">
+      <div class="container d-flex align-items-center justify-content-around">
+          <div class="search_div d-inline-flex align-items-center justify-content-center">
+              <%= simple_form_for :filter, url: sessions_path, method: "GET", html: { class: 'form-inline' } do %>
+              <div id="search_session_div">
+                  <input type="search" name="search[query]" id="accordion_search_session" placeholder="Search" />
+              </div>
+              <% end %>
+              <div class="d-inline-flex">
+                  <div id="btn">
+                      <div id='top'></div>
+                      <div id='middle'></div>
+                      <div id='bottom'></div>
+                  </div>
+                  <div id="box">
+                      <div id="items">
+                          <%= link_to root_path do  %>
+                            <div class="item-menu-burger"> <%= image_tag "user-icon.png", class: "icons-menu-session"%> Profil </div>
+                          <% end %>
+                          <%= link_to root_path do  %>
+                            <div class="item-menu-burger"><%= image_tag "setting-icon.png", class: "icons-menu-session"%> Paramètres </div>
+                          <%end%>
+                          <%= link_to destroy_user_session_path, :method => :delete do %>
+                          <div class="item-menu-burger">
+                            <div class= "menu-sign-out"><%= image_tag "log-out.png", class: "icons-menu-session"%> sign out </div>
+                          </div>
+                          <%end%>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="map_container " id="map" style="width: 100vw; height: 60vh; border-radius: 0px 0px 66px 66px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div class=" col-xs-6" style=" height: 40vh; overflow: scroll; ">
+      <% @sessions.each do |session| %>
+      <%= link_to session_path(session.id) do %>
+      <div class="bar-card-index d-flex justify-content-center align-items-center">
+          <div class="card-sessions-infos d-flex">
+              <div class="content-div-index d-flex flex-column">
+                  <h2>
+                      <%= session.bar.name %>
+                  </h2>
+                  <!-- <p>
+                        <%= session.description %>
+                    </p> -->
+                  <h3>
+                      <%= session.bar.address.split(',').join("<br>").html_safe %>
+                  </h3>
+              </div>
+              <div class="icon d-flex align-items-center justify-content-space-between">
+                  <% if session.category == "latino"%>
+                  <div id="moncercle" class="moncercle-vert"></div>
+                  <% elsif session.category == "pop"%>
+                  <div id="moncercle" class="moncercle-noir"></div>
+                  <% elsif session.category == "pop"%>
+                  <div id="moncercle" class="moncercle-cyan"></div>
+                  <% elsif session.category == "dancehall"%>
+                  <div id="moncercle" class="moncercle-vert"></div>
+                  <% elsif session.category == "hip-hop"%>
+                  <div id="moncercle" class="moncercle-marron"></div>
+                  <% else %>
+                  <div></div>
+                  <% end %>
+              </div>
+          </div>
+      </div>
+      <% end %>
+      <% end %>
+  </div>
+
