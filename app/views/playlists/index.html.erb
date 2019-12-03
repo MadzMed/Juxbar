@@ -1,9 +1,7 @@
 <div class="container-playlist-card">
   <div class="header-playlist">
     <div class="nav_search_bar p-3">
-      <% if !@playlists.empty? %>
-        <%= link_to session_path(@playlists.first.session_id) do  %>
-      <% end %>
+      <%= link_to session_path(params[:session_id]) do  %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
       <i class="fas fa-bars"></i>

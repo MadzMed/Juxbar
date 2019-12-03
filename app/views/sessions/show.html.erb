@@ -2,11 +2,12 @@
   <div class="container-description-bar">
     <div class="container-show d-flex align-items-end" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300);">
       <div class="bar-card d-flex align-items-center justify-content-around mb-3 text-white">
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" />
+        <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
+        <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" /> -->
         <div class="bar-card-description">
-          <h1>ROCKWOOD</h1>
-          <h2>4  quai Louis XVIII, 33000 Bordeaux</h2>
-          <h2>Max le Barman</h2>
+          <h1><%= @session.bar.name %></h1>
+          <h2><%= @session.bar.address %></h2>
+          <p><%= @session.bar.user.username %></p>
         </div>
         <i class="fas fa-heart" id= "heart"></i>
       </div>
@@ -29,30 +30,14 @@
       <div class="title-session d-flex justify-content-start">
         <img class="avatar-thema mr-4" />
         <div class="d-flex flex-column">
-          <h1 class="title-description">Retour vers le futur !</h1>
-          <h2 class="date-thema">6 décembre 2019 - Electro</h2>
+          <h1 class="title-description"><%= @session.category %></h1>
+          <h2 class="date-thema"><%= @session.playlists.first.started_at %></h2>
         </div>
       </div>
       <div class="session-description d-flex justify-content-center">
         <p>
-          Ce soir le Rockwood ouvre une session JuxBar avec un
-          thème musicale electro. Max le barman du Rockwood qui
-          vous servira de délicieux cocktail, précise que la soirée se
-          concentrera sur électro très festive, dans la veine d’artistes
-          comme …. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-          ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod
-          tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo
-          dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-          At vero eos et accusam et justo duo
-          dolores et ea rebum. Stet clita kasd gubergren, no sea
+          <%= @session.bar.description %>
+          <%= @session.description %>
         </p>
       </div>
     </div>
