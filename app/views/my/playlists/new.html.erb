@@ -1,6 +1,6 @@
 <!-- <script>   let playlists = document.querySelectorAll(".children") </script> -->
 <div class="d-flex flex-column">
-  <div class="search_playlist container" id="navbar_playlist">
+  <div class="search_playlist" id="navbar_playlist">
     <div class="nav_search_bar">
       <%= link_to session_playlists_path(session[:session_id]) do %>
         <i class="fas fa-arrow-left"></i>
@@ -116,7 +116,6 @@
       </div>
   <div class="d-flex justify-content-center mb-5">
     <%= link_to "validate", my_playlist_path(current_user.playlists.find_by(session_id: params[:session_id]).id), class: "button btnred text-center"  %>
-  </div>
   </div>
 </div>
 

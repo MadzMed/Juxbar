@@ -9,6 +9,36 @@ $headings-font-family:    $headers-font;
 $body-bg:                 $light-gray;
 $font-size-base: 1rem;
 
+// SIZE FONT PLAYLIST & SELECTION SONS
+$artist-font-size: 39px;
+$album-font-size: 30px;
+$song-font-size: 25px;
+
+// SIZE FONT PLAYER
+$artist-player-font-size: 36px;
+$album-player-font-size: 25px;
+$song-player-font-size: 21px;
+$time-song-font-size: 20px;
+
+// SIZE FONT USER PLAYLIST
+$user-font-size: 39px;
+$user-songs-left-font-size: 23px;
+$time-songs-left-font-size: 23px;
+$position-font-size: 31px;
+
+// SIZE FONT SHOW BAR
+$bar-name-font-size: 44px;
+$bar-address-font-size: 31px;
+$party-title-font-size: 40px;
+$party-date-font-size: 30px;
+$description-bar-font-size: 27px;
+
+// SIZE FONT SELECTION PLAYLIST
+$bar-selection-font-size: 39px;
+
+
+
+
 // Colors
 $body-color: $gray;
 $primary:    $blue;
@@ -23,3 +53,4 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
