@@ -3,12 +3,12 @@
   width: 50px;
 }
 
-.form_buttons {
-  color: $light-gray;
-}
+// .form_buttons {
+//   color: $light-gray;
+// }
 
 .search_div {
-    width: 83%;
+    min-width: 70%;
     height: 70px;
     background: #103458;
     border-radius: 0 0 25px 25px;
@@ -36,23 +36,24 @@
  }
 
 
-#accordion_search_session_div {
+#search_session_div {
   position: relative;
-  &:after {
-    font-family: Montserrat;
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+    min-width: 80%;
+  // &:after {
+  //   font-family: Montserrat;
+  //   width: 18px;
+  //   height: 18px;
+  //   position: absolute;
+  //   right: 10px;
+  //   bottom: 10px;
   }
   #accordion_search_session {
     display: block;
     margin: 10px auto;
-    width: 95%;
+    min-width: 100%;
     padding: 3px 10px;
     border: 1px solid $gray;
     border-radius: 25px !important;
     outline: 0;
   }
-}
+// }
