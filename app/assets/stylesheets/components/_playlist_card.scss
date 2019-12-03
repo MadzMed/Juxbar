@@ -65,12 +65,75 @@
   padding: 20px 10px;
   border-top: 1px solid black;
   overflow: hidden;
+
 }
 
 .playlist-list-first {
   height: 189px;
   padding: 20px 10px;
   overflow: hidden;
+}
+
+.playlist-list {
+  height: 189px;
+  padding: 20px 10px;
+  border-top: 1px solid black;
+  overflow: hidden;
+
+}
+
+.playlist-list h3 {
+  //height: 189px;
+  //padding: 20px 10px;
+  //overflow: hidden;
+  font-weight: $font-weight-semi-bold;
+  font-size:$artist-font-size;
+  font-family:$main-font;
+}
+
+.playlist-list h4 {
+  //height: 189px;
+  //padding: 20px 10px;
+  //overflow: hidden;
+  font-weight: $font-weight-medium;
+  font-size: $album-font-size;
+  font-family: $main-font;
+}
+
+.playlist-list h5 {
+  //height: 189px;
+  //padding: 20px 10px;
+  //overflow: hidden;
+  font-weight: $font-weight-medium;
+  font-size: $song-font-size;
+  font-family: $main-font;
+}
+
+.playlist-list-first h3 {
+  //height: 189px;
+  //padding: 20px 10px;
+  //overflow: hidden;
+  font-weight: $font-weight-semi-bold;
+  font-size:$artist-font-size;
+  font-family:$main-font;
+}
+
+.playlist-list-first h4 {
+  //height: 189px;
+  //padding: 20px 10px;
+  //overflow: hidden;
+  font-weight: $font-weight-medium;
+  font-size: $album-font-size;
+  font-family: $main-font;
+}
+
+.playlist-list-first h5 {
+  //height: 189px;
+  //padding: 20px 10px;
+  //overflow: hidden;
+  font-weight: $font-weight-medium;
+  font-size: $song-font-size;
+  font-family: $main-font;
 }
 
 .font-height-shrink {

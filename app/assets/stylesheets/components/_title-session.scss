@@ -20,36 +20,36 @@
 
 
 .title-description h1 {
-    font-family: Montserrat;
+    font-family: $main-font;
     color: white;
-    font-size: 42px;
-    font-weight: bold;
+    font-size: $party-title-font-size;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
     margin-left: -37px;
 }
 
 .bar-card-description p {
-    font-family: Montserrat;
+    font-family: $main-font;
     color: white;
-    font-size: 25px;
-    font-weight: normal;
+    font-size: $description-bar-font-size;
+    font-weight: $font-weight-medium;
     text-transform: capitalize;
     // padding-top: 85%;
     z-index: 40000;
 }
 
 .date-thema h2 {
-    font-family: Montserrat;
+    font-family: $main-font;
     color: white !important;
-    font-size: 29px;
-    font-weight: 200;
+    font-size: $party-date-font-size;
+    font-weight: $font-weight-semi-bold;
 }
 
-.title-session {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 70% 5% 5% 5%;
+//.title-session {
+  //display: flex;
+  //justify-content: space-between;
+  //align-items: center;
+  //margin-bottom: 10px;
+  //padding: 70% 5% 5% 5%;
 
-}
+//}
