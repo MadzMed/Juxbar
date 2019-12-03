@@ -1,26 +1,29 @@
 
 .card-sessions-infos {
   width: 80vw;
-  background-color: #EAEAEA ;
+  background-color: #4C5763 ;
   border-radius: 10px;
-  border: #A9A9A9 3px solid;
+  //border: #A9A9A9 3px solid;
   min-height: 150px;
   margin: 8px;
   padding: 20px;
   box-shadow: 2px;
   position: relative;
   justify-content: space-between;
-  // font-family: 'Montserrat', sans-serif;
-
+  // font-family: $main-font, sans-serif;
 
 }
 
 .card-sessions-infos h2 {
   font-size: 30px;
-  text-decoration: underline;  color: black;
+  //text-decoration: underline;
+  color: white;
   padding: 5px;
   margin: 0px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font;
+  font-size: $map-bar-name-font-size;
+  font-weight: $font-weight-bold;
+
 }
 
 .card-sessions-infos p {
@@ -29,7 +32,8 @@
   color: black;
   padding: 5px;
   margin: 0px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font;
+
 
 }
 
@@ -37,9 +41,12 @@
   font-size: 24px;
   padding: 5px;
   text-decoration: none;
-  color: black;
+  color: #FFFFFF;
   margin: 0px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $main-font;
+  font-size: $map-bar-address-font-size;
+  font-weight: $font-weight-medium;
+
 }
 
 .content-div-index {
@@ -53,10 +60,11 @@
 
 #moncercle {
   border-radius:50%;
-  width:100px;
-  height:100px;
-  border:2px solid #679403;
+  width:90px;
+  height:90px;
+  border:2px solid #FFFFFF;
   margin: auto;
+
   // position: absolute;
   // right: 100px;
 

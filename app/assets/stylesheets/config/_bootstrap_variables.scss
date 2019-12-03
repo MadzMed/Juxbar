@@ -4,10 +4,10 @@
 // 3. You can override them below!
 
 // General style
-$font-family-sans-serif:  $body-font;
-$headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
-$font-size-base: 1rem;
+//$font-family-sans-serif:  $main-font;
+//$headings-font-family:    $headers-font;
+//$body-bg:                 $light-gray;
+//$font-size-base: 1rem;
 
 // SIZE FONT PLAYLIST & SELECTION SONS
 $artist-font-size: 39px;
@@ -21,7 +21,7 @@ $song-player-font-size: 21px;
 $time-song-font-size: 20px;
 
 // SIZE FONT USER PLAYLIST
-$user-font-size: 39px;
+$user-font-size: 37px;
 $user-songs-left-font-size: 23px;
 $time-songs-left-font-size: 23px;
 $position-font-size: 31px;
@@ -35,6 +35,11 @@ $description-bar-font-size: 27px;
 
 // SIZE FONT SELECTION PLAYLIST
 $bar-selection-font-size: 39px;
+
+// SIZE FONT MAP BARS
+$map-bar-name-font-size:31px;
+$map-bar-address-font-size:29px;
+
 
 
 

@@ -1,5 +1,5 @@
 .avatar-barman {
-  width: 76px;
+  width: 80px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
@@ -20,13 +20,13 @@
   justify-content: center;
   height: 100%;
   h1 {
-    font-size: 40px;
-  font-weight: bold;
+    font-size: $bar-name-font-size;
+  font-weight: $font-weight-bold;
   text-transform: uppercase;
   }
   h2 {
-    font-size: 25px;
-    font-weight: 600;
+    font-size: $bar-address-font-size;
+    font-weight: $font-weight-medium;
   }
   p {
     font-size: 16px;
@@ -37,12 +37,12 @@
 
 .session-description p {
     color: white;
-    font-size: 25px;
-    font-weight: normal;
+    font-size: $description-bar-font-size;
+    font-weight: $font-weight-medium;
     text-transform: capitalize;
     text-align: justify;
     width: 100%;
-    // padding: 0 8%;
+    padding: 0 8%;
     // margin: 0;
     // padding-top: 3%;
 }
