@@ -15,13 +15,14 @@
                 <div id="box">
                     <div id="items">
                       <%= link_to root_path do  %>
-                        <div class="item-menu-burger">Team JuxBar</div>
-                      <% end %>
-                      <%= link_to root_path do  %>
-                        <div class="item-menu-burger">Team JuxBar</div>
-                      <% end %>                       <%= link_to root_path do  %>
-                        <div class="item-menu-burger">Team JuxBar</div>
-                      <% end %>
+                        <div class="item-menu-burger"><%= image_tag ( "info-icon"), class: "icons-menu-session"%> Infos </div>
+                          <% end %>
+                        <%= link_to root_path do  %>
+                        <div class="item-menu-burger"><%= image_tag ( "user-icon"), class: "icons-menu-session"%> Profil </div>
+                          <% end %>
+                        <%= link_to root_path do  %>
+                        <div class="item-menu-burger"><%= image_tag ( "setting-icon"), class: "icons-menu-session"%> Paramètres </div>
+                        <%end%>
                     </div>
                 </div>
             </div>
@@ -33,7 +34,7 @@
 <div class=" col-xs-6" style=" height: 40vh; overflow: scroll; ">
     <% @sessions.each do |session| %>
     <%= link_to session_path(session.id) do %>
-      <div class="bar-card-index d-flex justify-content-center align-items-center">
+    <div class="bar-card-index d-flex justify-content-center align-items-center">
         <div class="card-sessions-infos d-flex">
             <div class="content-div-index d-flex flex-column">
                 <h2>
