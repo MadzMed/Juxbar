@@ -56,13 +56,21 @@ class My::PlaylistsController < ApplicationController
     end
   end
 
-  def update
-    raise
-    @playlist = Playlist.find(params[:id])
-  end
+  # def update
+  #   raise
+  #   @playlist = Playlist.find(params[:id])
+  # end
 
   def destroy
-    raise
+    @playlist = Playlist.find_by(session_id: params[:session_id], user_id: current_user.id)
+    @songs = @playlist.songs
+    @songs.each do |song|
+      if song.artist == params[:song][:artist] && song.title == params[:song][:title]
+        song.destroy
+        redirect_to new_session_my_playlist_path(session_id: params[:session_id])
+      end
+    end
+
   end
 
   private

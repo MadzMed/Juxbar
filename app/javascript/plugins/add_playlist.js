@@ -1,19 +1,11 @@
 const createPlaylist = () => {
   let playlists = document.querySelectorAll(".children")
-  // let playlists = document.getElementById("top-playlist").children
-  // console.log(playlists)
   playlists.forEach ((playlist) => {
     playlist.addEventListener("click", (e) => {
       playlist.children["1"].children["0"].children["0"].classList.toggle("fa-plus");
       playlist.children["1"].children["0"].children["0"].classList.toggle("fa-check");
-      // console.dir(playlists[i].children["1"].children["0"].children["0"].classList);
       let newPlaylist = document.getElementById("first-card")
       let myPlaylist = document.getElementById("myplaylist");
-      console.log(e.currentTarget)
-      // console.log(playlist)
-      // console.dir(playlist.children["1"])
-      // console.dir(document.getElementById("myplaylist").children)
-      console.dir(newPlaylist.children)
       if (newPlaylist.children.length < 5 ) {
         if (newPlaylist.children.length === 0){
           myPlaylist.style.display = "";
@@ -25,7 +17,7 @@ const createPlaylist = () => {
         // } else if (playlist.children["1"].children["0"].children["0"].classList["1"] === "fa-check") {
         }
       } else {
-        alert("trop de son maggle")
+        alert("impossible de rajouter des sons")
       }
       newPlaylist.querySelectorAll(".children").forEach((playlist) => {
         if (newPlaylist.children.length === 1){
@@ -43,4 +35,15 @@ const createPlaylist = () => {
   });
 }
 
+const destroySong = () => {
+  let songDestroy = document.querySelectorAll(".children-destroy");
+  songDestroy.forEach ((playlist) => {
+    song.addEventListener("click", (e) => {
+      playlist.setAttribute('style', 'display:none !important');
+    });
+  })
+}
+
+
 export { createPlaylist };
+export { destroySong };
