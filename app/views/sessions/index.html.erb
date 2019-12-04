@@ -54,15 +54,21 @@
               </div>
               <div class="icon d-flex align-items-center justify-content-space-between">
                   <% if session.category == "latino"%>
-                  <div id="moncercle" class="moncercle-vert"></div>
+                  <div id="moncercle" class="moncercle-orange"></div>
                   <% elsif session.category == "pop"%>
                   <div id="moncercle" class="moncercle-noir"></div>
-                  <% elsif session.category == "pop"%>
+                  <% elsif session.category == "RnB"%>
                   <div id="moncercle" class="moncercle-cyan"></div>
-                  <% elsif session.category == "dancehall"%>
+                  <% elsif session.category == "Electro"%>
                   <div id="moncercle" class="moncercle-vert"></div>
-                  <% elsif session.category == "hip-hop"%>
+                  <% elsif session.category == "Année 80"%>
                   <div id="moncercle" class="moncercle-marron"></div>
+                  <% elsif session.category == "rap"%>
+                  <div id="moncercle" class="moncercle-magenta"></div>
+                  <% elsif session.category == "Jazz"%>
+                  <div id="moncercle" class="moncercle-blue"></div>
+                  <% elsif session.category == "Rock"%>
+                  <div id="moncercle" class="moncercle-vert"></div>
                   <% else %>
                   <div></div>
                   <% end %>
