@@ -42,16 +42,7 @@ class My::PlaylistsController < ApplicationController
           @song.save
         end
       end
-    # else
-    #   @playlist = Playlist.find(params[:playlist_id])
-    #   @playlist.user_id =
-    #   @playlist.session_id = params[:session_id]
-    #   if @playlist.save
-    #     @song = Song.new(songs_params)
-    #     @song.playlist_id = @playlist.id
-    #     @song.save
-    #   end
-     end
+    end
     if @playlist.save
       respond_to do |format|
         format.html { redirect_to my_playlist_path(params[:session_id]) }
@@ -68,6 +59,9 @@ class My::PlaylistsController < ApplicationController
   def update
     raise
     @playlist = Playlist.find(params[:id])
+  end
+
+  def destroy
   end
 
   private

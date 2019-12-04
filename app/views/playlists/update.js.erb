@@ -1,0 +1,12 @@
+
+const hearts = document.querySelectorAll(".fa-heart");
+
+hearts.forEach((heart) => {
+  heart.addEventListener("click", (e) => {
+    if (e.target.id !== "heart") {
+      e.target.classList.toggle("fas");
+      e.target.classList.toggle("far");
+      e.target.style.color = e.target.style.color === 'rgb(186, 27, 29)' ? 'rgb(38, 37, 37)' : 'rgb(186, 27, 29)';
+    }
+  });
+});
