@@ -62,6 +62,7 @@ class My::PlaylistsController < ApplicationController
   end
 
   def destroy
+    raise
   end
 
   private

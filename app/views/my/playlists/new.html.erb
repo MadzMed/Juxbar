@@ -27,7 +27,7 @@
       </div>
       <div class='playlist container-playlist-card' id='first-card'>
         <% @mysongs.each do |song| %>
-          <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }, session_id: params[:session_id]), method: :delete, remote: true do  %>
+          <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }, session_id: params[:session_id]), method: :delete do  %>
             <div class="playlist-list d-flex justify-content-between children">
               <div class="d-flex text-left">
                 <span class="mr-3 mt-3"> •</span>
