@@ -1,28 +1,73 @@
-<div class="container-background">
+
+<!-- <div class="container-background">
   <div class="container-description-bar">
     <div class="container-show d-flex align-items-end">
       <div class="bar-card d-flex align-items-center justify-content-around mb-3 text-white">
-        <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
-        <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" /> -->
+        <!%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" />
         <div class="bar-card-description">
-          <h1><%= @session.bar.name %></h1>
-          <h2><%= @session.bar.address %></h2>
-          <p><%= @session.bar.user.username %></p>
+          <h1><!%= @session.bar.name %></h1>
+          <h2><!%= @session.bar.address %></h2>
+          <p><!%= @session.bar.user.username %></p>
+-->
+
+<div class="container-fluid container-background">
+  <div class="container-btn-off">
+    <div class="container-description-bar">
+        <div class="container-show d-flex align-items-end">
+            <div class="bar-card d-flex align-items-center justify-content-around mb-3 text-white"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300)">
+                <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
+                <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" /> -->
+                <div class="bar-card-description">
+                    <h1>
+                        <%= @session.bar.name %>
+                    </h1>
+                    <h2>
+                        <%= @session.bar.address %>
+                    </h2>
+                    <p>
+                        <%= @session.bar.user.username %>
+                    </p>
+                </div>
+                <i class="fas fa-heart" id="heart"></i>
+            </div>
         </div>
-        <i class="fas fa-heart" id= "heart"></i>
-      </div>
-    </div>
-    <div class="image-bar-cards-1">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="image-bar-cards-1">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
             </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      </div>
-    </div>
-    <div class="image-bar-cards-2">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
             </div>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+            </div>
+        </div>
+        <div class="image-bar-cards-2">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            </div>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+            </div>
+        </div>
+        <div class="session-bar">
+            <div class="title-session d-flex justify-content-around">
+                <div class="d-flex flex-column">
+                    <h1 class="title-description">
+                        <%= @session.category %>
+                    </h1>
+                    <h2 class="date-thema">
+                        <%= @session.playlists.first.started_at %>
+                    </h2>
+                </div>
+                <img class="avatar-thema mr-4" />
+            </div>
+            <div class="session-description d-flex justify-content-center">
+                <p>
+
+
+                    <%= @session.bar.description %>
+                    <br>
+                    <%= @session.description %>
+                </p>
+            </div>
+       <!--
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
       </div>
     </div>
@@ -30,19 +75,19 @@
       <div class="title-session d-flex">
         <img class="avatar-thema mr-4" />
         <div class="d-flex flex-column">
-          <h1 class="title-description"><%= @session.category %></h1>
-          <h2 class="date-thema"><%= @session.playlists.first.started_at %></h2>
+          <h1 class="title-description"><!%= @session.category %></h1>
+          <h2 class="date-thema"><!%= @session.playlists.first.started_at %></h2>
+         -->
+
         </div>
-      </div>
-      <div class="session-description d-flex justify-content-center">
-        <p>
-          <%= @session.bar.description %>
-          <%= @session.description %>
-        </p>
-      </div>
     </div>
   </div>
-  <div class="action-btn mb-5">
-    <%= link_to 'REJOINDRE', session_playlists_path(params[:id]), class: "btn btn-gradient" %>
-  </div>
+
+  <div class="container btn-container d-flex align-items-end justify-content-center">
+    <!-- <div class="action-btn d-flex align-items-center justify-content-center"> -->
+      <%= link_to 'REJOINDRE', session_playlists_path(params[:id]), class: "btn btn-gradient " %>
+    </div>
+  <!-- </div> -->
 </div>
+
+
