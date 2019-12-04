@@ -88,9 +88,12 @@
                     <div class="date-thema">
 
                         <% if @session.playlists.first == nil %>
-                        <p class="date-thema"> horaires non communiqués </p>
+                          <p class="date-thema"> horaires non communiqués </p>
                         <% else %>
-                       <p class="date-thema"> <%= @session.playlists.first.started_at %> </p>
+                        <h2 class="date-thema">
+                          <% t = @session.playlists.first.started_at %>
+                          <%= t.strftime("%d %b %Y - %Hh%M") %>
+                        </h2>
                         <%end%>
                     </div>
                 </div>
