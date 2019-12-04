@@ -1,21 +1,49 @@
-.button {
-  color: white;//#BA1B1D;
-  font-weight: bold;
-  padding: 8px 24px;
-  width: 30%;
-  border-radius: 25px;
-  background: #BA1B1D;//#1EDD88;
-  transition: background 0.3s ease;
-}
+// .button {
+//   color: white;//#BA1B1D;
+//   font-weight: bold;
+//   padding: 8px 24px;
+//   width: 30%;
+//   border-radius: 25px;
+//   background: #BA1B1D;//#1EDD88;
+//   transition: background 0.3s ease;
+// }
 
-.button-DJ {
-  // position: absolute;
-  // bottom: 35px;
-  // left: 300px;
-  margin: 30px auto;
-}
+// .button-DJ {
+//   // position: absolute;
+//   // bottom: 35px;
+//   // left: 300px;
+//   margin: 30px auto;
+// }
 
 .fa-arrow-left {
   color: white;
   font-size: 30px;
+}
+
+.button-1 {
+  background-color: #BA1B1B;
+  //border: 3px solid #00d7c3;
+  border-radius: 50px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: white;
+}
+
+.button-1:hover {
+  //box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+  border: 1px solid #BA1B1B;
+}
+
+.button {
+  width: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  // color: red;
+  text-transform: uppercase;
+  font-weight: 600;
+  // margin-left: 30px;
+  margin: 30px;
+  cursor: pointer;
+  display: inline-block;
 }
