@@ -5,7 +5,7 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { heartLike } from '../plugins/heart_animation';
 import { playerAdvance } from '../plugins/player_wave';
-import { createPlaylist } from '../plugins/add_playlist';
+import { createPlaylist, destroySong } from '../plugins/add_playlist';
 import { song } from '../plugins/add_playlist';
 import { anim } from '../plugins/burger_animation_slider';
 import { home, pushEnter } from '../plugins/home';
@@ -15,6 +15,10 @@ heartLike();
 playerAdvance();
 if (document.getElementById("top-playlist")) {
   createPlaylist();
+}
+
+if (document.querySelectorAll(".children-destroy")) {
+  destroySong();
 }
 if (document.querySelector('#box')) {
   anim();
