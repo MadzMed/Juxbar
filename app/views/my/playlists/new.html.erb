@@ -22,7 +22,7 @@
     <% if !@mysongs.nil? %>
       <div class="hearder-playlist-card">
         <div class="d-flex justify-content-center">
-            <h3>MA SELECTION</h3>
+            <h3>Ma Sélection</h3>
         </div>
       </div>
       <div class='playlist container-playlist-card' id='first-card'>
@@ -68,7 +68,7 @@
   <div class="topcard">
     <div class="hearder-playlist-card">
       <div class="d-flex justify-content-center">
-        <h3>TOP titre</h3>
+        <h3>Sélection <%= @playlist.session.bar.name %></h3>
       </div>
     </div>
     <div class="playlist container-playlist-card" id="top-playlist" >
@@ -82,15 +82,15 @@
                 <span class="mr-3 mt-3"><%= i %> •</span>
                 <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
-                  <h5>
+                  <h3>
                     <%= song["artist"]["name"] %>
-                  </h5>
-                  <p>
+                  </h3>
+                  <h4>
                     <%= song["album"]["title"] %>
-                  </p>
-                  <p>
+                  </h4>
+                  <h5>
                     <%= song["title"] %>
-                  </p>
+                  </h5>
                 </span>
               </div>
               <div class="d-flex flex-column">
@@ -106,15 +106,15 @@
                 <span class="mr-3 mt-3"><%= i %> •</span>
                 <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
-                  <h5>
+                  <h3>
                     <%= song["artist"]["name"] %>
-                  </h5>
-                  <p>
+                  </h3>
+                  <h4>
                     <%= song["album"]["title"] %>
-                  </p>
-                  <p>
+                  </h4>
+                  <h5>
                     <%= song["title"] %>
-                  </p>
+                  </h5>
                 </span>
               </div>
               <div class="d-flex flex-column">
