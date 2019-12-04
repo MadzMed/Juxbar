@@ -14,6 +14,39 @@
 <div class="container-fluid container-background">
   <div class="container-btn-off">
     <div class="container-description-bar">
+      <div class="container d-flex justify-content-between">
+        <div class="nav_search_bar p-3">
+          <%= link_to sessions_path do  %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+          <div class="d-inline-flex">
+            <div id="btn">
+                <div id='top'></div>
+                <div id='middle'></div>
+                <div id='bottom'></div>
+            </div>
+            <div id="box">
+                <div id="items">
+                    <%= link_to root_path do  %>
+                      <div class="item-menu-burger"> <%= image_tag "user-icon.png", class: "icons-menu-session"%> Profil </div>
+                    <% end %>
+                    <%= link_to root_path do  %>
+                      <div class="item-menu-burger"><%= image_tag "setting-icon.png", class: "icons-menu-session"%> Paramètres </div>
+                    <%end%>
+                    <%= link_to root_path do  %>
+                      <div class="item-menu-burger"><%= image_tag "info-icon.png", class: "icons-menu-session"%> Infos </div>
+                    <%end%>
+                    <%= link_to destroy_user_session_path, :method => :delete do %>
+                    <div class="item-menu-burger">
+                      <div class= "menu-sign-out"><%= image_tag "log-out.png", class: "icons-menu-session"%> Déconnexion </div>
+                    </div>
+                    <%end%>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
         <div class="container-show d-flex align-items-end">
             <div class="bar-card d-flex align-items-center justify-content-around mb-3 text-white"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300)">
                 <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
@@ -23,11 +56,11 @@
                         <%= @session.bar.name %>
                     </h1>
                     <h2>
-                        <%= @session.bar.address %>
+                        <%= @session.bar.address.split(',').join("<br>").html_safe %>
                     </h2>
-                    <p>
+                   <!--  <p>
                         <%= @session.bar.user.username %>
-                    </p>
+                    </p> -->
                 </div>
                 <i class="fas fa-heart" id="heart"></i>
             </div>
@@ -47,27 +80,53 @@
             </div>
         </div>
         <div class="session-bar">
-            <div class="title-session d-flex justify-content-around">
+            <div class="title-session d-flex justify-content-between">
                 <div class="d-flex flex-column">
                     <h1 class="title-description">
                         <%= @session.category %>
                     </h1>
-                    <h2 class="date-thema">
-                        <% t = @session.playlists.first.started_at %>
-                        <%= t.strftime("%d %b %Y - %Hh%M") %>
-                    </h2>
+                    <div class="date-thema">
+
+                        <% if @session.playlists.first == nil %>
+                          <p class="date-thema"> horaires non communiqués </p>
+                        <% else %>
+                        <h2 class="date-thema">
+                          <% t = @session.playlists.first.started_at %>
+                          <%= t.strftime("%d %b %Y - %Hh%M") %>
+                        </h2>
+                        <%end%>
+                    </div>
                 </div>
-                <img class="avatar-thema mr-4" />
+                <div>
+                  <% if @session.category == "Latino" %>
+                  <div id="moncercle" class="moncercle-orange"></div>
+                  <% elsif @session.category == "pop"%>
+                  <div id="moncercle" class="moncercle-noir"></div>
+                  <% elsif @session.category == "RnB"%>
+                  <div id="moncercle" class="moncercle-cyan"></div>
+                  <% elsif @session.category == "Electro"%>
+                  <div id="moncercle" class="moncercle-vert"></div>
+                  <% elsif @session.category == "Année 80"%>
+                  <div id="moncercle" class="moncercle-marron"></div>
+                  <% elsif @session.category == "rap"%>
+                  <div id="moncercle" class="moncercle-magenta"></div>
+                  <% elsif @session.category == "Jazz"%>
+                  <div id="moncercle" class="moncercle-blue"></div>
+                  <% elsif @session.category == "Rock"%>
+                  <div id="moncercle" class="moncercle-vert"></div>
+                  <% else %>
+                  <div></div>
+                  <% end %>
+                </div>
             </div>
             <div class="session-description d-flex justify-content-center">
                 <p>
-
-
                     <%= @session.bar.description %>
                     <br>
                     <%= @session.description %>
                 </p>
             </div>
+
        <!--
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
       </div>
@@ -84,7 +143,7 @@
     </div>
   </div>
 
-  <div class="container btn-container d-flex align-items-end justify-content-center">
+  <div class="container btn-container d-flex align-items-center justify-content-center">
     <!-- <div class="action-btn d-flex align-items-center justify-content-center"> -->
       <%= link_to 'REJOINDRE', session_playlists_path(params[:id]), class: "btn btn-gradient " %>
     </div>

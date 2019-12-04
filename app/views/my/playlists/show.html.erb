@@ -8,9 +8,9 @@
     </div>
     <div class="d-flex justify-content-between p-3">
       <div class="text-center">
-        <h5 class="mt-4"><%= @playlists.first.songs[1].artist %></h5>
+        <h2 class="mt-4"><%= @playlists.first.songs[1].artist %></h2>
         <h4><%= @playlists.first.songs[1].title %></h4>
-        <h6><%= @playlists.first.songs[1].album %></h6>
+        <h5><%= @playlists.first.songs[1].album %></h5>
       </div>
       <div>
         <%= image_tag @playlists.first.songs[1].photo_large, width: 250, height: 250 %>
@@ -66,12 +66,15 @@
             <span class="mr-3 mt-3"><%= i %> •</span>
             <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
             <span class="ml-3 black-color">
-              <h5>
+              <h3>
                 <%= song.artist %>
-              </h5>
-              <h4 class="black-color">
-                <%= song.title %>
+              </h3>
+              <h4>
+                <%= song.album %>
               </h4>
+              <h5 class="black-color">
+                <%= song.title %>
+              </h5>
             </span>
           </div>
           <div class="d-flex flex-column">
@@ -86,12 +89,15 @@
             <span class="mr-3 mt-3"><%= i %> •</span>
             <%= image_tag song.photo_album, alt: "alttext" %>
             <span class="ml-3 black-color">
-              <h5>
+              <h3>
                 <%= song.artist %>
-              </h5>
-              <h4 class="black-color">
-                <%= song.title %>
+              </h3>
+              <h4>
+                <%= song.album %>
               </h4>
+              <h5 class="black-color">
+                <%= song.title %>
+              </h5>
             </span>
           </div>
           <div class="d-flex flex-column">
