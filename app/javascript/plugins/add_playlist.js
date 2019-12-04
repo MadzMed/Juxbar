@@ -17,10 +17,10 @@ const createPlaylist = () => {
       if (newPlaylist.children.length < 5 ) {
         if (newPlaylist.children.length === 0){
           myPlaylist.style.display = "";
-          newPlaylist.insertAdjacentHTML("beforeend", `<%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }, session_id: params[:session_id]), method: :delete, remote: true do  %><div class="playlist-list-first d-flex justify-content-between children">${playlist.innerHTML}</div><% end %>`);
+          newPlaylist.insertAdjacentHTML("beforeend", `<div class="playlist-list-first d-flex justify-content-between children">${playlist.innerHTML}</div>`);
           playlist.setAttribute('style', 'display:none !important')
         } else if (playlist.children["1"].children["0"].children["0"].classList["1"] === "fa-check") {
-          newPlaylist.insertAdjacentHTML("beforeend", `<%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }, session_id: params[:session_id]), method: :delete, remote: true do  %><div class="playlist-list d-flex justify-content-between children">${playlist.innerHTML}</div><% end %>`);
+          newPlaylist.insertAdjacentHTML("beforeend", `<div class="playlist-list d-flex justify-content-between children">${playlist.innerHTML}</div>`);
           playlist.setAttribute('style', 'display:none !important')
         // } else if (playlist.children["1"].children["0"].children["0"].classList["1"] === "fa-check") {
         }
