@@ -1,35 +1,36 @@
 class PlaylistsController < ApplicationController
   def index
-    raise
     @playlists = Playlist.where(session_id: params[:session_id])
     # @playlists = Playlist.all
   end
 
   def update
-    raise
-    @like = Like.new(user_id: current_user)
-    @song = Song.find(params[:song])
-    @like.song_id = @song.id
-    @playlist = Playlist.find(params[:id])
-    # @song.new(song_params)
-    @song.playlist_id = @playlist.id
-    if @song.save
-      respond_to do |format|
-        format.html { redirect_to my_playlist_path }
-        format.js
+    if Like.where(user_id: current_user.id, song_id: params[:song]).empty?
+      @like = Like.new(user_id: current_user.id, song_id: params[:song], status: params[:like])
+      if @like.save
+        respond_to do |format|
+          format.html { redirect_to my_playlist_path }
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html { render 'my/playlists/new' }
+          format.js
+        end
       end
     else
-      respond_to do |format|
-        format.html { render 'my/playlists/new' }
-        format.js
+      @like = Like.where(user_id: current_user.id, song_id: params[:song])
+      if @like.update(status: params[:like])
+        respond_to do |format|
+          format.html { redirect_to my_playlist_path }
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html { render 'my/playlists/new' }
+          format.js
+        end
       end
     end
-    render :index
   end
-
-  private
-
-  # def song_params
-  #   params.require(:song).permit(:artist, :album, :category, :duration, :title, :deezer_id, :composer)
-  # end
 end
