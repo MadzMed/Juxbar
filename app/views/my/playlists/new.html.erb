@@ -5,7 +5,8 @@
       <%= link_to session_playlists_path(@playlist.session.id) do %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
-      <h3>SELECTION</h3>
+      <!--<h1>SELECTION</h1>-->
+      <h3>Sélection <%= @playlist.session.bar.name %></h3>
       <i class="fas fa-bars"></i>
     </div>
     <%= simple_form_for :song, url: new_session_my_playlist_path(@playlist.session_id), method: :get do %>
@@ -21,27 +22,27 @@
   <div id="myplaylist">
     <% if !@mysongs.nil? %>
       <div class="hearder-playlist-card">
-        <div class="d-flex justify-content-center">
-            <h3>Ma Sélection</h3>
+        <div class="d-flex justify-content-center align-items-center">
+            <h3>Ma Playlist</h3>
         </div>
       </div>
       <div class='playlist container-playlist-card' id='first-card'>
         <% @mysongs.each do |song| %>
           <%= link_to my_playlist_path(@playlist.id, song: {title: song.title,  artist: song.artist, album: song.album, duration: song.duration, deezer_id: song.deezer_id, photo_album: song.photo_album, photo_album: song.photo_artist, photo_large: song.photo_large,  preview: song.preview }, session_id: params[:session_id]), method: :delete do  %>
-            <div class="playlist-list d-flex justify-content-between children-destroy">
+            <div class="playlist-list d-flex justify-content-between align-items-center children-destroy">
               <div class="d-flex text-left">
-                <span class="mr-3 mt-3"> •</span>
+                <span class="mr-3 mt-3" style="color:#BA1B1D"> •</span>
                 <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
-                  <h5>
+                  <h3>
                     <%= song.artist %>
-                  </h5>
-                  <p>
+                  </h3>
+                  <h4>
                     <%= song.album %>
-                  </p>
-                  <p>
+                  </h4>
+                  <h5>
                     <%= song.title %>
-                  </p>
+                  </h5>
                 </span>
               </div>
               <div class="d-flex flex-column">
@@ -53,7 +54,7 @@
       </div>
     <% else %>
       <div class="hearder-playlist-card">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-center">
             <h3>MA SELECTION</h3>
         </div>
       </div>
@@ -67,9 +68,9 @@
 
   <div class="topcard">
     <div class="hearder-playlist-card">
-      <div class="d-flex justify-content-center">
+      <!--<div class="d-flex justify-content-center">
         <h3>Sélection <%= @playlist.session.bar.name %></h3>
-      </div>
+      </div>-->
     </div>
     <div class="playlist container-playlist-card" id="top-playlist" >
       <% @songs_var = @songs['data'] == nil ? @songs['tracks']['data'] : @songs['data'] %>
@@ -77,9 +78,9 @@
       <% @songs_var.map do |song| %>
         <% if (i==1) && !(@mysongs.map { |s| s.title }.include?(song["title"])) && !(@mysongs.map { |s| s.artist }.include?(song["artist"]["name"])) %>
           <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }, session_id: params[:session_id]), method: :post, remote: true do  %>
-            <div class="playlist-list-first d-flex justify-content-between children">
+            <div class="playlist-list-first d-flex justify-content-between align-items-center children">
               <div class="d-flex text-left">
-                <span class="mr-3 mt-3"><%= i %> •</span>
+                <span class="mr-3 mt-3" style="color:#BA1B1D"> •</span>
                 <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
                   <h3>
@@ -103,7 +104,7 @@
           <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"]  }), method: :post, remote: true do  %>
             <div class="playlist-list d-flex justify-content-between children">
               <div class="d-flex">
-                <span class="mr-3 mt-3"><%= i %> •</span>
+                <span class="mr-3 mt-3" style="color:#BA1B1D"> •</span>
                 <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
                   <h3>

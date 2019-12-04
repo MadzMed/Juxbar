@@ -11,10 +11,22 @@
   justify-content: space-between;
   align-items : center;
   padding: 0px 10px 0px 10px;
+
 }
 
 h3 {
   padding-top: 10px;
+  //font-size: $bar-selection-font-size;
+  //font-weight: $font-weight-semi-bold;
+
 }
 
-
+.nav_search_bar h1 {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items : center;
+  padding: 0px 10px 0px 10px;
+  font-size: $bar-selection-font-size;
+  font-weight: $font-weight-semi-bold;
+}
