@@ -43,17 +43,26 @@
     text-align: justify;
     width: 100%;
     padding: 0 8%;
-    // margin: 0;
-    // padding-top: 3%;
+    max-height: calc(100vh * 0.35);
+    display: flex;
+    flex-grow: 1;
 }
 
 .title-session {
   color: white;
-  padding: 0;
+  // code floppy
+  // margin: 0 65px 20px;
+  // flex-direction: row-reverse;
+  // justify-content: space-between;
+  padding: 10px 0px 15px 0px;
 }
 
 .bar-card {
   width: 100%;
+  min-height: 25vh;
+  background-size: cover;
+  background-position: center;
+
   // display: flex;
   // justify-content: space-between;
   // align-items: center;
@@ -67,4 +76,8 @@
   border: 10px;
   border-color: #091929;
 
+}
+
+.session-description {
+  height: 20vh;
 }

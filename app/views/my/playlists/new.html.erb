@@ -18,8 +18,8 @@
     <% end %>
   </div>
 
-  <% if !@mysongs.nil? %>
-    <div id="myplaylist">
+  <div id="myplaylist" style="display: none;">
+    <% if !@mysongs.nil? %>
       <div class="hearder-playlist-card">
         <div class="d-flex justify-content-center">
             <h3>MA SELECTION</h3>
@@ -37,6 +37,9 @@
                     <%= song.artist %>
                   </h5>
                   <p>
+                    <%= song.album %>
+                  </p>
+                  <p>
                     <%= song.title %>
                   </p>
                 </span>
@@ -48,19 +51,16 @@
           <% end %>
         <% end %>
       </div>
-    </div>
-  <% else %>
-    <div id="myplaylist" style="display: none;">
+    <% else %>
       <div class="hearder-playlist-card">
         <div class="d-flex justify-content-center">
             <h3>MA SELECTION</h3>
         </div>
       </div>
       <div class='playlist container-playlist-card' id='first-card'>
-
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
       <!-- inserer le nouveau son -->
 
 
@@ -86,6 +86,9 @@
                     <%= song["artist"]["name"] %>
                   </h5>
                   <p>
+                    <%= song["album"]["title"] %>
+                  </p>
+                  <p>
                     <%= song["title"] %>
                   </p>
                 </span>
@@ -106,6 +109,9 @@
                   <h5>
                     <%= song["artist"]["name"] %>
                   </h5>
+                  <p>
+                    <%= song["album"]["title"] %>
+                  </p>
                   <p>
                     <%= song["title"] %>
                   </p>
