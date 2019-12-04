@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
   namespace :my do
-    resources :playlists, only: [:show, :update]
+    resources :playlists, only: [:show, :update, :destroy]
   end
   resources :playlists, only: [:update]
   devise_scope :user do
