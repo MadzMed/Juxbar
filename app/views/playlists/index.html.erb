@@ -116,7 +116,7 @@
                 <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
                 <% if !song.likes.empty? && song.likes.find_by(user_id: current_user.id, song_id: song.id) && song.likes.find_by(user_id: current_user.id, song_id: song.id).status == true %>
                   <%= link_to playlist_path(playlist.id, like: false, song: song.id), class: "text-center", method: :patch, remote: true do %>
-                    <i class="fas fa-heart" style="color: #BA1B1D;"></i>
+                    <i class="fas fa-heart" style="color: rgb(186, 27, 29);"></i>
                   <% end %>
                 <% else %>
                   <%= link_to playlist_path(playlist.id, like: true, song: song.id), class: "text-center", method: :patch, remote: true do %>
