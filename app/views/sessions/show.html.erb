@@ -53,7 +53,8 @@
                         <%= @session.category %>
                     </h1>
                     <h2 class="date-thema">
-                        <%= @session.playlists.first.started_at %>
+                        <% t = @session.playlists.first.started_at %>
+                        <%= t.strftime("%d %b %Y - %Hh%M") %>
                     </h2>
                 </div>
                 <img class="avatar-thema mr-4" />
