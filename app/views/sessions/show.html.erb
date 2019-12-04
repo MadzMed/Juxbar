@@ -1,6 +1,6 @@
 <div class="container-background">
   <div class="container-description-bar">
-    <div class="container-show d-flex align-items-end" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300);">
+    <div class="container-show d-flex align-items-end">
       <div class="bar-card d-flex align-items-center justify-content-around mb-3 text-white">
         <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
         <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" /> -->
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="session-bar">
-      <div class="title-session d-flex justify-content-start">
+      <div class="title-session d-flex">
         <img class="avatar-thema mr-4" />
         <div class="d-flex flex-column">
           <h1 class="title-description"><%= @session.category %></h1>
