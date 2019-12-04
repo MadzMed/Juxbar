@@ -14,18 +14,19 @@
 <div class="container-fluid container-background">
   <div class="container-btn-off">
     <div class="container-description-bar">
-      <div class="container d-flex justify-content-between">
-        <div class="nav_search_bar p-3">
-          <%= link_to sessions_path do  %>
+
+        <div class="container-show col-12">
+          <div class="nav_search_bar p-3">
+            <%= link_to sessions_path do  %>
             <i class="fas fa-arrow-left"></i>
-          <% end %>
-          <div class="d-inline-flex">
-            <div id="btn">
+            <% end %>
+            <div class="d-inline-flex">
+              <div id="btn">
                 <div id='top'></div>
                 <div id='middle'></div>
                 <div id='bottom'></div>
-            </div>
-            <div id="box">
+              </div>
+              <div id="box">
                 <div id="items">
                     <%= link_to root_path do  %>
                       <div class="item-menu-burger"> <%= image_tag "user-icon.png", class: "icons-menu-session"%> Profil </div>
@@ -45,13 +46,12 @@
             </div>
           </div>
         </div>
-
-      </div>
-        <div class="container-show d-flex align-items-end">
+        <div class= "" >
             <div class="bar-card d-flex align-items-center justify-content-around mb-3 text-white"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300)">
                 <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
                 <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" /> -->
                 <div class="bar-card-description">
+
                     <h1>
                         <%= @session.bar.name %>
                     </h1>
@@ -64,6 +64,7 @@
                 </div>
                 <i class="fas fa-heart" id="heart"></i>
             </div>
+          </div>
         </div>
         <div class="image-bar-cards-1">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
