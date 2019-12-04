@@ -1,17 +1,24 @@
 .container-background {
-  // width: 828px;
-  // height: 1730px;
-  height: 100vh;
-
+  max-height: 100vh;
+  min-height: 100vh;
+  background-color: #4B5763;
 }
 
-.action-btn {
-  position: absolute;
-  bottom: 0;
-  right: calc(50vw - 160px);
-  // width: 100%;
+.container-btn-off {
+  max-height: calc(100%/8);
+  min-height: calc(100vh - 300px);
+
+}
+// .action-btn {
+//   position: absolute;
+//   bottom: 0;
+//   right: calc(50vw - 160px);
+//   // width: 100%;
   .btn-gradient {
     color: white;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     // width: 270px;
     // height: 80px;
     padding: 24px 120px;
@@ -21,6 +28,8 @@
     background: #BA1B1D;
     transition: background 0.3s ease;
   }
-}
 
+.btn-container {
+  min-height: calc(100vh * 0.12);
+}
 
