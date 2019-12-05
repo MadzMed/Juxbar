@@ -5,7 +5,7 @@
       <%= link_to session_playlists_path(@playlist.session.id) do %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
-      <h3>SELECTION</h3>
+      <h3>Sélection <%= @playlist.session.bar.name %></h3>
       <i class="fas fa-bars"></i>
     </div>
     <%= simple_form_for :song, url: new_session_my_playlist_path(@playlist.session_id), method: :get do %>
@@ -13,7 +13,7 @@
         <input type="search"
           name="search[query]"
           id="accordion_search_bar"
-          placeholder="Search"/>
+          placeholder="Themes, artistes, titres..."/>
       </div>
     <% end %>
   </div>
@@ -22,7 +22,7 @@
     <% if !@mysongs.nil? %>
       <div class="hearder-playlist-card">
         <div class="d-flex justify-content-center">
-            <h3>Ma Sélection</h3>
+            <h3>Ma Playlist</h3>
         </div>
       </div>
       <div class='playlist container-playlist-card' id='first-card'>
@@ -66,11 +66,11 @@
 
 
   <div class="topcard">
-    <div class="hearder-playlist-card">
+    <!-- <div class="hearder-playlist-card">
       <div class="d-flex justify-content-center">
-        <h3>Sélection <%= @playlist.session.bar.name %></h3>
+
       </div>
-    </div>
+    </div> -->
     <div class="playlist container-playlist-card" id="top-playlist" >
       <% @songs_var = @songs['data'] == nil ? @songs['tracks']['data'] : @songs['data'] %>
       <% i = 1 %>

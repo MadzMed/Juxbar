@@ -6,8 +6,9 @@
   margin: 0 auto;
   height: 195px;
   background-color: $cardblue;
-  border-radius: 25px 25px 0px 0px;
-  padding: 1px 20px 15px 20px;
+
+  border-radius: 25px 25px 25px 25px;
+  padding: 15px 20px;
   border: 0;
   overflow: hidden;
   color: white;
@@ -22,7 +23,7 @@
   width: 90vw;
   // height: 529px;
   background: linear-gradient($playerblue, $playerbluelight);
-  border-radius: 0px 0px 25px 25px;
+  border-radius: 25px 25px 25px 25px;
   padding: 20px 20px 40px 20px;
   border: 0;
   overflow: hidden;
@@ -150,7 +151,7 @@
 
 .topcard {
   position: relative;
-  top: 90px;
+  top: 200px;
 }
 
 .topcard h3 {
