@@ -16,11 +16,21 @@
         <div>
           <%= image_tag @playlists.first.songs[0].photo_large, width: 278, height: 278, class: "photo-album-border" %>
         </div>
+        <div class="d-flex justify-content-around align-items-center w-25">
+          <div class="avatar-thema-medium"></div>
+          <div class="text-center">
+            <% if !@playlists.first.songs[0].likes.empty? && @playlists.first.songs[0].likes.find_by(user_id: current_user.id, song_id: @playlists.first.songs[0].id) && @playlists.first.songs[0].likes.find_by(user_id: current_user.id, song_id: @playlists.first.songs[0].id).status == true %>
+              <%= link_to playlist_path(@playlists.first.id, like: false, song: @playlists.first.songs[0].id), class: "text-center", method: :patch, remote: true do %>
+                <i class="fas fa-heart icon-large" style="color: #BA1B1D;"></i>
+              <% end %>
+            <% else %>
+              <%= link_to playlist_path(@playlists.first.id, like: true, song: @playlists.first.songs[0].id), class: "text-center", method: :patch, remote: true do %>
+                <i class="far fa-heart icon-large" style="color: white"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
-      <div class="d-flex justify-content-around align-items-center w-25">
-        <div class="avatar-thema-medium"></div>
-        <div class="text-center"><i class="fas fa-heart icon-large" id="heart"></i></div>
-      </div>
     </div>
      <div class="w-100">
       <svg viewBox="0 0 100 5" xmlns="http://www.w3.org/2000/svg" id="top-waves">

@@ -39,22 +39,28 @@
     color: white;
     font-size: $description-bar-font-size;
     font-weight: $font-weight-medium;
+    line-height: 1.25;
+
     // text-transform: capitalize;
     text-align: justify;
     width: 100%;
-    padding: 0 8%;
+    // padding: 0 8%;
     max-height: calc(100vh * 0.35);
     display: flex;
     flex-grow: 1;
+    margin-top: 20px;
+
 }
 
 .title-session {
   color: white;
+  margin-top: 40px;
+
   // code floppy
   // margin: 0 65px 20px;
   // flex-direction: row-reverse;
   // justify-content: space-between;
-  padding: 0 8%;
+  // padding: 0 8%;
 }
 
 .bar-card {
