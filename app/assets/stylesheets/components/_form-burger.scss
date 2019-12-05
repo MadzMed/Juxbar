@@ -19,8 +19,8 @@ $easing: cubic-bezier(.6, .05, .28, .91);
   position: fixed;
   color: red;
   z-index: 199;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 25px;
   cursor: pointer;
   transition: right 500ms $easing;
   div {
