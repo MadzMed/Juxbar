@@ -15,14 +15,18 @@
   width: 100%;
   position: absolute;
   top: 0;
-  padding: 25px;
+  padding: 30px 0 0 80px;
   #btn {
     div {
       background-color: white;
     }
-    right: 25px;
-    top: 25px;
+    right: 66px;
+    top: 30px;
   }
+}
+
+#banner-show {
+  width: 100%;
 }
 
 // .nav_bar_show {
