@@ -107,6 +107,7 @@
   font-weight: $font-weight-medium;
   font-size: $song-font-size;
   font-family: $main-font;
+  text-overflow: ellipsis;
 }
 
 .playlist-list-first h3 {
@@ -116,6 +117,7 @@
   font-weight: $font-weight-semi-bold;
   font-size:$artist-font-size;
   font-family:$main-font;
+  text-overflow: ellipsis;
 }
 
 .playlist-list-first h4 {
@@ -125,6 +127,7 @@
   font-weight: $font-weight-medium;
   font-size: $album-font-size;
   font-family: $main-font;
+  text-overflow: ellipsis;
 }
 
 .playlist-list-first h5 {
@@ -160,6 +163,7 @@
   font-weight: $font-weight-semi-bold;
   font-size:$artist-font-size;
   font-family:$main-font;
+  text-overflow: ellipsis;
 }
 
 .topcard h4 {
@@ -168,6 +172,7 @@
   font-weight: $font-weight-medium;
   font-size: $album-font-size;
   font-family: $main-font;
+  text-overflow: ellipsis;
 }
 
 .topcard h5 {
@@ -176,6 +181,7 @@
   font-weight: $font-weight-medium;
   font-size: $song-font-size;
   font-family: $main-font;
+  text-overflow: ellipsis;
 }
 
 #top-playlist {
@@ -217,26 +223,32 @@
 }
 
 .playlist-titles {
+  max-width: 33%;
   h2 {
     font-size: $artist-player-font-size;
     font-weight: $font-weight-semi-bold;
     font-family: $main-font;
+    text-overflow: ellipsis;
   }
 
   h4 {
     font-size: $album-player-font-size;
     font-weight: $font-weight-medium;
     font-family: $main-font;
+    text-overflow: ellipsis;
   }
 
   h5 {
     font-size:$song-player-font-size;
     font-weight: $font-weight-medium;
     font-family: $main-font;
+    text-overflow: ellipsis;
   }
 }
 
-
+.icon-large {
+  font-size: 3em;
+}
 
 .user-info {
 
