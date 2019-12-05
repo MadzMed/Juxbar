@@ -29,7 +29,7 @@
         <% @mysongs.each do |song| %>
           <%= link_to my_playlist_path(@playlist.id, song: {title: song.title,  artist: song.artist, album: song.album, duration: song.duration, deezer_id: song.deezer_id, photo_album: song.photo_album, photo_album: song.photo_artist, photo_large: song.photo_large,  preview: song.preview }, session_id: params[:session_id]), method: :delete do  %>
             <div class="playlist-list d-flex justify-content-between children-destroy">
-              <div class="d-flex text-left">
+              <div class="d-flex text-left align-items-center">
                 <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
@@ -44,7 +44,7 @@
                   </p>
                 </span>
               </div>
-              <div class="d-flex flex-column">
+              <div class="d-flex align-items-center pr-4">
                 <span class="text-center"><i class="fas fa-check"></i></span>
               </div>
             </div>
@@ -78,8 +78,8 @@
         <% if (i==1) && !(@mysongs.map { |s| s.title }.include?(song["title"])) && !(@mysongs.map { |s| s.artist }.include?(song["artist"]["name"])) %>
           <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }, session_id: params[:session_id]), method: :post, remote: true do  %>
             <div class="playlist-list-first d-flex justify-content-between children">
-              <div class="d-flex text-left">
-                <span class="mr-3 mt-3"><%= i %> •</span>
+              <div class="d-flex text-left align-items-center">
+                <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
                   <h3>
@@ -93,7 +93,7 @@
                   </h5>
                 </span>
               </div>
-              <div class="d-flex flex-column">
+              <div class="d-flex align-items-center pr-4">
                 <span class="text-center"><i class="fas fa-plus"></i></span>
               </div>
             </div>
@@ -102,8 +102,8 @@
         <% elsif !@mysongs.map { |s| s.title }.include?(song["title"]) && !@mysongs.map { |s| s.artist }.include?(song["artist"]["name"]) %>
           <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"]  }), method: :post, remote: true do  %>
             <div class="playlist-list d-flex justify-content-between children">
-              <div class="d-flex">
-                <span class="mr-3 mt-3"><%= i %> •</span>
+              <div class="d-flex text-left align-items-center">
+                <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
                 <span class="ml-3">
                   <h3>
@@ -117,7 +117,7 @@
                   </h5>
                 </span>
               </div>
-              <div class="d-flex flex-column">
+              <div class="d-flex align-items-center pr-4">
                 <span class="text-center"><i class="fas fa-plus"></i></span>
               </div>
             </div>
@@ -127,7 +127,7 @@
       <% end %>
     </div>
   <div class="d-flex justify-content-center mb-5">
-    <%= link_to "validate", my_playlist_path(current_user.playlists.find_by(session_id: params[:session_id]).id), class: "button btnred text-center"  %>
+    <%= link_to "valider", my_playlist_path(current_user.playlists.find_by(session_id: params[:session_id]).id), class: "button button-1"  %>
   </div>
 </div>
 

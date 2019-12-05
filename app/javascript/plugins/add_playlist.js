@@ -4,17 +4,16 @@ const createPlaylist = () => {
     playlist.addEventListener("click", (e) => {
       playlist.children["1"].children["0"].children["0"].classList.toggle("fa-plus");
       playlist.children["1"].children["0"].children["0"].classList.toggle("fa-check");
-      let newPlaylist = document.getElementById("first-card")
+      let newPlaylist = document.getElementById("first-card");
       let myPlaylist = document.getElementById("myplaylist");
       if (newPlaylist.children.length < 5 ) {
         if (newPlaylist.children.length === 0){
           myPlaylist.style.display = "";
           newPlaylist.insertAdjacentHTML("beforeend", `<div class="playlist-list-first d-flex justify-content-between children">${playlist.innerHTML}</div>`);
-          playlist.setAttribute('style', 'display:none !important')
+          playlist.setAttribute('style', 'display:none !important');
         } else if (playlist.children["1"].children["0"].children["0"].classList["1"] === "fa-check") {
           newPlaylist.insertAdjacentHTML("beforeend", `<div class="playlist-list d-flex justify-content-between children">${playlist.innerHTML}</div>`);
-          playlist.setAttribute('style', 'display:none !important')
-        // } else if (playlist.children["1"].children["0"].children["0"].classList["1"] === "fa-check") {
+          playlist.setAttribute('style', 'display:none !important');
         }
       } else {
         alert("impossible de rajouter des sons")
@@ -37,9 +36,9 @@ const createPlaylist = () => {
 
 const destroySong = () => {
   let songDestroy = document.querySelectorAll(".children-destroy");
-  songDestroy.forEach ((playlist) => {
+  songDestroy.forEach ((song) => {
     song.addEventListener("click", (e) => {
-      playlist.setAttribute('style', 'display:none !important');
+      song.setAttribute('style', 'display:none !important');
     });
   })
 }

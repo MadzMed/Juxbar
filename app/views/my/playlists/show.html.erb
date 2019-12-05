@@ -62,9 +62,9 @@
       <% sum += song.duration %>
       <% if i==1 %>
         <div class="playlist-list-first d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-remote="true">
-          <div class="d-flex font-height-shrink">
-            <span class="mr-3 mt-3"><%= i %> •</span>
-            <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
+          <div class="d-flex font-height-shrink align-items-center">
+            <span class="mr-3 mt-3"> •</span>
+            <%= image_tag song.photo_album, alt: song.album, width:114, height:114 %>
             <span class="ml-3 black-color">
               <h3>
                 <%= song.artist %>
@@ -77,17 +77,25 @@
               </h5>
             </span>
           </div>
-          <div class="d-flex flex-column">
+          <div class="d-flex flex-column justify-content-center pr-4">
             <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
-            <span class="text-center"><i class="far fa-heart"></i></span>
+              <% if !song.likes.empty? && song.likes.find_by(user_id: current_user.id, song_id: song.id) && song.likes.find_by(user_id: current_user.id, song_id: song.id).status == true %>
+                <%= link_to playlist_path(@playlist.id, like: false, song: song.id), class: "text-center", method: :patch, remote: true do %>
+                  <i class="fas fa-heart" style="color: rgb(186, 27, 29);"></i>
+                <% end %>
+              <% else %>
+                <%= link_to playlist_path(@playlist.id, like: true, song: song.id), class: "text-center", method: :patch, remote: true do %>
+                  <i class="far fa-heart" style="color: #262525;"></i>
+                <% end %>
+              <% end %>
           </div>
         </div>
         <% i += 1 %>
       <% else %>
         <div class="playlist-list d-flex justify-content-between" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-remote="true">
-          <div class="d-flex font-height-shrink">
-            <span class="mr-3 mt-3"><%= i %> •</span>
-            <%= image_tag song.photo_album, alt: "alttext" %>
+          <div class="d-flex font-height-shrink align-items-center">
+            <span class="mr-3 mt-3"> •</span>
+            <%= image_tag song.photo_album, alt: song.album, width:114, height:114 %>
             <span class="ml-3 black-color">
               <h3>
                 <%= song.artist %>
@@ -100,9 +108,17 @@
               </h5>
             </span>
           </div>
-          <div class="d-flex flex-column">
+          <div class="d-flex flex-column justify-content-center pr-4">
             <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
-            <span class="text-center"><i class="far fa-heart"></i></span>
+              <% if !song.likes.empty? && song.likes.find_by(user_id: current_user.id, song_id: song.id) && song.likes.find_by(user_id: current_user.id, song_id: song.id).status == true %>
+                <%= link_to playlist_path(@playlist.id, like: false, song: song.id), class: "text-center", method: :patch, remote: true do %>
+                  <i class="fas fa-heart" style="color: rgb(186, 27, 29);"></i>
+                <% end %>
+              <% else %>
+                <%= link_to playlist_path(@playlist.id, like: true, song: song.id), class: "text-center", method: :patch, remote: true do %>
+                  <i class="far fa-heart" style="color: #262525;"></i>
+                <% end %>
+              <% end %>
           </div>
         </div>
         <% i += 1 %>
@@ -110,6 +126,6 @@
     <% end %>
   </div>
   <div class="d-flex justify-content-center my-2">
-    <%= link_to "validate", session_playlists_path(@playlist.session_id), class: "button btnred text-center"  %>
+    <%= link_to "valider", session_playlists_path(@playlist.session_id), class: "button button-1"  %>
   </div>
 </div>

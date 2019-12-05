@@ -9,12 +9,12 @@
     <div class="d-flex justify-content-between align-items-center p-4 mb-4">
       <% if !@playlists.empty? %>
         <div class="text-center">
-          <h2 class="mt-4"><%= @playlists.first.songs[4].artist %></h2>
-          <h4><%= @playlists.first.songs[4].title %></h4>
-          <h5><%= @playlists.first.songs[4].album %></h5>
+          <h2 class="mt-4"><%= @playlists.first.songs[0].artist %></h2>
+          <h4><%= @playlists.first.songs[0].title %></h4>
+          <h5><%= @playlists.first.songs[0].album %></h5>
         </div>
         <div>
-          <%= image_tag @playlists.first.songs[4].photo_large, width: 278, height: 278, class: "photo-album-border" %>
+          <%= image_tag @playlists.first.songs[0].photo_large, width: 278, height: 278, class: "photo-album-border" %>
         </div>
       <% end %>
       <div class="d-flex justify-content-around align-items-center w-25">
@@ -45,8 +45,8 @@
     <% @playlists.each do |playlist| %>
       <div class="hearder-playlist-card">
         <div class="d-flex justify-content-between">
-          <div class="d-flex" style="align-items: center">
-            <img src=<%= playlist.user.photo %> alt=<%= playlist.user.username %> class="avatar-playlist-card">
+          <div class="d-flex align-items-center">
+            <img src=<%= playlist.user.photo %> alt= playlist.user.username class="avatar-playlist-card">
             <h4 class="ml-3"><%= playlist.user.username %></h4>
           </div>
           <div class="text-right" style="margin: 30px 20px 0 0">
@@ -66,8 +66,8 @@
         <% playlist.songs.each do |song| %>
           <% if i==1 %>
             <div class="playlist-list-first d-flex justify-content-between" id= "first-playlist-songs" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-song-photo-album="<%= song.photo_album %>" data-song-photo-artist="<%= song.photo_artist %>" data-song-photo-album-large="<%= song.photo_large %>">
-              <div class="d-flex font-height-shrink">
-                <span class="mr-3 mt-3"><%= i %> •</span>
+              <div class="d-flex font-height-shrink align-items-center">
+                <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song.photo_album, alt: song.album, width:114, height:114 %>
                 <span class="ml-3 black-color">
                   <h3>
@@ -81,7 +81,7 @@
                   </h5>
                 </span>
               </div>
-              <div class="d-flex flex-column">
+              <div class="d-flex flex-column justify-content-center pr-4">
                 <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S") %></span>
                 <% if !song.likes.empty? && song.likes.find_by(user_id: current_user.id, song_id: song.id) && song.likes.find_by(user_id: current_user.id, song_id: song.id).status == true %>
                   <%= link_to playlist_path(playlist.id, like: false, song: song.id), class: "text-center", method: :patch, remote: true do %>
@@ -97,8 +97,8 @@
             <% i += 1 %>
           <% else %>
             <div class="playlist-list d-flex justify-content-between" id= "playlist-songs" data-song-id="<%= song.id %>" data-song-title="<%= song.title %>" data-song-artist="<%= song.artist %>" data-song-album="<%= song.album %>" data-song-category="<%= song.category %>" data-song-duration="<%= song.duration %>" data-song-deezer-id="<%= song.deezer_id %>" data-song-composer="<%= song.composer %>" data-song-photo-album="<%= song.photo_album %>" data-song-photo-artist="<%= song.photo_artist %>" data-song-photo-album-large="<%= song.photo_large %>">
-              <div class="d-flex font-height-shrink">
-                <span class="mr-3 mt-3"><%= i %> •</span>
+              <div class="d-flex font-height-shrink align-items-center">
+                <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
                 <span class="ml-3 black-color">
                   <h3>
@@ -112,7 +112,7 @@
                   </h5>
                 </span>
               </div>
-              <div class="d-flex flex-column">
+              <div class="d-flex flex-column justify-content-center pr-4">
                 <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
                 <% if !song.likes.empty? && song.likes.find_by(user_id: current_user.id, song_id: song.id) && song.likes.find_by(user_id: current_user.id, song_id: song.id).status == true %>
                   <%= link_to playlist_path(playlist.id, like: false, song: song.id), class: "text-center", method: :patch, remote: true do %>
@@ -133,7 +133,7 @@
     <% end %>
   <% end %>
   <div class="d-flex justify-content-center">
-    <%= link_to "DJ", new_session_my_playlist_path(params[:session_id]), class: "button button-DJ text-center"  %>
+    <%= link_to "DJ", new_session_my_playlist_path(params[:session_id]), class: "button button-1 "  %>
   </div>
 </div>
 
