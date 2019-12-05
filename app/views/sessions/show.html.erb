@@ -48,7 +48,8 @@
             </div>
           </div>
           <div class=" d-flex justify-content-around align-items-center" id="banner-show">
-                <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
+            <div class="d-flex justify-content-left align-items-center">
+                <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered" %>
                 <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" /> -->
                 <div class="bar-card-description">
 
@@ -58,7 +59,8 @@
                     <h2>
                         <%= @session.bar.address.split(',').join("<br>").html_safe %>
                     </h2>
-                   <!--  <p>
+                 </div>
+                  <!--  <p>
                         <%= @session.bar.user.username %>
                     </p> -->
                 </div>
