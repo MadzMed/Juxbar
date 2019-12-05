@@ -32,20 +32,20 @@
               <div class="d-flex text-left align-items-center">
                 <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
-                <span class="ml-3">
-                  <h5>
+                <span class="ml-3 ellipsis">
+                  <h3>
                     <%= song.artist %>
-                  </h5>
-                  <p>
+                  </h3>
+                  <h4>
                     <%= song.album %>
-                  </p>
-                  <p>
+                  </h4>
+                  <h5>
                     <%= song.title %>
-                  </p>
+                  </h5>
                 </span>
               </div>
               <div class="d-flex align-items-center pr-4">
-                <span class="text-center"><i class="fas fa-check"></i></span>
+                <span class="text-center"><i class="fas fa-check icon-medium"></i></span>
               </div>
             </div>
           <% end %>
@@ -81,7 +81,7 @@
               <div class="d-flex text-left align-items-center">
                 <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
-                <span class="ml-3">
+                <span class="ml-3 ellipsis">
                   <h3>
                     <%= song["artist"]["name"] %>
                   </h3>
@@ -94,7 +94,7 @@
                 </span>
               </div>
               <div class="d-flex align-items-center pr-4">
-                <span class="text-center"><i class="fas fa-plus"></i></span>
+                <span class="text-center"><i class="fas fa-plus icon-medium"></i></span>
               </div>
             </div>
           <% end %>
@@ -105,7 +105,7 @@
               <div class="d-flex text-left align-items-center">
                 <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song["album"]["cover_small"], alt: "alttext", width:114, height:114 %>
-                <span class="ml-3">
+                <span class="ml-3 ellipsis">
                   <h3>
                     <%= song["artist"]["name"] %>
                   </h3>
@@ -118,7 +118,7 @@
                 </span>
               </div>
               <div class="d-flex align-items-center pr-4">
-                <span class="text-center"><i class="fas fa-plus"></i></span>
+                <span class="text-center"><i class="fas fa-plus icon-medium"></i></span>
               </div>
             </div>
           <% end %>

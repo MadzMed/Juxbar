@@ -246,8 +246,19 @@
   }
 }
 
+.ellipsis {
+  max-width: 75%;
+  h3, h4, h5 {
+    text-overflow: ellipsis;
+  }
+}
+
 .icon-large {
   font-size: 3em;
+}
+
+.icon-medium {
+  font-size: x-large;
 }
 
 .user-info {
