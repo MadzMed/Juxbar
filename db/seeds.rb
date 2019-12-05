@@ -18,7 +18,7 @@ j = User.create(email: "jojo@gmail.com", password: "juxbar", username: "Jonathan
 f = User.create(email: "fred@gmail.com", password: "juxbar", username: "Fred", barman: true, photo: "https://images.unsplash.com/photo-1567631015346-4d8fce3fae81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
 n = User.create(email: "marie@gmail.com", password: "juxbar", username: "Marie", barman: true, photo: "https://images.unsplash.com/photo-1521898130196-7b90b77c704e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
 l = User.create(email: "laura@gmail.com", password: "juxbar", username: "Laura", barman: true, photo: "https://images.unsplash.com/photo-1555084415-b708df0fef3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=881&q=80")
-b = User.create(email: "bob@gmail.com", password: "juxbar", username: "Bob", barman: false, photo: "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1479&q=80")
+b = User.create(email: "bertrand@gmail.com", password: "juxbar", username: "Bertrand", barman: true, photo: "https://avatars1.githubusercontent.com/u/9798952?v=4")
 a = User.create(email: "anna@gmail.com", password: "juxbar", username: "Anna", barman: false, photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
 t = User.create(email: "thomas@gmail.com", password: "juxbar", username: "Thomas", barman: false, photo: "https://images.unsplash.com/photo-1505503693641-1926193e8d57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2667&q=80")
 # BARS
