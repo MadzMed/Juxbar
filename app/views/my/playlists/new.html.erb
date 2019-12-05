@@ -5,7 +5,8 @@
       <%= link_to session_playlists_path(@playlist.session.id) do %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
-      <h3>Sélection <%= @playlist.session.bar.name %></h3>
+      <h3 style="font-weight: 600; font-size: 39px; font-family: "Montserrat", "sans-serif";
+    text-overflow: ellipsis;">Sélection <%= @playlist.session.bar.name %></h3>
       <i class="fas fa-bars"></i>
     </div>
     <%= simple_form_for :song, url: new_session_my_playlist_path(@playlist.session_id), method: :get do %>
