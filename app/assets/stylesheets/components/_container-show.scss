@@ -11,4 +11,34 @@
 //    background-size: cover;
 //    background-repeat: no-repeat;
 // }
+.nav_bar_show {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 25px;
+  #btn {
+    div {
+      background-color: white;
+    }
+    right: 25px;
+    top: 25px;
+  }
+}
 
+// .nav_bar_show {
+//   #btn.active {
+//     right: 240px;
+//     top: 138px;
+//   } div {
+//     background-color: white;
+//   #top {
+//     transform:translate(110px,550px) rotate(135deg);
+//   }
+//   #middle {
+//     opacity: 0;
+//     transform: rotate(-135deg);
+//   }
+//   #bottom {
+//     transform: translate(110px, 509px) rotate(45deg)  }
+// }
+// }
