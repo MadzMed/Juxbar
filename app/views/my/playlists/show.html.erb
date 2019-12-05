@@ -120,7 +120,7 @@
               </h5>
             </span>
           </div>
-          <div class="d-flex flex-column justify-content-center pr-4">
+          <div class="duration-heart d-flex flex-column justify-content-center pr-4">
             <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
               <% if !song.likes.empty? && song.likes.find_by(user_id: current_user.id, song_id: song.id) && song.likes.find_by(user_id: current_user.id, song_id: song.id).status == true %>
                 <%= link_to playlist_path(@playlist.id, like: false, song: song.id), class: "text-center", method: :patch, remote: true do %>
