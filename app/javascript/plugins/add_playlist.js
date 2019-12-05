@@ -36,6 +36,7 @@ const createPlaylist = () => {
 
 const destroySong = () => {
   let songDestroy = document.querySelectorAll(".children-destroy");
+  let topPlaylist = document.getElementById('top-playlist');
   songDestroy.forEach ((song) => {
     song.addEventListener("click", (e) => {
       song.setAttribute('style', 'display:none !important');
