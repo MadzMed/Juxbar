@@ -43,6 +43,9 @@ Session.create(bar_id: 6, description: "Ce soir session JUXBAR: 3h", category: "
 Session.create(bar_id: 7, description: "Ce soir session JUXBAR: 1h", category: "Jazz")
 Session.create(bar_id: 8, description: "Ce soir session JUXBAR: 2h", category: "Année 80")
 Session.create(bar_id: 1, description: "Ce soir session JUXBAR: 1h", category: "Latino")
+Session.create(bar_id: 9, description: "Ce soir session JUXBAR: All night long", category: "Année 80")
+
+
 p = Playlist.create(user_id: 1, started_at: Time.now, session_id: 1)
 m = Playlist.create(user_id: 2, started_at: Time.now, session_id: 2)
 d = Playlist.create(user_id: 3, started_at: Time.now, session_id: 3)
