@@ -40,6 +40,7 @@ const destroySong = () => {
   songDestroy.forEach ((song) => {
     song.addEventListener("click", (e) => {
       song.setAttribute('style', 'display:none !important');
+      topPlaylist.insertAdjacentHTML("beforeend", `<div class="playlist-list d-flex justify-content-between children">${song.innerHTML}</div>`);
     });
   })
 }
