@@ -31,19 +31,19 @@ Bar.create(name: "Empire", address: "14 Rue de la Devise, 33000 Bordeaux", user_
 Bar.create(name: "Iboat", address: "3 Cours Henri Brunet, 33300 Bordeaux", user_id: n.id, description: "Solidement ancré dans sa ville et dans son quartier, l’IBOAT se positionne comme un outil de diffusion atypique et indépendant. Porteur d’une politique culturelle curieuse et ambitieuse, l’équipage déploie ponctuellement son action en dehors des murs.", image: "https://medias.otbor.vm.aiprod.com/original/LOIAQU033V500OJ6/0-Entree-iboat-nuit-2.jpg")
 Bar.create(name: "La Comtesse", address: "25 Rue du Parlement Saint-Pierre, 33000 Bordeaux", user_id: f.id, description: "Si vous êtes amatrice de mojito, la Comtesse est pour vous ! Pétillante, sucrée comme il faut et rehaussée par des framboises fraîches, la célèbre boisson de Cuba est la star du lieu. Mais avant d’y goûter, il vous faudra passer par la porte ornée de photos kitsch qui vous laissent pénétrer dans l’univers de la Comtesse fait de meubles chinés.", image: "https://live.staticflickr.com/3680/12040749784_53817ae920_b.jpg")
 Bar.create(name: "Apollo", address: "19 Place Fernand Lafargue, 33000 Bordeaux", user_id: l.id, description: "L’apollo bar est situé au 19 place Fernand Laffargue, véritable place phare du centre ville, au cœur du quartier historique de Bordeaux. L’ effervescence de la place est réanimée, son agitation se retranscrit entre les murs de l’apollo.", image: "https://www.airbnb.com/google_place_photo?photoreference=CmRaAAAA42lWgq8qwZ82Vh4FnWf0OSABcWlhZKBY9dXYYk11c3o3IknFb35no7ASBZqCJZWs-4Havs6ukNmCsqO2P9OqhQ49ffrfaYdn0tAqWMLBtlQiB0q-Zy-waZ3Z3H5xb_xVEhCFIGLIcPMYoq3CCwhghLciGhRPsJim5pk9FvBo73eaETzWRT7KAg&maxwidth=1000&maxheight=1000&place_id=144098")
-Bar.create(name: "Le Wagon", address: "107 cours balguerie stuttenberg, 33300 Bordeaux", user_id: j.id, description: "Apprenez à coder autour d'une bière pour changer de vie!!!", image: "https://uca43db9905549976d8849e2933d.previews.dropboxusercontent.com/p/thumb/AApp8hL0gyrQvVGvQ4ym2qVgcX0P8z_G_yntRRBf6jmfi50maIouNwXmp0SRzV4TUulzW_C_AAjAJuGiaxlkE2bTTwsLzujYKnWh28LkqG9rs4T8TOPXhroX36jlVwobEyFLmdJW0-SHQDfS4361q3tE2-ScKsXERJmuWWsy5uB8HpsqZZdLrWYeNAag0iQMc2Ft6LBtRTap0-iXsuI5XiP18jYuTQ6_0qXn9xCK8iwmpE8OF_cfq6a0OUd_CU-Rz_2tYbn7mlGn1zJcX2U3dDJh-bqRcGKgsUVlIkn8R_FiOIyYY58ROcEvLcIwXm8-duzTtkF6TuYIQKvS1NiHjhk56PNk_Cfgd58n30Zgnr_2pyScxir3aWwW4WpbKzlt3JPzAEIKg_DyMDqqgZEKgP4E5IXwLmmPEn1ENE80kJEsNB4j2hdRma2lQRWtYsRt6uo/p.jpeg?fv_content=true&size_mode=5")
+Bar.create(name: "Le Wagon", address: "107 cours balguerie stuttenberg, 33300 Bordeaux", user_id: j.id, description: "Merci à tous pour ces 9 semaines de bonheur, d'entraide, de rires, et parfois de larmes. Merci à toute l'équipe du Wagon pour ces rencontres, pour ces découvertes, pour ces maux de têtes... La team JUXBAR vous envoie un maximum de love.", image: "https://uca43db9905549976d8849e2933d.previews.dropboxusercontent.com/p/thumb/AApp8hL0gyrQvVGvQ4ym2qVgcX0P8z_G_yntRRBf6jmfi50maIouNwXmp0SRzV4TUulzW_C_AAjAJuGiaxlkE2bTTwsLzujYKnWh28LkqG9rs4T8TOPXhroX36jlVwobEyFLmdJW0-SHQDfS4361q3tE2-ScKsXERJmuWWsy5uB8HpsqZZdLrWYeNAag0iQMc2Ft6LBtRTap0-iXsuI5XiP18jYuTQ6_0qXn9xCK8iwmpE8OF_cfq6a0OUd_CU-Rz_2tYbn7mlGn1zJcX2U3dDJh-bqRcGKgsUVlIkn8R_FiOIyYY58ROcEvLcIwXm8-duzTtkF6TuYIQKvS1NiHjhk56PNk_Cfgd58n30Zgnr_2pyScxir3aWwW4WpbKzlt3JPzAEIKg_DyMDqqgZEKgP4E5IXwLmmPEn1ENE80kJEsNB4j2hdRma2lQRWtYsRt6uo/p.jpeg?fv_content=true&size_mode=5")
 
 # SONGS
 
-Session.create(bar_id: 5, description: "Ce soir session JUXBAR: 2h", category: "pop")
+Session.create(bar_id: 5, description: "Ce soir session JUXBAR: 2h", category: "Année 80")
 Session.create(bar_id: 4, description: "Ce soir session JUXBAR: 1h", category: "rap")
 Session.create(bar_id: 3, description: "Ce soir session JUXBAR: 3h", category: "RnB")
 Session.create(bar_id: 2, description: "Ce soir session JUXBAR: 1h", category: "Rock")
 Session.create(bar_id: 6, description: "Ce soir session JUXBAR: 3h", category: "Electro")
-Session.create(bar_id: 7, description: "Ce soir session JUXBAR: 1h", category: "Jazz")
+Session.create(bar_id: 7, description: "Ce soir session JUXBAR: 1h", category: "Année 80")
 Session.create(bar_id: 8, description: "Ce soir session JUXBAR: 2h", category: "Année 80")
 Session.create(bar_id: 1, description: "Ce soir session JUXBAR: 1h", category: "Latino")
-Session.create(bar_id: 9, description: "Ce soir session JUXBAR: All night long", category: "Année 80")
+Session.create(bar_id: 9, description: "Ce soir session JUXBAR: All night long!!!", category: "Année 80")
 
 
 p = Playlist.create(user_id: 1, started_at: Time.now, session_id: 1)
