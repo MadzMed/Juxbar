@@ -7,10 +7,12 @@
       <i class="fas fa-bars"></i>
     </div>
     <div class="d-flex justify-content-between p-3">
-      <div class="text-center">
+
+      <div class="text-center playlist-titles">
         <h2 class="mt-4"><%= @playlists.first.songs[0].artist %></h2>
         <h4><%= @playlists.first.songs[0].title %></h4>
         <h5><%= @playlists.first.songs[0].album %></h5>
+
       </div>
       <div>
         <%= image_tag @playlists.first.songs[0].photo_large, width: 250, height: 250 %>
@@ -49,9 +51,9 @@
     </div>
   </div>
   <div class="hearder-playlist-card">
-    <div class="d-flex justify-content-between">
+    <div class="user-info d-flex justify-content-between">
       <div class="d-flex">
-        <img src="https://scontent-cdg2-1.xx.fbcdn.net/v/t1.0-9/s960x960/47689225_10218747533618335_6207042897448009728_o.jpg?_nc_cat=109&_nc_ohc=FoQmIqCNeWMAQlSbe-2QlhWxL1vfCFVZgtr_-pgOUQQYVOlL5zz712xBw&_nc_ht=scontent-cdg2-1.xx&oh=8f14f8adb4b971a8348536fab2536273&oe=5E7F51FA" alt="" class="avatar-playlist-card">
+        <img src=<%= current_user.photo %> alt= playlist.user.username class="avatar-playlist-card">
         <h4 class="ml-3"><%= @playlist.user.username %></h4>
       </div>
       <div class="text-right">
@@ -87,7 +89,7 @@
               </h5>
             </span>
           </div>
-          <div class="d-flex flex-column justify-content-center pr-4">
+          <div class="duration-heart d-flex flex-column justify-content-center pr-4">
             <span class="my-1">-<%= Time.at(song.duration).utc.strftime("%M:%S")  %></span>
               <% if !song.likes.empty? && song.likes.find_by(user_id: current_user.id, song_id: song.id) && song.likes.find_by(user_id: current_user.id, song_id: song.id).status == true %>
                 <%= link_to playlist_path(@playlist.id, like: false, song: song.id), class: "text-center", method: :patch, remote: true do %>
