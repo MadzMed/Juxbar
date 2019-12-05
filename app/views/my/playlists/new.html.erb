@@ -5,8 +5,7 @@
       <%= link_to session_playlists_path(@playlist.session.id) do %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
-      <h3 id="Montserrat";
-    text-overflow: ellipsis;">Sélection <%= @playlist.session.bar.name %></h3>
+      <h3>Sélection <%= @playlist.session.bar.name %></h3>
       <i class="fas fa-bars" style="font-size: 35px;"></i>
     </div>
     <%= simple_form_for :song, url: new_session_my_playlist_path(@playlist.session_id), method: :get do %>
@@ -22,7 +21,7 @@
   <div id="myplaylist">
     <% if !@mysongs.nil? %>
       <div class="hearder-playlist-card">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center pt-3">
             <h3>Ma Playlist</h3>
         </div>
       </div>
@@ -54,7 +53,7 @@
       </div>
     <% else %>
       <div class="hearder-playlist-card">
-        <div class="user-info d-flex justify-content-center">
+        <div class="user-info d-flex justify-content-center pt-3">
             <h3>MA SELECTION</h3>
         </div>
       </div>
@@ -77,7 +76,7 @@
       <% i = 1 %>
       <% @songs_var.map do |song| %>
         <% if (i==1) && !(@mysongs.map { |s| s.title }.include?(song["title"])) && !(@mysongs.map { |s| s.artist }.include?(song["artist"]["name"])) %>
-          <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }, session_id: params[:session_id]), method: :post, remote: true do  %>
+          <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }), method: :post, remote: true do  %>
             <div class="playlist-list-first d-flex justify-content-between children">
               <div class="d-flex text-left align-items-center">
                 <span class="mr-3 mt-3"> •</span>
@@ -101,7 +100,7 @@
           <% end %>
           <% i += 1 %>
         <% elsif !@mysongs.map { |s| s.title }.include?(song["title"]) && !@mysongs.map { |s| s.artist }.include?(song["artist"]["name"]) %>
-          <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"]  }), method: :post, remote: true do  %>
+          <%= link_to session_my_playlists_path(params[:session_id], song: {title: song["title"],  artist: song["artist"]["name"], album: song["album"]["title"], duration: song["duration"], deezer_id: song["id"], photo_album: song["album"]["cover_small"], photo_album: song["artist"]["picture_small"], photo_large: song["album"]["cover_big"],  preview: song["preview"] }), method: :post, remote: true do  %>
             <div class="playlist-list d-flex justify-content-between children">
               <div class="d-flex text-left align-items-center">
                 <span class="mr-3 mt-3"> •</span>

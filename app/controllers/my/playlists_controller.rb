@@ -70,7 +70,6 @@ class My::PlaylistsController < ApplicationController
         redirect_to new_session_my_playlist_path(session_id: params[:session_id])
       end
     end
-
   end
 
   private
