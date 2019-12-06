@@ -156,6 +156,9 @@
       <% end %>
     <% end %>
   </div>
+  <% if @playlist.session.bar.name == "Le Wagon" %>
+    <audio src=<%= @playlist.songs.first.preview %> autoplay></audio>
+  <% end %>
   <div class="d-flex justify-content-center my-2">
     <div class="wrap">
       <a href="#openModal01" class="button button-1">Valider</a> <br />
