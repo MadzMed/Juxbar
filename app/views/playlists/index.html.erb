@@ -14,7 +14,7 @@
           <h5><%= @playlists.first.songs[0].album %></h5>
         </div>
         <div>
-          <%= image_tag @playlists.first.songs[0].photo_large, width: 278, height: 278, class: "photo-album-border" %>
+          <%= image_tag @playlists.first.songs[0].photo_large, width: 278, height: 278, class: "photo-album-border", alt: @playlists.first.song[0].album %>
         </div>
         <div class="d-flex justify-content-around align-items-center w-25">
         <% if Session.find(params[:session_id]).category == "Latino"%>
