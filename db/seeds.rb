@@ -19,8 +19,8 @@ f = User.create(email: "fred@gmail.com", password: "juxbar", username: "Fred", b
 n = User.create(email: "marie@gmail.com", password: "juxbar", username: "Marie", barman: true, photo: "https://images.unsplash.com/photo-1521898130196-7b90b77c704e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
 l = User.create(email: "laura@gmail.com", password: "juxbar", username: "Laura", barman: true, photo: "https://images.unsplash.com/photo-1555084415-b708df0fef3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=881&q=80")
 b = User.create(email: "bertrand@gmail.com", password: "juxbar", username: "Bertrand", barman: true, photo: "https://avatars1.githubusercontent.com/u/9798952?v=4")
-a = User.create(email: "TC@gmail.com", password: "juxbar", username: "Team Com", barman: false, photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80")
-t = User.create(email: "TA@gmail.com", password: "juxbar", username: "Team TA", barman: false, photo: "https://images.unsplash.com/photo-1505503693641-1926193e8d57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2667&q=80")
+a = User.create(email: "TC@gmail.com", password: "juxbar", username: "Team Com", barman: false, photo: "https://images-na.ssl-images-amazon.com/images/I/61nlOq80N5L._SX355_.jpg")
+t = User.create(email: "TA@gmail.com", password: "juxbar", username: "Team TA", barman: false, photo: "https://img.discogs.com/vgQzcX_w8Qu2bWsy78A0dSJNLSE=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9194925-1476455418-6328.jpeg.jpg")
 # BARS
 
 Bar.create(name: "Rockwood", address: "4 Quai Louis XVIII, 33000 Bordeaux", user_id: j.id, description: "Le ROCKWOOD BAR CAFE est le spot parfait pour déguster de délicieux cocktails ou se désaltérer avec l’une de nos 8 bières pressions. Nous proposons également une large sélection de gin, rhum, whisky et spiritueux de qualité.", image: "http://www.rockwood.fr/images/rockwood-bordeaux-happy-hour.jpg")
