@@ -4,7 +4,7 @@
       <%= link_to session_path(params[:session_id]) do  %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
-      <i class="fas fa-bars"></i>
+      <i class="fas fa-bars" style="font-size: 35px;"></i>
     </div>
     <div class="d-flex justify-content-between align-items-center p-4 mb-4">
       <% if !@playlists.empty? %>
@@ -17,7 +17,25 @@
           <%= image_tag @playlists.first.songs[0].photo_large, width: 278, height: 278, class: "photo-album-border" %>
         </div>
         <div class="d-flex justify-content-around align-items-center w-25">
-          <div class="avatar-thema-medium"></div>
+        <% if Session.find(params[:session_id]).category == "Latino"%>
+          <div  class="avatar-thema-med moncercle-orange"></div>
+          <% elsif Session.find(params[:session_id]).category == "pop"%>
+          <div  class="avatar-thema-med moncercle-noir"></div>
+          <% elsif Session.find(params[:session_id]).category == "RnB"%>
+          <div  class="avatar-thema-med moncercle-cyan"></div>
+          <% elsif Session.find(params[:session_id]).category == "Electro"%>
+          <div  class="avatar-thema-med moncercle-vert"></div>
+          <% elsif Session.find(params[:session_id]).category == "Année 80"%>
+          <div  class="avatar-thema-med moncercle-marron"></div>
+          <% elsif Session.find(params[:session_id]).category == "rap"%>
+          <div  class="avatar-thema-med moncercle-magenta"></div>
+          <% elsif Session.find(params[:session_id]).category == "Jazz"%>
+          <div  class="avatar-thema-med moncercle-blue"></div>
+          <% elsif Session.find(params[:session_id]).category == "Rock"%>
+          <div  class="avatar-thema-med moncercle-vert"></div>
+          <% else %>
+          <div></div>
+          <% end %>
           <div class="text-center">
             <% if !@playlists.first.songs[0].likes.empty? && @playlists.first.songs[0].likes.find_by(user_id: current_user.id, song_id: @playlists.first.songs[0].id) && @playlists.first.songs[0].likes.find_by(user_id: current_user.id, song_id: @playlists.first.songs[0].id).status == true %>
               <%= link_to playlist_path(@playlists.first.id, like: false, song: @playlists.first.songs[0].id), class: "text-center", method: :patch, remote: true do %>
@@ -79,7 +97,7 @@
               <div class="duration-heart d-flex font-height-shrink align-items-center">
                 <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song.photo_album, alt: song.album, width:114, height:114 %>
-                <span class="ml-3 black-color">
+                <span class="ml-3 black-color ellipsis">
                   <h3>
                     <%= song.artist %>
                   </h3>
@@ -110,7 +128,7 @@
               <div class="d-flex font-height-shrink align-items-center">
                 <span class="mr-3 mt-3"> •</span>
                 <%= image_tag song.photo_album, alt: "alttext", width:114, height:114 %>
-                <span class="ml-3 black-color">
+                <span class="ml-3 black-color ellipsis">
                   <h3>
                     <%= song.artist %>
                   </h3>

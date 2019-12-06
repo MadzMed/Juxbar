@@ -4,7 +4,7 @@
       <%= link_to session_playlists_path(@playlist.session_id) do  %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
-      <i class="fas fa-bars"></i>
+      <i class="fas fa-bars" style="font-size: 35px;"></i>
     </div>
     <div class="d-flex justify-content-between align-items-center p-3">
 
@@ -18,7 +18,26 @@
         <%= image_tag @playlists.first.songs[0].photo_large, width: 250, height: 250 %>
       </div>
       <div class="d-flex align-items-center justify-content-around w-25">
-        <div class="avatar-thema-medium"></div>
+         <% if @playlist.session.category == "Latino"%>
+          <div  class="avatar-thema-med moncercle-orange"></div>
+          <% elsif @playlist.session.category == "pop"%>
+          <div  class="avatar-thema-med moncercle-noir"></div>
+          <% elsif @playlist.session.category == "RnB"%>
+          <div  class="avatar-thema-med moncercle-cyan"></div>
+          <% elsif @playlist.session.category == "Electro"%>
+          <div  class="avatar-thema-med moncercle-vert"></div>
+          <% elsif @playlist.session.category == "Année 80"%>
+          <div  class="avatar-thema-med moncercle-marron"></div>
+          <% elsif @playlist.session.category == "rap"%>
+          <div  class="avatar-thema-med moncercle-magenta"></div>
+          <% elsif @playlist.session.category == "Jazz"%>
+          <div  class="avatar-thema-med moncercle-blue"></div>
+          <% elsif @playlist.session.category == "Rock"%>
+          <div  class="avatar-thema-med moncercle-vert"></div>
+          <% else %>
+          <div></div>
+          <% end %>
+
         <div class="text-center align-items-center">
           <% if !@playlists.first.songs[0].likes.empty? && @playlists.first.songs[0].likes.find_by(user_id: current_user.id, song_id: @playlists.first.songs[0].id) && @playlists.first.songs[0].likes.find_by(user_id: current_user.id, song_id: @playlists.first.songs[0].id).status == true %>
             <%= link_to playlist_path(@playlists.first.id, like: false, song: @playlists.first.songs[0].id), class: "text-center", method: :patch, remote: true do %>
@@ -56,7 +75,7 @@
         <img src=<%= current_user.photo %> alt= playlist.user.username class="avatar-playlist-card">
         <h4 class="ml-3"><%= @playlist.user.username %></h4>
       </div>
-      <div class="text-right">
+      <div class="text-right pt-4">
         <p>
           <% sum = 0 %>
           <% @playlist.songs.each do |song| %>
@@ -137,7 +156,25 @@
       <% end %>
     <% end %>
   </div>
+  <% if @playlist.session.bar.name == "Le Wagon" %>
+    <audio src=<%= @playlist.songs.first.preview %> autoplay></audio>
+  <% end %>
   <div class="d-flex justify-content-center my-2">
-    <%= link_to "valider", session_playlists_path(@playlist.session_id), class: "button button-1"  %>
+    <div class="wrap">
+      <a href="#openModal01" class="button button-1">Valider</a> <br />
+      <div id="openModal01" class="modalDialog">
+        <div class="popWrap">
+          <h2 class="popTit">Félicitation ! </h2>
+          <div class="popCont">
+            <p>Vous êtes à la <%= @playlist.session.playlists.count %><% if @playlist.session.playlists.count == 1 %>ère position<% else %>ème position<% end %></p>
+          </div>
+          <div class="d-flex justify-content-center">
+            <%= link_to "valider", session_playlists_path(@playlist.session_id), class: "button button-1"  %>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </div>
