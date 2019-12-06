@@ -157,6 +157,21 @@
     <% end %>
   </div>
   <div class="d-flex justify-content-center my-2">
-    <%= link_to "valider", session_playlists_path(@playlist.session_id), class: "button button-1"  %>
+    <div class="wrap">
+      <a href="#openModal01" class="button button-1">Valider</a> <br />
+      <div id="openModal01" class="modalDialog">
+        <div class="popWrap">
+          <h2 class="popTit">Félicitation ! </h2>
+          <div class="popCont">
+            <p>Votre playlist est à la <%= @playlist.session.playlists.count %></p>
+          </div>
+          <div class="d-flex justify-content-center">
+            <%= link_to "valider", session_playlists_path(@playlist.session_id), class: "button button-1"  %>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </div>
