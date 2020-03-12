@@ -1,16 +1,3 @@
-
-<!-- <div class="container-background">
-  <div class="container-description-bar">
-    <div class="container-show d-flex align-items-end">
-      <div class="bar-card d-flex align-items-center justify-content-around mb-3 text-white">
-        <!%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" />
-        <div class="bar-card-description">
-          <h1><!%= @session.bar.name %></h1>
-          <h2><!%= @session.bar.address %></h2>
-          <p><!%= @session.bar.user.username %></p>
--->
-
 <div class="container-fluid container-background">
   <div class="container-btn-off">
     <div class="container-description-bar">
@@ -49,7 +36,6 @@
           </div>
           <div class=" d-flex justify-content-around align-items-center" id="banner-show">
                 <%= image_tag @session.bar.user.photo, alt: "alttext", class: "avatar-bordered ml-3" %>
-                <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered ml-3" /> -->
                 <div class="bar-card-description">
 
                     <h1>
@@ -58,9 +44,7 @@
                     <h2>
                         <%= @session.bar.address.split(',').join("<br>").html_safe %>
                     </h2>
-                   <!--  <p>
-                        <%= @session.bar.user.username %>
-                    </p> -->
+
                 </div>
                 <i class="fas fa-heart" id="heart"></i>
             </div>
@@ -70,22 +54,17 @@
 
 
         <div class="image-bar-cards-1">
-            <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../../assets/images/<%= @session.bar.name %>/tof1')">
-            </div> -->
+
             <%= image_tag "#{@session.bar.name}/tof1.jpg", alt: @session.bar.name, class: "photo-presentation-1" %>
-            <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-            </div> -->
+
             <%= image_tag "#{@session.bar.name}/tof2.jpg", alt: @session.bar.name, class: "photo-presentation-1" %>
-            <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-            </div> -->
+
             <%= image_tag "#{@session.bar.name}/tof3.jpg", alt: @session.bar.name, class: "photo-presentation-1" %>
         </div>
         <div class="image-bar-cards-2">
-            <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            </div> -->
+
             <%= image_tag "#{@session.bar.name}/tof4.jpg", alt: @session.bar.name, class: "photo-presentation-1" %>
-            <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-            </div> -->
+
             <%= image_tag "#{@session.bar.name}/tof5.jpg", alt: @session.bar.name, class: "photo-presentation-1" %>
         </div>
         <div class="session-bar">
@@ -137,28 +116,13 @@
                     <%= @session.description %>
                 </p>
             </div>
-
-       <!--
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      </div>
-    </div>
-    <div class="session-bar">
-      <div class="title-session d-flex">
-        <img class="avatar-thema mr-4" />
-        <div class="d-flex flex-column">
-          <h1 class="title-description"><!%= @session.category %></h1>
-          <h2 class="date-thema"><!%= @session.playlists.first.started_at %></h2>
-         -->
-
         </div>
     </div>
   </div>
 
   <div class="container btn-container d-flex align-items-center justify-content-center">
-    <!-- <div class="action-btn d-flex align-items-center justify-content-center"> -->
       <%= link_to 'REJOINDRE', session_playlists_path(params[:id]), class: "button button-1" %>
     </div>
-  <!-- </div> -->
 </div>
 
 

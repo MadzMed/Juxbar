@@ -1,7 +1,6 @@
 class PlaylistsController < ApplicationController
   def index
     @playlists = Playlist.where(session_id: params[:session_id])
-    # @playlists = Playlist.all
   end
 
   def update
