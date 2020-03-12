@@ -9,28 +9,6 @@ const anim = () => {
         console.log()
     sidebarBox.classList.toggle('active');
   });
-
-   // pageWrapper.addEventListener('click', event => {
-
-   //  if (sidebarBox.classList.contains('active')) {
-   //      sidebarBtn.classList.remove('active');
-   //      sidebarBox.classList.remove('active');
-   //  }
-  // });
-  // window.addEventListener('keydown', event => {
-
-  //   if (sidebarBox.classList.contains('active') && event.keyCode === 27) {
-  //       sidebarBtn.classList.remove('active');
-  //       sidebarBox.classList.remove('active');
-  //   }
-  // });
 };
-
-
-
-
-
-
-
 
 export { anim }

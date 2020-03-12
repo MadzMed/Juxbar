@@ -56,11 +56,6 @@ class My::PlaylistsController < ApplicationController
     end
   end
 
-  # def update
-  #   raise
-  #   @playlist = Playlist.find(params[:id])
-  # end
-
   def destroy
     @playlist = Playlist.find_by(session_id: params[:session_id], user_id: current_user.id)
     @songs = @playlist.songs

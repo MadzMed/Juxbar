@@ -31,6 +31,3 @@ class SessionsController < ApplicationController
   end
 end
 
-# session.bar.address
-# session.bar.name
-# session.category
