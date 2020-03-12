@@ -27,6 +27,8 @@
   -webkit-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
   color: white;
+  font-weight: $font-weight-semi-bold;
+  font-size: $party-date-font-size;
 }
 
 .button-1:hover {
@@ -41,9 +43,12 @@
   text-align: center;
   // color: red;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: $font-weight-semi-bold;
+  font-size: $party-date-font-size;
   // margin-left: 30px;
   margin: 30px;
   cursor: pointer;
   display: inline-block;
+  font-size: 25px;
+  letter-spacing: 2.5px;
 }

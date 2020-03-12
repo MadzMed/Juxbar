@@ -17,7 +17,6 @@ $easing: cubic-bezier(.6, .05, .28, .91);
 
 #btn {
   position: fixed;
-  color: red;
   z-index: 199;
   top: 25px;
   right: 25px;
@@ -27,7 +26,7 @@ $easing: cubic-bezier(.6, .05, .28, .91);
     width: 38px;
     height: 5px;
     margin-bottom: 8px;
-    background-color: $blueform;
+    background-color: white;
     transition: transform 500ms $easing, opacity 500ms, background-color 250ms;
   }
 }
