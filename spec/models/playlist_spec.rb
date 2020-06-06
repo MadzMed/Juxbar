@@ -22,4 +22,10 @@ RSpec.describe Playlist, type: :model do
       expect(Playlist.new({ user: User.new, session: Session.new })).to_not be_valid
     end
   end
+
+  describe "Association" do
+    it { should belong_to(:user) }
+    it { should belong_to(:session) }
+    it { should have_many(:songs) }
+  end
 end

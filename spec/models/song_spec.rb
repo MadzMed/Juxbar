@@ -4,7 +4,6 @@ RSpec.describe Song, type: :model do
   subject do
     Song.new({artist: "eminem", title: "mockinbird", duration: "180", playlist: Playlist.new })
   end
-  let(:invalid_song) { Song.new }
 
   describe "with correct attributes" do
     it("is valid with correct attributes") { expect(subject).to be_valid }
@@ -25,5 +24,10 @@ RSpec.describe Song, type: :model do
     it("is not valid without artist") do
       expect(Song.new({ title: "mockinbird", duration: "180", playlist: Playlist.new })).to_not be_valid
     end
+  end
+
+  describe "Association" do
+    it { should belong_to(:playlist) }
+    it { should have_many(:likes).dependent(:destroy) }
   end
 end

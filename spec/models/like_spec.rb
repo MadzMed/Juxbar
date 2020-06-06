@@ -19,4 +19,9 @@ RSpec.describe Like, type: :model do
       expect(Like.new({song: Song.new})).to_not be_valid
     end
   end
+
+  describe "Association" do
+    it { should belong_to(:user) }
+    it { should belong_to(:song) }
+  end
 end

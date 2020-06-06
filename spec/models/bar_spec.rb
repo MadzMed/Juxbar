@@ -27,4 +27,10 @@ RSpec.describe Bar, type: :model do
       expect(Bar.new({ user: user, description: "célébre bar-restaurant de l'enseigne toulousaines 'à la Une'. découvrez la vaste terrasse ainsi que cette équipe compétente et souriante, prêt à tout pour animer vos soirées" })).to_not be_valid
     end
   end
+
+  describe "Association" do
+    it { should belong_to(:user) }
+    it { should have_many(:sessions).dependent(:destroy) }
+    it { should validate_length_of(:description).is_at_least(50).is_at_most(260) }
+  end
 end

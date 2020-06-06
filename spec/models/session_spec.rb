@@ -25,4 +25,10 @@ RSpec.describe Session, type: :model do
       Session.new({ bar: Bar.new, description: "session funk dans les locaux de tel bar, assister nombreux à notre DJ mix, Happy Hour jusqu'à 21h !!!!!"})
     end
   end
+
+  describe "Association" do
+    it { should belong_to(:bar) }
+    it { should have_many(:playlists) }
+    it { should validate_length_of(:description).is_at_least(50).is_at_most(260) }
+  end
 end
