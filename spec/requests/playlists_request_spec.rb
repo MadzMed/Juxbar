@@ -11,7 +11,7 @@ juxbar_helper = JuxbarControllersHelper.new(
   class_name: "PlaylistsController"
 )
 
-RSpec.describe PlaylistsController, unless: juxbar_helper.file_and_class_valid? do
+RSpec.describe PlaylistsController, type: :request, unless: juxbar_helper.file_and_class_valid? do
   it '`playlists_controller.rb` file should exist' do
     expect(juxbar_helper.file_exists?).to be(true)
   end

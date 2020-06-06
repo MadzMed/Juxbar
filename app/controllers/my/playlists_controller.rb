@@ -61,8 +61,12 @@ class My::PlaylistsController < ApplicationController
     @songs = @playlist.songs
     @songs.each do |song|
       if song.artist == params[:song][:artist] && song.title == params[:song][:title]
-        song.destroy
-        redirect_to new_session_my_playlist_path(session_id: params[:session_id])
+        if song.destroy
+          respond_to do |format|
+            format.html { redirect_to new_session_my_playlist_path(session_id: params[:session_id]) }
+            format.js
+          end
+        end
       end
     end
   end
