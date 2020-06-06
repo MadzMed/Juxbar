@@ -29,6 +29,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
