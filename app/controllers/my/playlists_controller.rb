@@ -33,6 +33,7 @@ class My::PlaylistsController < ApplicationController
           @song = Song.new(songs_params)
           @song.playlist_id = @playlist.id
           @song.save
+          flash[:success] = "song added !"
         end
       else
         @playlist = Playlist.new(session_id: params[:session_id], user_id: current_user, started_at: Time.now)
