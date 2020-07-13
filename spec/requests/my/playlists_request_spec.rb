@@ -40,10 +40,10 @@ RSpec.describe "My::Playlists", type: :request do
   describe My::PlaylistsController, type: :request, if: juxbar_helper.file_and_class_valid? do
     user = FactoryBot.build_stubbed(:user)
     session = FactoryBot.build_stubbed(:session)
-    @playlist = Playlist.new({session: session, user: user, started_at: Time.now})
+    playlist = Playlist.new({session: session, user: user, started_at: Time.now})
     it "create a new playlist and redirect to " do
       sign_in user
-      get new_session_my_playlist_path(session.id)
+      get new_session_my_playlist_path(playlist.session)
       expect(response).to render_template(:new)
       sign out user
     end

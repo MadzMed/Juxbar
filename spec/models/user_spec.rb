@@ -24,7 +24,7 @@ end
 RSpec.describe User, type: :model, if: juxbar_helper.file_and_class_valid? do
 
   subject do
-    User.new({ email: "test@test.com", username: "MadzeMed", password: "azerty00" })
+    User.last
   end
 
   let(:invalid_password) { User.new({ email: "test@test.com", username: "MadzeMad", password: "azerty" }) }
@@ -46,7 +46,7 @@ RSpec.describe User, type: :model, if: juxbar_helper.file_and_class_valid? do
     end
     it("is not valid with incorrect email") { expect(invalid_email).to_not be_valid }
     it("is created") do
-      expect{ subject.save }.to change{ User.count }.by(1)
+      expect{ User.new({ email: "test@test.com", username: "MadzeMad", password: "azerty01" }).save }.to change{ User.count }.by(1)
     end
     it { is_expected.to be_an(User) }
   end
